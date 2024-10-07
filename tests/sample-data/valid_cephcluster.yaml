@@ -1,0 +1,3 @@
+deviceClass: custom
+min_size: 1
+replica_count: 3

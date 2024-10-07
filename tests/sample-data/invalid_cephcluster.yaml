@@ -1,0 +1,2 @@
+deviceClass: custom  # This will break as there's no valid YAML format
+min_size: 2

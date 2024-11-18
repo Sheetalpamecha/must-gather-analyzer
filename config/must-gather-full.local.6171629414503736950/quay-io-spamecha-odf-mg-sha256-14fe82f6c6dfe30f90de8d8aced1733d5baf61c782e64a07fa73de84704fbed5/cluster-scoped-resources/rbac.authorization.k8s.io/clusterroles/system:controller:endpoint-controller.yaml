@@ -1,0 +1,62 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T02:58:11Z"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+        f:labels:
+          .: {}
+          f:kubernetes.io/bootstrapping: {}
+      f:rules: {}
+    manager: kube-apiserver
+    operation: Update
+    time: "2024-11-11T02:58:11Z"
+  name: system:controller:endpoint-controller
+  resourceVersion: "123"
+  uid: 8997ce36-4ad8-4886-9cc5-2c710449e84f
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - services
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - endpoints/restricted
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - events.k8s.io
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update

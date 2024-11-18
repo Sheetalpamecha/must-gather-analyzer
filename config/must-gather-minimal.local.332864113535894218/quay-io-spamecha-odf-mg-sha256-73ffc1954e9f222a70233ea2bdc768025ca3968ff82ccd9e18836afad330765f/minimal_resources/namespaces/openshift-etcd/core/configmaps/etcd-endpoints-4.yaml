@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+data:
+  79553d7fc8928de4: 10.0.112.145
+  346035a2e5c1671b: 10.0.47.7
+kind: ConfigMap
+metadata:
+  annotations:
+    alpha.installer.openshift.io/etcd-bootstrap: 10.0.139.241
+  creationTimestamp: "2024-11-11T03:05:58Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:79553d7fc8928de4: {}
+        f:346035a2e5c1671b: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:alpha.installer.openshift.io/etcd-bootstrap: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"7d5677f4-43c0-419f-a3bc-2f46637d9cd0"}: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:05:58Z"
+  name: etcd-endpoints-4
+  namespace: openshift-etcd
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-4
+    uid: 7d5677f4-43c0-419f-a3bc-2f46637d9cd0
+  resourceVersion: "13472"
+  uid: 3aa3c3d1-9fa4-4dcb-bc5e-e4af6503c1cb

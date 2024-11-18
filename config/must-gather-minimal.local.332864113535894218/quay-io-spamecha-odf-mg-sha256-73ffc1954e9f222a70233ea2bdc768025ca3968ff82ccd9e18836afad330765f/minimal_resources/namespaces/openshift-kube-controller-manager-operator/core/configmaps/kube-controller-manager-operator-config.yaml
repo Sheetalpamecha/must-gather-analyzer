@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+data:
+  config.yaml: |
+    apiVersion: operator.openshift.io/v1
+    kind: GenericOperatorConfig
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:12Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:12Z"
+  name: kube-controller-manager-operator-config
+  namespace: openshift-kube-controller-manager-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1229"
+  uid: d5fae994-6dc6-4333-a673-fe3274c5d6ae

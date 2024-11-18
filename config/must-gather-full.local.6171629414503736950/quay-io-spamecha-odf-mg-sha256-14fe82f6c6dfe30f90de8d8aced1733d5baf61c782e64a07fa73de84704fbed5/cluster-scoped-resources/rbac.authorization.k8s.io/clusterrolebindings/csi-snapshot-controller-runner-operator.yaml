@@ -1,0 +1,53 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    capability.openshift.io/name: CSISnapshot
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:26Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubernetes.io/cluster-service: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:labels:
+          .: {}
+          f:addonmanager.kubernetes.io/mode: {}
+          f:kubernetes.io/cluster-service: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:26Z"
+  name: csi-snapshot-controller-runner-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1805"
+  uid: 81935c29-32b8-4966-a6a1-698db748f4ae
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: openshift-csi-snapshot-controller-runner
+subjects:
+- kind: ServiceAccount
+  name: csi-snapshot-controller-operator
+  namespace: openshift-cluster-storage-operator

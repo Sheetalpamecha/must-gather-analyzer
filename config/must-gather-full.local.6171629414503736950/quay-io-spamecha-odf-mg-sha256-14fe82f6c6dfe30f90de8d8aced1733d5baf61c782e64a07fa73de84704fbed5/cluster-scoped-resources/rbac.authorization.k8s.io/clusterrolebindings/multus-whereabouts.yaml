@@ -1,0 +1,35 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:01:01Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:ownerReferences:
+          k:{"uid":"3fc47453-0621-4bee-ac3f-e3cec88fc937"}: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-network-operator/operconfig
+    operation: Apply
+    time: "2024-11-11T03:01:01Z"
+  name: multus-whereabouts
+  ownerReferences:
+  - apiVersion: operator.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Network
+    name: cluster
+    uid: 3fc47453-0621-4bee-ac3f-e3cec88fc937
+  resourceVersion: "3473"
+  uid: aee4e727-280b-4208-bd0a-cf3006b6ef73
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: whereabouts-cni
+subjects:
+- kind: ServiceAccount
+  name: multus-ancillary-tools
+  namespace: openshift-multus

@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:37Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-d32acb4252badada-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-d32acb4252badada-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3a2ff5d1-ae05-4cb6-932c-5c44d511aa7e"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:37Z"
+  name: ocsinitializations.ocs.openshift.io-v1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: ocsinitializations.ocs.openshift.io
+    uid: 3a2ff5d1-ae05-4cb6-932c-5c44d511aa7e
+  resourceVersion: "34277"
+  uid: ceec79b1-562f-4916-9df1-5c95ef8cded0
+rules:
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - ocsinitializations
+  verbs:
+  - get
+  - list
+  - watch

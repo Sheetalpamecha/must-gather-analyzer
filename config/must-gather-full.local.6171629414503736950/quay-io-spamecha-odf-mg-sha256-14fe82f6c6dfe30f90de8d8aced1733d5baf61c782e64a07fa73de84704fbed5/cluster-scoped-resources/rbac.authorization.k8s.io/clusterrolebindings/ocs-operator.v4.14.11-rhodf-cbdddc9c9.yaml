@@ -1,0 +1,45 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:24:41Z"
+  labels:
+    olm.owner: ocs-operator.v4.14.11-rhodf
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-storage
+    operators.coreos.com/ocs-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:41Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/ocs-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:26:10Z"
+  name: ocs-operator.v4.14.11-rhodf-cbdddc9c9
+  resourceVersion: "35273"
+  uid: 4185b398-cfc2-4c80-8a24-4421e2dc0def
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: ocs-operator.v4.14.11-rhodf-cbdddc9c9
+subjects:
+- kind: ServiceAccount
+  name: rook-ceph-system
+  namespace: openshift-storage

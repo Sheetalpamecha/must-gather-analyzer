@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:23Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:02:23Z"
+  name: system:openshift:operator:openshift-etcd-installer
+  resourceVersion: "5791"
+  uid: 58b341f7-c248-4bb0-8f28-6287ee068ed4
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: installer-sa
+  namespace: openshift-etcd

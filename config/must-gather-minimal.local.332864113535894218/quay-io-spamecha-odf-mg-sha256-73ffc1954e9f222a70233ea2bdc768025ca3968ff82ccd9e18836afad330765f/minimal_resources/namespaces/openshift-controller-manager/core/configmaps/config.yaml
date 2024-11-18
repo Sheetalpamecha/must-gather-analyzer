@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+data:
+  config.yaml: |
+    {"apiVersion":"openshiftcontrolplane.config.openshift.io/v1","build":{"buildDefaults":{"resources":{}},"imageTemplateFormat":{"format":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3de5379727cfa903170d1fb4f91b1d756d8231d183b93dc1eb482eaf4b6d7391"}},"controllers":["*"],"deployer":{"imageTemplateFormat":{"format":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6c3c98f449ce0280cc125d0a8b62e8434118c2f3b5701e7eaea53d8f3bf517f0"}},"dockerPullSecret":{"internalRegistryHostname":"image-registry.openshift-image-registry.svc:5000"},"featureGates":["BuildCSIVolumes=true"],"ingress":{"ingressIPNetworkCIDR":""},"kind":"OpenShiftControllerManagerConfig"}
+  openshift-controller-manager.client-ca.configmap: 9eZcbw==
+  openshift-controller-manager.openshift-global-ca.configmap: ElMHxA==
+  openshift-controller-manager.serving-cert.secret: 4ziOrw==
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:19Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+        f:openshift-controller-manager.client-ca.configmap: {}
+        f:openshift-controller-manager.openshift-global-ca.configmap: {}
+        f:openshift-controller-manager.serving-cert.secret: {}
+    manager: cluster-openshift-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:11:30Z"
+  name: config
+  namespace: openshift-controller-manager
+  resourceVersion: "24085"
+  uid: 4306a4f9-afa0-4133-b1ae-7775bdfe00bc

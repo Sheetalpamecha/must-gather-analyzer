@@ -1,0 +1,70 @@
+---
+apiVersion: v1
+data:
+  policy.yaml: |
+    apiVersion: audit.k8s.io/v1
+    kind: Policy
+    metadata:
+      creationTimestamp: null
+      name: policy
+    omitManagedFields: true
+    omitStages:
+    - RequestReceived
+    rules:
+    - level: None
+      resources:
+      - resources:
+        - events
+    - level: None
+      nonResourceURLs:
+      - /api*
+      - /version
+      - /healthz
+      - /readyz
+      userGroups:
+      - system:authenticated
+      - system:unauthenticated
+    - level: None
+      namespaces:
+      - ""
+      resources:
+      - group: apiserver.openshift.io
+        resources:
+        - apirequestcounts
+        - apirequestcounts/*
+      users:
+      - system:apiserver
+    - level: RequestResponse
+      resources:
+      - group: user.openshift.io
+        resources:
+        - identities
+      - group: oauth.openshift.io
+        resources:
+        - oauthaccesstokens
+        - oauthauthorizetokens
+      verbs:
+      - create
+      - update
+      - patch
+      - delete
+    - level: Metadata
+      omitStages:
+      - RequestReceived
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:27Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:policy.yaml: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:02:27Z"
+  name: kube-apiserver-audit-policies
+  namespace: openshift-kube-apiserver
+  resourceVersion: "6038"
+  uid: 19dca684-7583-4a6a-a633-58c792dfb2f2

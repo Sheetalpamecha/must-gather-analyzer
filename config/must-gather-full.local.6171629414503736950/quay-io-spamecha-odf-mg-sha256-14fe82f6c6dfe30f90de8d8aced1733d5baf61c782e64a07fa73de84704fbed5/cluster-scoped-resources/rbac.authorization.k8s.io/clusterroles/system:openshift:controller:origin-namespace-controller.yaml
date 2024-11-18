@@ -1,0 +1,46 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:34Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:rules: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:34Z"
+  name: system:openshift:controller:origin-namespace-controller
+  resourceVersion: "11576"
+  uid: 0e75fed0-2436-4156-8a78-ce6c13522d7c
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - namespaces/finalize
+  - namespaces/status
+  verbs:
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update

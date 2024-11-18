@@ -1,0 +1,42 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T02:58:12Z"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+        f:labels:
+          .: {}
+          f:kubernetes.io/bootstrapping: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: kube-apiserver
+    operation: Update
+    time: "2024-11-11T02:58:12Z"
+  name: system:node-admin
+  resourceVersion: "170"
+  uid: dd451142-49ad-4dae-ac64-d0123f9e2c8f
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:node-admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:master
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:kube-apiserver
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:node-admins

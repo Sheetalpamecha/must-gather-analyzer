@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:39Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-7bb907a72dc7116e-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-7bb907a72dc7116e-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"77a9d821-5dc5-4752-8cef-628097c211b2"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:39Z"
+  name: cephclients.ceph.rook.io-v1-crdview
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephclients.ceph.rook.io
+    uid: 77a9d821-5dc5-4752-8cef-628097c211b2
+  resourceVersion: "34499"
+  uid: ebe25f5b-04d6-47ae-8b07-1c447d4ff932
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephclients.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get

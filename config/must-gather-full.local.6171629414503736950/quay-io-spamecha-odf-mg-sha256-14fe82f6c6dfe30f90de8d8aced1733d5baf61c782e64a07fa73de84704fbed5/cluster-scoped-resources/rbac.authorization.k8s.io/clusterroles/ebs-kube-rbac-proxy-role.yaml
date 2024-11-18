@@ -1,0 +1,23 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:02:46Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: aws-ebs-csi-driver-operator
+    operation: Update
+    time: "2024-11-11T03:02:46Z"
+  name: ebs-kube-rbac-proxy-role
+  resourceVersion: "7063"
+  uid: 2b0bf24f-4d85-435c-a577-2b6980f83750
+rules:
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create

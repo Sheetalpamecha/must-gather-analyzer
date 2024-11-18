@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+data:
+  baseOSContainerImage: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:9a537ddc3d08a130e6af84be1ffe83e56cb0d176d2e654e73ae0de82a2a7f337
+  baseOSExtensionsContainerImage: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:526fe269114d91ecc8409f63b5775781b0431aa8e1e64c22bb9154171e0abd51
+  osImageURL: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3aae624a1db1fb7d47a426d3d80e7249cd39bc2839c0de83c4c23fc5644420e9
+  releaseVersion: 4.14.0-0.nightly-2024-11-08-043134
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:27Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:baseOSContainerImage: {}
+        f:baseOSExtensionsContainerImage: {}
+        f:osImageURL: {}
+        f:releaseVersion: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:27Z"
+  name: machine-config-osimageurl
+  namespace: openshift-machine-config-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1838"
+  uid: ec0e222d-9288-4094-ad9d-9d949f5d57b7

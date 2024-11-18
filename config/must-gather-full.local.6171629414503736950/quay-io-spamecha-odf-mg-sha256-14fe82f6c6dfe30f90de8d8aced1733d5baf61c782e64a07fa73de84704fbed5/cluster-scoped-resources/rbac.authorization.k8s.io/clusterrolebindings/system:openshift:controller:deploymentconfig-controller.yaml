@@ -1,0 +1,31 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:35Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:35Z"
+  name: system:openshift:controller:deploymentconfig-controller
+  resourceVersion: "11614"
+  uid: d083d892-aa91-40ee-a367-828c67f9aec0
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:controller:deploymentconfig-controller
+subjects:
+- kind: ServiceAccount
+  name: deploymentconfig-controller
+  namespace: openshift-infra

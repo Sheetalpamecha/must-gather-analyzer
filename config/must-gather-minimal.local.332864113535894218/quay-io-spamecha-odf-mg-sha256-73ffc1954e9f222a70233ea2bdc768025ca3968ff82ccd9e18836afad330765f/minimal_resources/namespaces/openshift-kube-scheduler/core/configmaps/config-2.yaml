@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+data:
+  config.yaml: |
+    {"apiVersion":"kubescheduler.config.k8s.io/v1beta3","clientConnection":{"kubeconfig":"/etc/kubernetes/static-pod-resources/configmaps/scheduler-kubeconfig/kubeconfig"},"enableContentionProfiling":false,"enableProfiling":false,"kind":"KubeSchedulerConfiguration","leaderElection":{"leaderElect":true,"leaseDuration":"137s","renewDeadline":"107s","resourceLock":"leases","resourceNamespace":"openshift-kube-scheduler","retryPeriod":"26s"}}
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:34Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5ebca438-6d4c-4073-9a42-320b780a7e62"}: {}
+    manager: cluster-kube-scheduler-operator
+    operation: Update
+    time: "2024-11-11T03:02:34Z"
+  name: config-2
+  namespace: openshift-kube-scheduler
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-2
+    uid: 5ebca438-6d4c-4073-9a42-320b780a7e62
+  resourceVersion: "6435"
+  uid: 39a4e4f1-2656-40cf-a893-069e2594a1d4

@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:38Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"e4b8c019-999b-4c30-a2ff-98eac7b8e425"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:38Z"
+  name: cephblockpools.ceph.rook.io-v1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephblockpools.ceph.rook.io
+    uid: e4b8c019-999b-4c30-a2ff-98eac7b8e425
+  resourceVersion: "34403"
+  uid: cfaf281e-6f7e-4733-b16d-79e23f847366
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpools
+  verbs:
+  - get
+  - list
+  - watch

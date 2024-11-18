@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:24:45Z"
+  labels:
+    olm.owner: ocs-operator.v4.14.11-rhodf
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-storage
+    operators.coreos.com/ocs-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:rules: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:45Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/ocs-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:26:15Z"
+  name: ocs-operator.v4.14.11-rhodf-59966954fc
+  resourceVersion: "35355"
+  uid: fffce5d4-2c05-4496-8201-6dbb4a32cb30
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list

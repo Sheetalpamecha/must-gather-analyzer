@@ -1,0 +1,82 @@
+Name:         version
+Namespace:    
+Labels:       <none>
+Annotations:  <none>
+API Version:  config.openshift.io/v1
+Kind:         ClusterVersion
+Metadata:
+  Creation Timestamp:  2024-11-11T02:58:59Z
+  Generation:          2
+  Resource Version:    57385
+  UID:                 c0027b13-9238-4c5e-b824-f2e2febbc466
+Spec:
+  Cluster ID:  51bc86c4-35d5-4938-9848-c4edcc2684e9
+Status:
+  Available Updates:  <nil>
+  Capabilities:
+    Enabled Capabilities:
+      Build
+      CSISnapshot
+      Console
+      DeploymentConfig
+      ImageRegistry
+      Insights
+      MachineAPI
+      NodeTuning
+      Storage
+      baremetal
+      marketplace
+      openshift-samples
+    Known Capabilities:
+      Build
+      CSISnapshot
+      Console
+      DeploymentConfig
+      ImageRegistry
+      Insights
+      MachineAPI
+      NodeTuning
+      Storage
+      baremetal
+      marketplace
+      openshift-samples
+  Conditions:
+    Last Transition Time:  2024-11-11T02:59:00Z
+    Message:               The update channel has not been configured.
+    Reason:                NoChannel
+    Status:                False
+    Type:                  RetrievedUpdates
+    Last Transition Time:  2024-11-11T02:59:00Z
+    Message:               Capabilities match configured spec
+    Reason:                AsExpected
+    Status:                False
+    Type:                  ImplicitlyEnabledCapabilities
+    Last Transition Time:  2024-11-11T02:59:00Z
+    Message:               Payload loaded version="4.14.0-0.nightly-2024-11-08-043134" image="registry.build09.ci.openshift.org/ci-ln-2s0x4sk/release@sha256:da639cfc585eb3d2e2af5d31e0f4c581dbcd8c8757497ca24192ab24ebc687ca" architecture="amd64"
+    Reason:                PayloadLoaded
+    Status:                True
+    Type:                  ReleaseAccepted
+    Last Transition Time:  2024-11-11T03:21:12Z
+    Message:               Done applying 4.14.0-0.nightly-2024-11-08-043134
+    Status:                True
+    Type:                  Available
+    Last Transition Time:  2024-11-11T03:21:12Z
+    Status:                False
+    Type:                  Failing
+    Last Transition Time:  2024-11-11T03:21:12Z
+    Message:               Cluster version is 4.14.0-0.nightly-2024-11-08-043134
+    Status:                False
+    Type:                  Progressing
+  Desired:
+    Image:    registry.build09.ci.openshift.org/ci-ln-2s0x4sk/release@sha256:da639cfc585eb3d2e2af5d31e0f4c581dbcd8c8757497ca24192ab24ebc687ca
+    Version:  4.14.0-0.nightly-2024-11-08-043134
+  History:
+    Completion Time:    2024-11-11T03:21:12Z
+    Image:              registry.build09.ci.openshift.org/ci-ln-2s0x4sk/release@sha256:da639cfc585eb3d2e2af5d31e0f4c581dbcd8c8757497ca24192ab24ebc687ca
+    Started Time:       2024-11-11T02:59:00Z
+    State:              Completed
+    Verified:           false
+    Version:            4.14.0-0.nightly-2024-11-08-043134
+  Observed Generation:  2
+  Version Hash:         6peM7relJ_8=
+Events:                 <none>

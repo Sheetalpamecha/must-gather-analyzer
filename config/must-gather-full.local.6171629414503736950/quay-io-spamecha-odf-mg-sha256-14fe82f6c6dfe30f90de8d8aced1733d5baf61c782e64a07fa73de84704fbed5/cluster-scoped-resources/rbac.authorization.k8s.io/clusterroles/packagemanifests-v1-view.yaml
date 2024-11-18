@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:11:04Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-4bca9f23e412d79d-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-4bca9f23e412d79d-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"dd9e2802-72ff-49eb-974c-7e3b20bdcb20"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:11:04Z"
+  name: packagemanifests-v1-view
+  ownerReferences:
+  - apiVersion: apiregistration.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: APIService
+    name: v1.packages.operators.coreos.com
+    uid: dd9e2802-72ff-49eb-974c-7e3b20bdcb20
+  resourceVersion: "21411"
+  uid: b460f1b1-df1c-456d-97ce-d04afcd85cdd
+rules:
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  verbs:
+  - get
+  - list
+  - watch

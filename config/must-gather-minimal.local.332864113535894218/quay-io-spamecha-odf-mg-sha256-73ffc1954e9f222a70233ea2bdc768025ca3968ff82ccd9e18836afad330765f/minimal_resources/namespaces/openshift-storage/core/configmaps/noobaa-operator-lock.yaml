@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T04:08:53Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"6939fd1a-8518-4dde-adb9-7a233ac92f13"}: {}
+    manager: noobaa-operator
+    operation: Update
+    time: "2024-11-11T04:08:53Z"
+  name: noobaa-operator-lock
+  namespace: openshift-storage
+  ownerReferences:
+  - apiVersion: v1
+    kind: Pod
+    name: noobaa-operator-66c974fdc-lg4j8
+    uid: 6939fd1a-8518-4dde-adb9-7a233ac92f13
+  resourceVersion: "54420"
+  uid: 072b28b9-c759-4fbd-aa3a-f173c8910fbd

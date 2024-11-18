@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:37Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-d32acb4252badada-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-d32acb4252badada-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3a2ff5d1-ae05-4cb6-932c-5c44d511aa7e"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:37Z"
+  name: ocsinitializations.ocs.openshift.io-v1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: ocsinitializations.ocs.openshift.io
+    uid: 3a2ff5d1-ae05-4cb6-932c-5c44d511aa7e
+  resourceVersion: "34272"
+  uid: 7bc466c0-691a-45cc-823a-1d8c44cc4dba
+rules:
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - ocsinitializations
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

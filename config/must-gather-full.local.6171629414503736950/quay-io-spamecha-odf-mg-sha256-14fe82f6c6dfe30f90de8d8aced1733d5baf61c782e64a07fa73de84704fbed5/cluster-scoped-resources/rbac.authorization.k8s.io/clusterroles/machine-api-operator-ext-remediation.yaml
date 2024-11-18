@@ -1,0 +1,69 @@
+---
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+      rbac.ext-remediation/aggregate-to-ext-remediation: "true"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    capability.openshift.io/name: MachineAPI
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:31Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: clusterrole-aggregation-controller
+    operation: Apply
+    time: "2024-11-11T04:28:16Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:aggregationRule:
+        .: {}
+        f:clusterRoleSelectors: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T04:28:16Z"
+  name: machine-api-operator-ext-remediation
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "63433"
+  uid: 690fd189-a230-4e29-bd66-d3e83661777e
+rules:
+- apiGroups:
+  - infrastructure.cluster.x-k8s.io
+  resources:
+  - metal3remediationtemplates
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - infrastructure.cluster.x-k8s.io
+  resources:
+  - metal3remediations
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete

@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+data:
+  images.json: |
+    {
+      "clusterBaremetalOperator": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ec58176fbba555efc59023e389ef423cce03d02b6e52a38fe659b2bcda7f805d",
+      "kubeRBACProxy": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8c839bb3665955bcf151f5d5b2fe26187c5070c4812739b7f0b83af7f6cf7afa",
+      "baremetalOperator": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:322616fd845848792ab3f97f8cb175e889f2d8911e5dbb7b59419f20f2e19f33",
+      "baremetalIronic": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4d15c223d3e1b7c2c8a4b577827056a6c993fb1b5fee4abf4a33c4a418da2c40",
+      "baremetalMachineOsDownloader": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4f929b3567293b19dd76a33ee0e8e50bc84fd02fe029c632af16891d83f7e507",
+      "baremetalStaticIpManager": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ad0a2870a20f2b0413fc83b1aeccb3e2c173ea1afc37a71ecc1294f5f68c8364",
+      "baremetalIronicAgent": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1f33d5592d31726bce3a0aa0490c4870bf9d48097729e2eadab509893bb8c0fd",
+      "imageCustomizationController": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:d6afe1f6d39b0f30fafa4ac43f4e9e3852223da5c33da8d46834faf7d35a7189",
+      "machineOSImages": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:2aec385693b8d4d2e050a8504cb01c1bb1a9987bb9bab4bf933af5992ab90b86"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    capability.openshift.io/name: baremetal
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:54Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:images.json: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:54Z"
+  name: cluster-baremetal-operator-images
+  namespace: openshift-machine-api
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "2403"
+  uid: 5d2b6fd3-7820-4d91-bb63-99022c56ab3d

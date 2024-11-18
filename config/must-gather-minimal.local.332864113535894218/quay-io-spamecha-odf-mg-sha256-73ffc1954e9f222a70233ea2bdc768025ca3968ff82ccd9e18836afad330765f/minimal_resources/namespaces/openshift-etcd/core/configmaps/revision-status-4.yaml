@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+data:
+  reason: required configmap/etcd-pod has changed,required configmap/etcd-endpoints
+    has changed
+  revision: "4"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:05:49Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:06:00Z"
+  name: revision-status-4
+  namespace: openshift-etcd
+  resourceVersion: "13531"
+  uid: 7d5677f4-43c0-419f-a3bc-2f46637d9cd0

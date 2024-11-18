@@ -1,0 +1,61 @@
+---
+apiVersion: v1
+data:
+  recycler-pod.yaml: |
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: recycler-pod
+      namespace: openshift-infra
+      annotations:
+        target.workload.openshift.io/management: '{"effect": "PreferredDuringScheduling"}'
+    spec:
+      activeDeadlineSeconds: 60
+      restartPolicy: Never
+      serviceAccountName: pv-recycler-controller
+      containers:
+        - name: recycler-container
+          image: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:2189bf55195311371367f056f676ac9fa8a6fbbaaa6e9dd427c10f2dda84965a"
+          command:
+          - "/bin/bash"
+          args:
+          - "-c"
+          - "test -e /scrub && rm -rf /scrub/..?* /scrub/.[!.]* /scrub/*  && test -z \"$(ls -A /scrub)\" || exit 1"
+          volumeMounts:
+            - mountPath: /scrub
+              name: vol
+          securityContext:
+            runAsUser: 0
+          priorityClassName: openshift-user-critical
+          resources:
+            requests:
+              memory: 50Mi
+              cpu: 10m
+      volumes:
+        - name: vol
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:05:11Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:recycler-pod.yaml: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"a8af9970-49c3-4bc9-8390-967f4b164adc"}: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:05:11Z"
+  name: recycler-config-4
+  namespace: openshift-kube-controller-manager
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-4
+    uid: a8af9970-49c3-4bc9-8390-967f4b164adc
+  resourceVersion: "12598"
+  uid: 22d23fed-1ca6-4f15-8874-4aa73573929c

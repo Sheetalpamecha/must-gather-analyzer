@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+data:
+  config.yaml: '{"apiVersion":"openshiftcontrolplane.config.openshift.io/v1","featureGates":["AdminNetworkPolicy=false","AdmissionWebhookMatchConditions=false","AlibabaPlatform=true","AutomatedEtcdBackup=false","AzureWorkloadIdentity=true","BuildCSIVolumes=true","CSIDriverSharedResource=false","CloudDualStackNodeIPs=true","DynamicResourceAllocation=false","EventedPLEG=false","ExternalCloudProvider=false","ExternalCloudProviderAzure=true","ExternalCloudProviderExternal=true","ExternalCloudProviderGCP=false","GCPLabelsTags=false","GatewayAPI=false","InsightsConfigAPI=false","MachineAPIOperatorDisableMachineHealthCheckController=false","MachineAPIProviderOpenStack=false","MaxUnavailableStatefulSet=false","NetworkLiveMigration=false","NodeSwap=false","OpenShiftPodSecurityAdmission=false","PrivateHostedZoneAWS=true","RetroactiveDefaultStorageClass=false","RouteExternalCertificate=false","SigstoreImageVerification=false","VSphereStaticIPs=false","ValidatingAdmissionPolicy=false"],"kind":"OpenShiftControllerManagerConfig","serviceServingCert":{},"servingInfo":{"bindAddress":"0.0.0.0:10357","bindNetwork":"tcp","certFile":"/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.crt","cipherSuites":["TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256","TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"],"clientCA":"/etc/kubernetes/static-pod-certs/configmaps/client-ca/ca-bundle.crt","keyFile":"/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.key","minTLSVersion":"VersionTLS12"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:10Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0db12e5-71d2-48d7-bff2-5fd0ab67e13d"}: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:11:10Z"
+  name: cluster-policy-controller-config-5
+  namespace: openshift-kube-controller-manager
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-5
+    uid: c0db12e5-71d2-48d7-bff2-5fd0ab67e13d
+  resourceVersion: "22109"
+  uid: da5c1023-f5bc-4ca2-bc20-efab21f750df

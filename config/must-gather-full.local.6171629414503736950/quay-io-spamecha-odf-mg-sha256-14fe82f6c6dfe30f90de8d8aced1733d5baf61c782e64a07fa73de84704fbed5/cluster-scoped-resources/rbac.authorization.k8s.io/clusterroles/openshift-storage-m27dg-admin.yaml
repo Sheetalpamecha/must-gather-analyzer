@@ -1,0 +1,326 @@
+---
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-1cf66995ee5bab83-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ed14b8217d5f81fc-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3a054534430a3631-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e58adfe3b19e9184-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8dfc2a63e2feb6c9-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-44dd4fec5da1845-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-94d2dd7a0d8806e7-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5ccc51d57a9ce542-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-efb12a2ea66b6c64-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-9c626d79fb785c91-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5baa5929acc62195-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a022983f817a132c-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-345775c37f11b6ca-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-62e2d1ee37777c10-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ca13f6cd334b1083-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-47bc7c1173ca756e-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-d32acb4252badada-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-f03e7265e9e6e2d5-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-b280738eede00e42-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ca0e0d0722b44db-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ec7b67b48d8e612-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3f0f4f6281994474-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e2f792f51ea1ef2b-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-41719b2096907ede-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-38cd97520e769cdd-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8506b5939604d5d8-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7bb907a72dc7116e-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-97beeaad9521bbe7-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-165268e7c6da0af8-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-edb57df2a130d63c-admin: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-c08a45603993da75-admin: "true"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:23:57Z"
+  labels:
+    olm.owner: openshift-storage-m27dg
+    olm.owner.kind: OperatorGroup
+    olm.owner.namespace: openshift-storage
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: clusterrole-aggregation-controller
+    operation: Apply
+    time: "2024-11-11T04:27:54Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:aggregationRule:
+        .: {}
+        f:clusterRoleSelectors: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T04:27:54Z"
+  name: openshift-storage-m27dg-admin
+  resourceVersion: "63282"
+  uid: e76e6090-ea50-4b54-8ded-3533fc429351
+rules:
+- apiGroups:
+  - noobaa.io
+  resources:
+  - bucketclasses
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephrbdmirrors
+  verbs:
+  - '*'
+- apiGroups:
+  - noobaa.io
+  resources:
+  - backingstores
+  verbs:
+  - '*'
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplicationclasses
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpools
+  verbs:
+  - '*'
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageprofiles
+  verbs:
+  - '*'
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageconsumers
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstores
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbuckettopics
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstoreusers
+  verbs:
+  - '*'
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemmirrors
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpoolradosnamespaces
+  verbs:
+  - '*'
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephcosidrivers
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephnfses
+  verbs:
+  - '*'
+- apiGroups:
+  - odf.openshift.io
+  resources:
+  - storagesystems
+  verbs:
+  - '*'
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - '*'
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaas
+  verbs:
+  - '*'
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications
+  verbs:
+  - '*'
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - ocsinitializations
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclusters
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystems
+  verbs:
+  - '*'
+- apiGroups:
+  - noobaa.io
+  resources:
+  - namespacestores
+  verbs:
+  - '*'
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclusters
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbucketnotifications
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzonegroups
+  verbs:
+  - '*'
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectrealms
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzones
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclients
+  verbs:
+  - '*'
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes
+  verbs:
+  - '*'
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbucketclaims
+  verbs:
+  - '*'
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclassrequests
+  verbs:
+  - '*'
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaaaccounts
+  verbs:
+  - '*'
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemsubvolumegroups
+  verbs:
+  - '*'

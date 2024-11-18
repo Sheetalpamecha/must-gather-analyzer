@@ -1,0 +1,22 @@
+Name:                  gp2-csi
+IsDefaultClass:        No
+Annotations:           <none>
+Provisioner:           ebs.csi.aws.com
+Parameters:            encrypted=true,type=gp2
+AllowVolumeExpansion:  True
+MountOptions:          <none>
+ReclaimPolicy:         Delete
+VolumeBindingMode:     WaitForFirstConsumer
+Events:                <none>
+
+
+Name:                  gp3-csi
+IsDefaultClass:        Yes
+Annotations:           storageclass.kubernetes.io/is-default-class=true
+Provisioner:           ebs.csi.aws.com
+Parameters:            encrypted=true,type=gp3
+AllowVolumeExpansion:  True
+MountOptions:          <none>
+ReclaimPolicy:         Delete
+VolumeBindingMode:     WaitForFirstConsumer
+Events:                <none>

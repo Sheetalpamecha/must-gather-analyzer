@@ -1,0 +1,981 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: |-
+      [
+        {
+          "apiVersion": "odf.openshift.io/v1alpha1",
+          "kind": "StorageSystem",
+          "metadata": {
+            "name": "my-flashsystemcluster-storagesystem",
+            "namespace": "openshift-storage"
+          },
+          "spec": {
+            "kind": "flashsystemcluster.odf.ibm.com/v1alpha1",
+            "name": "my-flashsystemcluster",
+            "namespace": "openshift-storage"
+          }
+        },
+        {
+          "apiVersion": "odf.openshift.io/v1alpha1",
+          "kind": "StorageSystem",
+          "metadata": {
+            "name": "my-storagecluster-storagesystem",
+            "namespace": "openshift-storage"
+          },
+          "spec": {
+            "kind": "storagecluster.ocs.openshift.io/v1",
+            "name": "my-storagecluster",
+            "namespace": "openshift-storage"
+          }
+        }
+      ]
+    capabilities: Deep Insights
+    categories: Storage
+    console.openshift.io/plugins: '["odf-console"]'
+    containerImage: registry.redhat.io/odf4/odf-rhel9-operator@sha256:b835e614d4e25eadfc50615f2f04e6ee9cb786e5f494552ecc6944cc7573a32c
+    createdAt: "2024-09-23T06:52:04Z"
+    description: OpenShift Data Foundation provides a common control plane for storage
+      solutions on OpenShift Container Platform.
+    features.operators.openshift.io/disconnected: "true"
+    features.operators.openshift.io/fips-compliant: "true"
+    features.operators.openshift.io/proxy-aware: "true"
+    features.operators.openshift.io/tls-profiles: "false"
+    features.operators.openshift.io/token-auth-aws: "false"
+    features.operators.openshift.io/token-auth-azure: "false"
+    features.operators.openshift.io/token-auth-gcp: "false"
+    olm.operatorGroup: openshift-storage-m27dg
+    olm.operatorNamespace: openshift-storage
+    olm.properties: '[{"type": "olm.maxOpenShiftVersion", "value": "4.15"}]'
+    olm.skipRange: '>=4.2.0 <4.14.11-rhodf'
+    olm.targetNamespaces: openshift-storage
+    operatorframework.io/initialization-resource: |-
+      {
+        "apiVersion": "odf.openshift.io/v1alpha1",
+        "kind": "StorageSystem",
+        "metadata": {
+          "name": "ocs-storagecluster-storagesystem",
+          "namespace": "openshift-storage"
+        },
+        "spec": {
+          "kind": "storagecluster.ocs.openshift.io/v1",
+          "name": "ocs-storagecluster",
+          "namespace": "openshift-storage"
+        }
+      }
+    operatorframework.io/properties: '{"properties":[{"type":"olm.gvk","value":{"group":"odf.openshift.io","kind":"StorageSystem","version":"v1alpha1"}},{"type":"olm.maxOpenShiftVersion","value":"4.15"},{"type":"olm.package","value":{"packageName":"odf-operator","version":"4.14.11-rhodf"}},{"type":"olm.package.required","value":{"packageName":"mcg-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}},{"type":"olm.package.required","value":{"packageName":"ocs-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}},{"type":"olm.package.required","value":{"packageName":"odf-csi-addons-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}},{"type":"olm.package.required","value":{"packageName":"mcg-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}},{"type":"olm.package.required","value":{"packageName":"ocs-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}},{"type":"olm.package.required","value":{"packageName":"odf-csi-addons-operator","versionRange":"\u003e=4.9.0
+      \u003c=4.14.11"}}]}'
+    operatorframework.io/suggested-namespace: openshift-storage
+    operators.openshift.io/infrastructure-features: '["disconnected"]'
+    operators.openshift.io/valid-subscription: '["OpenShift Platform Plus","OpenShift
+      Data Foundation Essentials","OpenShift Data Foundation Advanced"]'
+    operators.operatorframework.io/builder: operator-sdk-v1.31.0
+    operators.operatorframework.io/operator-type: standalone
+    operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+    repository: https://github.com/red-hat-storage/odf-operator
+    support: Red Hat
+    vendors.odf.openshift.io/kind: '["storagecluster.ocs.openshift.io/v1", "flashsystemcluster.odf.ibm.com/v1alpha1"]'
+  creationTimestamp: "2024-11-11T03:24:28Z"
+  generation: 1
+  labels:
+    full_version: 4.14.11-3
+    operatorframework.io/arch.amd64: supported
+    operatorframework.io/arch.ppc64le: supported
+    operatorframework.io/arch.s390x: supported
+    operators.coreos.com/odf-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:alm-examples: {}
+          f:capabilities: {}
+          f:categories: {}
+          f:console.openshift.io/plugins: {}
+          f:containerImage: {}
+          f:createdAt: {}
+          f:description: {}
+          f:features.operators.openshift.io/disconnected: {}
+          f:features.operators.openshift.io/fips-compliant: {}
+          f:features.operators.openshift.io/proxy-aware: {}
+          f:features.operators.openshift.io/tls-profiles: {}
+          f:features.operators.openshift.io/token-auth-aws: {}
+          f:features.operators.openshift.io/token-auth-azure: {}
+          f:features.operators.openshift.io/token-auth-gcp: {}
+          f:olm.properties: {}
+          f:olm.skipRange: {}
+          f:operatorframework.io/initialization-resource: {}
+          f:operatorframework.io/properties: {}
+          f:operatorframework.io/suggested-namespace: {}
+          f:operators.openshift.io/infrastructure-features: {}
+          f:operators.openshift.io/valid-subscription: {}
+          f:operators.operatorframework.io/builder: {}
+          f:operators.operatorframework.io/operator-type: {}
+          f:operators.operatorframework.io/project_layout: {}
+          f:repository: {}
+          f:support: {}
+          f:vendors.odf.openshift.io/kind: {}
+        f:labels:
+          .: {}
+          f:full_version: {}
+          f:operatorframework.io/arch.amd64: {}
+          f:operatorframework.io/arch.ppc64le: {}
+          f:operatorframework.io/arch.s390x: {}
+      f:spec:
+        .: {}
+        f:apiservicedefinitions: {}
+        f:cleanup:
+          .: {}
+          f:enabled: {}
+        f:customresourcedefinitions:
+          .: {}
+          f:owned: {}
+        f:description: {}
+        f:displayName: {}
+        f:icon: {}
+        f:install:
+          .: {}
+          f:spec:
+            .: {}
+            f:clusterPermissions: {}
+            f:deployments: {}
+            f:permissions: {}
+          f:strategy: {}
+        f:installModes: {}
+        f:keywords: {}
+        f:links: {}
+        f:maintainers: {}
+        f:maturity: {}
+        f:provider:
+          .: {}
+          f:name: {}
+        f:relatedImages: {}
+        f:replaces: {}
+        f:version: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:28Z"
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:olm.operatorGroup: {}
+          f:olm.operatorNamespace: {}
+          f:olm.targetNamespaces: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:24:28Z"
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/odf-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:24:35Z"
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:cleanup: {}
+        f:conditions: {}
+        f:lastTransitionTime: {}
+        f:lastUpdateTime: {}
+        f:message: {}
+        f:phase: {}
+        f:reason: {}
+        f:requirementStatus: {}
+    manager: olm
+    operation: Update
+    subresource: status
+    time: "2024-11-11T04:09:03Z"
+  name: odf-operator.v4.14.11-rhodf
+  namespace: openshift-storage
+  resourceVersion: "54522"
+  uid: 6dfbf63c-064c-4367-85e4-d951163b0a17
+spec:
+  apiservicedefinitions: {}
+  cleanup:
+    enabled: false
+  customresourcedefinitions:
+    owned:
+    - description: StorageSystem is the Schema for the storagesystems API
+      displayName: Storage System
+      kind: StorageSystem
+      name: storagesystems.odf.openshift.io
+      resources:
+      - kind: FlashSystemCluster
+        name: flashsystemclusters.odf.ibm.com
+        version: v1alpha1
+      - kind: StorageCluster
+        name: storageclusters.ocs.openshift.io
+        version: v1
+      version: v1alpha1
+  description: |
+    **Red Hat OpenShift Data Foundation** deploys three operators.
+
+    ### OpenShift Data Foundation
+    The OpenShift Data Foundation operator is the primary operator for
+    OpenShift Data Foundation. It serves to facilitate the other operators in
+    OpenShift Data Foundation by performing administrative tasks outside their
+    scope as well as watching and configuring their CustomResources.
+
+    ### Rook
+    [Rook][1] deploys and manages Ceph on OpenShift, which provides block,
+    file and object storage.
+
+    ### NooBaa operator
+    The NooBaa operator deploys and manages the [NooBaa][2] Multi-Cloud Gateway
+    on OpenShift, which provides object storage.
+
+    # Core Capabilities
+    * **Self-managing service:** No matter which supported storage technologies
+    you choose, OpenShift Data Foundation ensures that resources can be
+    deployed and managed automatically.
+
+    * **Hyper-scale or hyper-converged:** With OpenShift Data Foundation you
+    can either build dedicated storage clusters or hyper-converged clusters
+    where your apps run alongside storage.
+
+    * **File, Block, and Object provided by OpenShift Data Foundation:**
+    OpenShift Data Foundation integrates Ceph with multiple storage
+    presentations including object storage (compatible with S3), block storage,
+    and POSIX-compliant shared file system.
+
+    * **Your data, protected:** OpenShift Data Foundation efficiently
+    distributes and replicates your data across your cluster to minimize the
+    risk of data loss. With snapshots, cloning, and versioning, no more losing
+    sleep over your data.
+
+    * **Elastic storage in your datacenter:** Scale is now possible in your
+    datacenter. Get started with a few terabytes, and easily scale up.
+
+    * **Simplified data management:** Easily create hybrid and multi-cloud data
+    storage for your workloads, using a single namespace.
+
+    # Subscriptions
+    OpenShift Data Foundation requires a matching 1:1 ratio with the OpenShift
+    subscription used. The Essential subscription is included in the OpenShift
+    Platform Plus subscription. Disaster Recovery features, external mode, and
+    KMS integration for encryption at rest require a bundle of OpenShift
+    Platform Plus with OpenShift Data Foundation Advanced subscription.
+
+    [1]: https://rook.io
+    [2]: https://www.noobaa.io
+  displayName: OpenShift Data Foundation
+  icon:
+  - base64data: PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTQ1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2UwMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlJlZEhhdC1Mb2dvLUhhdC1Db2xvcjwvdGl0bGU+PHBhdGggZD0iTTE1Ny43Nyw2Mi42MWExNCwxNCwwLDAsMSwuMzEsMy40MmMwLDE0Ljg4LTE4LjEsMTcuNDYtMzAuNjEsMTcuNDZDNzguODMsODMuNDksNDIuNTMsNTMuMjYsNDIuNTMsNDRhNi40Myw2LjQzLDAsMCwxLC4yMi0xLjk0bC0zLjY2LDkuMDZhMTguNDUsMTguNDUsMCwwLDAtMS41MSw3LjMzYzAsMTguMTEsNDEsNDUuNDgsODcuNzQsNDUuNDgsMjAuNjksMCwzNi40My03Ljc2LDM2LjQzLTIxLjc3LDAtMS4wOCwwLTEuOTQtMS43My0xMC4xM1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjcuNDcsODMuNDljMTIuNTEsMCwzMC42MS0yLjU4LDMwLjYxLTE3LjQ2YTE0LDE0LDAsMCwwLS4zMS0zLjQybC03LjQ1LTMyLjM2Yy0xLjcyLTcuMTItMy4yMy0xMC4zNS0xNS43My0xNi42QzEyNC44OSw4LjY5LDEwMy43Ni41LDk3LjUxLjUsOTEuNjkuNSw5MCw4LDgzLjA2LDhjLTYuNjgsMC0xMS42NC01LjYtMTcuODktNS42LTYsMC05LjkxLDQuMDktMTIuOTMsMTIuNSwwLDAtOC40MSwyMy43Mi05LjQ5LDI3LjE2QTYuNDMsNi40MywwLDAsMCw0Mi41Myw0NGMwLDkuMjIsMzYuMywzOS40NSw4NC45NCwzOS40NU0xNjAsNzIuMDdjMS43Myw4LjE5LDEuNzMsOS4wNSwxLjczLDEwLjEzLDAsMTQtMTUuNzQsMjEuNzctMzYuNDMsMjEuNzdDNzguNTQsMTA0LDM3LjU4LDc2LjYsMzcuNTgsNTguNDlhMTguNDUsMTguNDUsMCwwLDEsMS41MS03LjMzQzIyLjI3LDUyLC41LDU1LC41LDc0LjIyYzAsMzEuNDgsNzQuNTksNzAuMjgsMTMzLjY1LDcwLjI4LDQ1LjI4LDAsNTYuNy0yMC40OCw1Ni43LTM2LjY1LDAtMTIuNzItMTEtMjcuMTYtMzAuODMtMzUuNzgiLz48L3N2Zz4=
+    mediatype: image/svg+xml
+  install:
+    spec:
+      clusterPermissions:
+      - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - services
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - apiextensions.k8s.io
+          resources:
+          - customresourcedefinitions
+          verbs:
+          - create
+          - get
+          - list
+          - update
+          - watch
+        - apiGroups:
+          - apps
+          resources:
+          - deployments
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - apps
+          resources:
+          - deployments/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - config.openshift.io
+          resources:
+          - clusterversions
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - config.openshift.io
+          resources:
+          - clusterversions/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - config.openshift.io
+          resources:
+          - clusterversions/status
+          verbs:
+          - get
+          - patch
+          - update
+        - apiGroups:
+          - console.openshift.io
+          resources:
+          - consoleplugins
+          verbs:
+          - create
+          - get
+          - update
+        - apiGroups:
+          - console.openshift.io
+          resources:
+          - consolequickstarts
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - update
+        - apiGroups:
+          - ocs.openshift.io
+          resources:
+          - storageclusters
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ocs.openshift.io
+          resources:
+          - storageclusters/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - ocs.openshift.io
+          resources:
+          - storageclusters/status
+          verbs:
+          - get
+          - patch
+          - update
+        - apiGroups:
+          - odf.ibm.com
+          resources:
+          - flashsystemclusters
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - odf.openshift.io
+          resources:
+          - storagesystems
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - odf.openshift.io
+          resources:
+          - storagesystems/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - odf.openshift.io
+          resources:
+          - storagesystems/status
+          verbs:
+          - get
+          - patch
+          - update
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - catalogsources
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - clusterserviceversions
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - clusterserviceversions/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - installplans
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - operatorconditions
+          verbs:
+          - get
+          - list
+          - watch
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - subscriptions
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - subscriptions/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - operators.coreos.com
+          resources:
+          - subscriptions/status
+          verbs:
+          - get
+          - patch
+          - update
+        - apiGroups:
+          - authentication.k8s.io
+          resources:
+          - tokenreviews
+          verbs:
+          - create
+        - apiGroups:
+          - authorization.k8s.io
+          resources:
+          - subjectaccessreviews
+          verbs:
+          - create
+        serviceAccountName: odf-operator-controller-manager
+      deployments:
+      - label:
+          app.kubernetes.io/name: odf-operator
+          control-plane: controller-manager
+        name: odf-operator-controller-manager
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              control-plane: controller-manager
+          strategy: {}
+          template:
+            metadata:
+              annotations:
+                kubectl.kubernetes.io/default-container: manager
+              creationTimestamp: null
+              labels:
+                app.kubernetes.io/name: odf-operator
+                control-plane: controller-manager
+            spec:
+              containers:
+              - args:
+                - --secure-listen-address=0.0.0.0:8443
+                - --upstream=http://127.0.0.1:8080/
+                - --logtostderr=true
+                - --v=0
+                image: registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8204d45506297578c8e41bcc61135da0c7ca244ccbd1b39070684dfeb4c2f26c
+                name: kube-rbac-proxy
+                ports:
+                - containerPort: 8443
+                  name: https
+                  protocol: TCP
+                resources: {}
+                securityContext:
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    drop:
+                    - ALL
+                  readOnlyRootFilesystem: true
+              - args:
+                - --health-probe-bind-address=:8081
+                - --metrics-bind-address=127.0.0.1:8080
+                - --leader-elect
+                - --odf-console-port=9001
+                command:
+                - /manager
+                env:
+                - name: OPERATOR_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.namespace
+                envFrom:
+                - configMapRef:
+                    name: odf-operator-manager-config
+                image: registry.redhat.io/odf4/odf-rhel9-operator@sha256:b835e614d4e25eadfc50615f2f04e6ee9cb786e5f494552ecc6944cc7573a32c
+                livenessProbe:
+                  httpGet:
+                    path: /healthz
+                    port: 8081
+                  initialDelaySeconds: 15
+                  periodSeconds: 20
+                name: manager
+                readinessProbe:
+                  httpGet:
+                    path: /readyz
+                    port: 8081
+                  initialDelaySeconds: 5
+                  periodSeconds: 10
+                resources:
+                  limits:
+                    cpu: 200m
+                    memory: 300Mi
+                  requests:
+                    cpu: 200m
+                    memory: 200Mi
+                securityContext:
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    drop:
+                    - ALL
+                  readOnlyRootFilesystem: true
+              securityContext:
+                runAsNonRoot: true
+              serviceAccountName: odf-operator-controller-manager
+              terminationGracePeriodSeconds: 10
+              tolerations:
+              - effect: NoSchedule
+                key: node.ocs.openshift.io/storage
+                operator: Equal
+                value: "true"
+      - label:
+          app: odf-console
+        name: odf-console
+        spec:
+          selector:
+            matchLabels:
+              app: odf-console
+          strategy: {}
+          template:
+            metadata:
+              creationTimestamp: null
+              labels:
+                app: odf-console
+            spec:
+              containers:
+              - image: registry.redhat.io/odf4/odf-console-rhel9@sha256:90dee9735a562ef3136a6a5f9373b58d759107c6f8f40d0885d42417a4d44c42
+                livenessProbe:
+                  httpGet:
+                    path: /plugin-manifest.json
+                    port: 9001
+                    scheme: HTTPS
+                  initialDelaySeconds: 1000
+                  periodSeconds: 60
+                name: odf-console
+                ports:
+                - containerPort: 9001
+                  protocol: TCP
+                resources:
+                  limits:
+                    cpu: 100m
+                    memory: 512Mi
+                securityContext:
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    drop:
+                    - ALL
+                  readOnlyRootFilesystem: true
+                  seccompProfile:
+                    type: RuntimeDefault
+                volumeMounts:
+                - mountPath: /var/serving-cert
+                  name: odf-console-serving-cert
+                  readOnly: true
+                - mountPath: /etc/nginx/nginx.conf
+                  name: odf-console-nginx-conf
+                  subPath: nginx.conf
+                - mountPath: /var/log/nginx
+                  name: odf-console-nginx-log
+                - mountPath: /var/lib/nginx/tmp
+                  name: odf-console-nginx-tmp
+              securityContext:
+                runAsNonRoot: true
+              tolerations:
+              - effect: NoSchedule
+                key: node.ocs.openshift.io/storage
+                operator: Equal
+                value: "true"
+              volumes:
+              - name: odf-console-serving-cert
+                secret:
+                  secretName: odf-console-serving-cert
+              - configMap:
+                  name: odf-console-nginx-conf
+                name: odf-console-nginx-conf
+              - emptyDir: {}
+                name: odf-console-nginx-log
+              - emptyDir: {}
+                name: odf-console-nginx-tmp
+      permissions:
+      - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - configmaps
+          verbs:
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
+        - apiGroups:
+          - coordination.k8s.io
+          resources:
+          - leases
+          verbs:
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
+        - apiGroups:
+          - ""
+          resources:
+          - events
+          verbs:
+          - create
+          - patch
+        serviceAccountName: odf-operator-controller-manager
+    strategy: deployment
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: false
+    type: AllNamespaces
+  keywords:
+  - operator
+  - data
+  - storage
+  links:
+  - name: Source Code
+    url: https://github.com/red-hat-storage/odf-operator
+  maintainers:
+  - email: ocs-support@redhat.com
+    name: Red Hat Support
+  maturity: alpha
+  provider:
+    name: Red Hat
+  relatedImages:
+  - image: registry.redhat.io/odf4/odf-rhel9-operator@sha256:b835e614d4e25eadfc50615f2f04e6ee9cb786e5f494552ecc6944cc7573a32c
+    name: odf-operator
+  - image: registry.redhat.io/odf4/odf-console-rhel9@sha256:90dee9735a562ef3136a6a5f9373b58d759107c6f8f40d0885d42417a4d44c42
+    name: odf-console
+  - image: registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8204d45506297578c8e41bcc61135da0c7ca244ccbd1b39070684dfeb4c2f26c
+    name: rbac-proxy
+  replaces: odf-operator.v4.14.10-rhodf
+  version: 4.14.11-rhodf
+status:
+  cleanup: {}
+  conditions:
+  - lastTransitionTime: "2024-11-11T03:24:28Z"
+    lastUpdateTime: "2024-11-11T03:24:28Z"
+    message: requirements not yet checked
+    phase: Pending
+    reason: RequirementsUnknown
+  - lastTransitionTime: "2024-11-11T03:24:28Z"
+    lastUpdateTime: "2024-11-11T03:24:28Z"
+    message: one or more requirements couldn't be found
+    phase: Pending
+    reason: RequirementsNotMet
+  - lastTransitionTime: "2024-11-11T03:24:34Z"
+    lastUpdateTime: "2024-11-11T03:24:34Z"
+    message: all requirements found, attempting install
+    phase: InstallReady
+    reason: AllRequirementsMet
+  - lastTransitionTime: "2024-11-11T03:24:34Z"
+    lastUpdateTime: "2024-11-11T03:24:34Z"
+    message: waiting for install components to report healthy
+    phase: Installing
+    reason: InstallSucceeded
+  - lastTransitionTime: "2024-11-11T03:24:34Z"
+    lastUpdateTime: "2024-11-11T03:24:34Z"
+    message: 'installing: waiting for deployment odf-operator-controller-manager to
+      become ready: deployment "odf-operator-controller-manager" not available: Deployment
+      does not have minimum availability.'
+    phase: Installing
+    reason: InstallWaiting
+  - lastTransitionTime: "2024-11-11T03:25:02Z"
+    lastUpdateTime: "2024-11-11T03:25:02Z"
+    message: install strategy completed with no errors
+    phase: Succeeded
+    reason: InstallSucceeded
+  - lastTransitionTime: "2024-11-11T04:08:43Z"
+    lastUpdateTime: "2024-11-11T04:08:43Z"
+    message: 'installing: waiting for deployment odf-operator-controller-manager to
+      become ready: deployment "odf-operator-controller-manager" not available: Deployment
+      does not have minimum availability.'
+    phase: Failed
+    reason: ComponentUnhealthy
+  - lastTransitionTime: "2024-11-11T04:08:44Z"
+    lastUpdateTime: "2024-11-11T04:08:44Z"
+    message: 'installing: waiting for deployment odf-operator-controller-manager to
+      become ready: deployment "odf-operator-controller-manager" not available: Deployment
+      does not have minimum availability.'
+    phase: Pending
+    reason: NeedsReinstall
+  - lastTransitionTime: "2024-11-11T04:08:44Z"
+    lastUpdateTime: "2024-11-11T04:08:44Z"
+    message: all requirements found, attempting install
+    phase: InstallReady
+    reason: AllRequirementsMet
+  - lastTransitionTime: "2024-11-11T04:08:45Z"
+    lastUpdateTime: "2024-11-11T04:08:45Z"
+    message: waiting for install components to report healthy
+    phase: Installing
+    reason: InstallSucceeded
+  - lastTransitionTime: "2024-11-11T04:08:45Z"
+    lastUpdateTime: "2024-11-11T04:08:45Z"
+    message: 'installing: waiting for deployment odf-operator-controller-manager to
+      become ready: deployment "odf-operator-controller-manager" not available: Deployment
+      does not have minimum availability.'
+    phase: Installing
+    reason: InstallWaiting
+  - lastTransitionTime: "2024-11-11T04:09:03Z"
+    lastUpdateTime: "2024-11-11T04:09:03Z"
+    message: install strategy completed with no errors
+    phase: Succeeded
+    reason: InstallSucceeded
+  lastTransitionTime: "2024-11-11T04:09:03Z"
+  lastUpdateTime: "2024-11-11T04:09:03Z"
+  message: install strategy completed with no errors
+  phase: Succeeded
+  reason: InstallSucceeded
+  requirementStatus:
+  - group: apiextensions.k8s.io
+    kind: CustomResourceDefinition
+    message: CRD is present and Established condition is true
+    name: storagesystems.odf.openshift.io
+    status: Present
+    uuid: 53270d3e-bb78-42b0-9974-30765e4a5fa8
+    version: v1
+  - dependents:
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: namespaced rule:{"verbs":["get","list","watch","create","update","patch","delete"],"apiGroups":[""],"resources":["configmaps"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: namespaced rule:{"verbs":["get","list","watch","create","update","patch","delete"],"apiGroups":["coordination.k8s.io"],"resources":["leases"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: namespaced rule:{"verbs":["create","patch"],"apiGroups":[""],"resources":["events"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":[""],"resources":["services"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","get","list","update","watch"],"apiGroups":["apiextensions.k8s.io"],"resources":["customresourcedefinitions"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["apps"],"resources":["deployments"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["apps"],"resources":["deployments/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["config.openshift.io"],"resources":["clusterversions"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["config.openshift.io"],"resources":["clusterversions/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["get","patch","update"],"apiGroups":["config.openshift.io"],"resources":["clusterversions/status"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","get","update"],"apiGroups":["console.openshift.io"],"resources":["consoleplugins"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","update"],"apiGroups":["console.openshift.io"],"resources":["consolequickstarts"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["ocs.openshift.io"],"resources":["storageclusters"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["ocs.openshift.io"],"resources":["storageclusters/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["get","patch","update"],"apiGroups":["ocs.openshift.io"],"resources":["storageclusters/status"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["odf.ibm.com"],"resources":["flashsystemclusters"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["odf.openshift.io"],"resources":["storagesystems"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["odf.openshift.io"],"resources":["storagesystems/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["get","patch","update"],"apiGroups":["odf.openshift.io"],"resources":["storagesystems/status"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["operators.coreos.com"],"resources":["catalogsources"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["operators.coreos.com"],"resources":["clusterserviceversions"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["operators.coreos.com"],"resources":["clusterserviceversions/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["operators.coreos.com"],"resources":["installplans"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["get","list","watch"],"apiGroups":["operators.coreos.com"],"resources":["operatorconditions"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create","delete","get","list","patch","update","watch"],"apiGroups":["operators.coreos.com"],"resources":["subscriptions"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["update"],"apiGroups":["operators.coreos.com"],"resources":["subscriptions/finalizers"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["get","patch","update"],"apiGroups":["operators.coreos.com"],"resources":["subscriptions/status"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create"],"apiGroups":["authentication.k8s.io"],"resources":["tokenreviews"]}
+      status: Satisfied
+      version: v1
+    - group: rbac.authorization.k8s.io
+      kind: PolicyRule
+      message: cluster rule:{"verbs":["create"],"apiGroups":["authorization.k8s.io"],"resources":["subjectaccessreviews"]}
+      status: Satisfied
+      version: v1
+    group: ""
+    kind: ServiceAccount
+    message: ""
+    name: odf-operator-controller-manager
+    status: Present
+    version: v1

@@ -1,0 +1,29 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:34Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:rules: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:34Z"
+  name: cluster-debugger
+  resourceVersion: "11496"
+  uid: 01a00f41-aa67-4e05-b3fa-a04dfc28a4de
+rules:
+- nonResourceURLs:
+  - /debug/pprof
+  - /debug/pprof/*
+  - /metrics
+  verbs:
+  - get

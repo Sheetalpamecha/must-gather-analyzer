@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+data:
+  alertmanagerPublicURL: https://alertmanager-main-openshift-monitoring.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org
+  alertmanagerTenancyHost: alertmanager-main.openshift-monitoring.svc:9092
+  alertmanagerUserWorkloadHost: alertmanager-main.openshift-monitoring.svc:9094
+  prometheusPublicURL: https://prometheus-k8s-openshift-monitoring.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org
+  thanosPublicURL: https://thanos-querier-openshift-monitoring.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:12:08Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:alertmanagerPublicURL: {}
+        f:alertmanagerTenancyHost: {}
+        f:alertmanagerUserWorkloadHost: {}
+        f:prometheusPublicURL: {}
+        f:thanosPublicURL: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:12:08Z"
+  name: monitoring-shared-config
+  namespace: openshift-config-managed
+  resourceVersion: "25494"
+  uid: 419d6bc7-a72f-4e46-ac42-2352c43d3d59

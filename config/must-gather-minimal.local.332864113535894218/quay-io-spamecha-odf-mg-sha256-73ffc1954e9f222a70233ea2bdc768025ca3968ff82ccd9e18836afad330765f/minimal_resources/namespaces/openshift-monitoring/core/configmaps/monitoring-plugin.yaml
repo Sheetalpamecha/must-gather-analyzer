@@ -1,0 +1,60 @@
+---
+apiVersion: v1
+data:
+  nginx.conf: |
+    error_log /dev/stdout info;
+    events {}
+    http {
+      include            /etc/nginx/mime.types;
+      default_type       application/octet-stream;
+      keepalive_timeout  65;
+      server {
+        listen              LISTEN_ADDRESS_PORT_REPLACED_AT_RUNTIME ssl;
+        ssl_certificate     /var/cert/tls.crt;
+        ssl_certificate_key /var/cert/tls.key;
+        root                /usr/share/nginx/html;
+
+        # Prevent caching for plugin-manifest.json
+        location = /plugin-manifest.json {
+          add_header Cache-Control 'no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0';
+          add_header Pragma 'no-cache';
+          add_header Expires '0';
+        }
+
+        # Prevent caching for plugin-entry.js
+        location = /plugin-entry.js {
+          add_header Cache-Control 'no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0';
+          add_header Pragma 'no-cache';
+          add_header Expires '0';
+        }
+      }
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:15Z"
+  labels:
+    app.kubernetes.io/component: monitoring-plugin
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/name: monitoring-plugin
+    app.kubernetes.io/part-of: openshift-monitoring
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:nginx.conf: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:11:15Z"
+  name: monitoring-plugin
+  namespace: openshift-monitoring
+  resourceVersion: "22591"
+  uid: 129dc263-4583-494c-bf58-7fb738bb34d6

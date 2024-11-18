@@ -1,0 +1,87 @@
+---
+apiVersion: v1
+data:
+  install-config: |
+    additionalTrustBundlePolicy: Proxyonly
+    apiVersion: v1
+    baseDomain: aws-2.ci.openshift.org
+    compute:
+    - architecture: amd64
+      hyperthreading: Enabled
+      name: worker
+      platform:
+        aws:
+          metadataService: {}
+          rootVolume:
+            iops: 0
+            size: 0
+            type: ""
+          type: m6a.xlarge
+          zones:
+          - us-east-1c
+          - us-east-1a
+      replicas: 3
+    controlPlane:
+      architecture: amd64
+      hyperthreading: Enabled
+      name: master
+      platform:
+        aws:
+          metadataService: {}
+          rootVolume:
+            iops: 0
+            size: 0
+            type: ""
+          type: m6a.xlarge
+          zones:
+          - us-east-1c
+          - us-east-1a
+      replicas: 3
+    metadata:
+      creationTimestamp: null
+      name: ci-ln-2s0x4sk-76ef8
+    networking:
+      clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+      machineNetwork:
+      - cidr: 10.0.0.0/16
+      networkType: OVNKubernetes
+      serviceNetwork:
+      - 172.30.0.0/16
+    platform:
+      aws:
+        region: us-east-1
+        userTags:
+          clusterName: ci-ln-2s0x4sk-76ef8
+          expirationDate: 2024-11-11T10:48+00:00
+    publish: External
+    pullSecret: ""
+    sshKey: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLume21au7DO1U53hRBlP0FdJPJ85QEsm/ahjj3t9ZHUZkIZIZspYkAu6uahm6JReNnAbo2lDvVaVjq134BooT++WRIhk2X4hv7eUFYpBPaztjrTTG+COqLNJHZKNKa+KzRDEDk/TDsBSOgx35qZdC4l2VnJOkFXxGKMC/N4cW+NBJCdEOOz56LodPHmmIM1I0U97tuHkplw4+vMrAh8DgjoaxpijBlGOnVo3fD95EoG4D+d3RkOSsB3AsrkdyZa+A703NvSuIcofbOvXz5tBeKVlgpSyXUKywtKPr7J8UnWy3/ajGTDuY+kY/447Y+n1T5aU/iD8Xk2LTBhIZ7Z7SilYYWgV6Yr+z7DpLUqCBWlggI/Owp8XOaAPRETl3UPxFc4hKkE3cL8eu+Nw25ooUwY4Jikoq+r3WY2FCcVnQL2Rswf7z+pi8q49YaQV0mFGoow036+5f1JA/GvglDZEnKWMH8rwQw0Sw24FG+iC+1Fy6qrKoMFkz2nk4j8lZ368= nmoraiti@localhost.localdomain
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: The install-config content used to create the cluster.  The
+      cluster configuration may have evolved since installation, so check cluster
+      configuration resources directly if you are interested in the current cluster
+      state.
+  creationTimestamp: "2024-11-11T03:02:25Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:install-config: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubernetes.io/description: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:02:25Z"
+  name: cluster-config-v1
+  namespace: openshift-etcd
+  resourceVersion: "5905"
+  uid: f4893a3e-dfdd-4677-81e6-2c0d49417fb9

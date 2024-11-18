@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:25Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-7ca0e0d0722b44db-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-7ca0e0d0722b44db-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"fec4f487-97d6-4db1-b2ae-dd0673c114e9"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:25Z"
+  name: namespacestores.noobaa.io-v1alpha1-crdview
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: namespacestores.noobaa.io
+    uid: fec4f487-97d6-4db1-b2ae-dd0673c114e9
+  resourceVersion: "34003"
+  uid: 641f96f3-2238-4c29-9392-ac28dfbf627c
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - namespacestores.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get

@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+data:
+  mtu: "9001"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:00:46Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mtu: {}
+    manager: cluster-network-operator
+    operation: Update
+    time: "2024-11-11T03:00:46Z"
+  name: mtu
+  namespace: openshift-network-operator
+  resourceVersion: "3223"
+  uid: 64c3d518-e64d-42a3-adce-56756e2bac76

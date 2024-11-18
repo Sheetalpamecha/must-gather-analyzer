@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+data:
+  config: |
+    [Global]
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T02:59:33Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:59:33Z"
+  name: cloud-provider-config
+  namespace: openshift-config
+  resourceVersion: "2230"
+  uid: 3766bdd1-22ab-4867-ad95-a235addff7cb

@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+data:
+  v4-0-config-system-cliconfig: '{"admission":{},"apiVersion":"osin.config.openshift.io/v1","auditConfig":{"auditFilePath":"","enabled":false,"logFormat":"","maximumFileRetentionDays":0,"maximumFileSizeMegabytes":0,"maximumRetainedFiles":0,"policyConfiguration":null,"policyFile":"","webHookKubeConfig":"","webHookMode":""},"corsAllowedOrigins":["//127\\.0\\.0\\.1(:|$)","//localhost(:|$)"],"kind":"OsinServerConfig","kubeClientConfig":{"connectionOverrides":{"acceptContentTypes":"","burst":400,"contentType":"","qps":400},"kubeConfig":""},"oauthConfig":{"alwaysShowProviderSelection":false,"assetPublicURL":"https://console-openshift-console.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org","grantConfig":{"method":"deny","serviceAccountMethod":"prompt"},"identityProviders":null,"loginURL":"https://api.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org:6443","masterCA":"/var/config/system/configmaps/v4-0-config-system-service-ca/service-ca.crt","masterPublicURL":"https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org","masterURL":"https://oauth-openshift.openshift-authentication.svc","sessionConfig":{"sessionMaxAgeSeconds":300,"sessionName":"ssn","sessionSecretsFile":"/var/config/system/secrets/v4-0-config-system-session/v4-0-config-system-session"},"templates":{"error":"/var/config/system/secrets/v4-0-config-system-ocp-branding-template/errors.html","login":"/var/config/system/secrets/v4-0-config-system-ocp-branding-template/login.html","providerSelection":"/var/config/system/secrets/v4-0-config-system-ocp-branding-template/providers.html"},"tokenConfig":{"accessTokenMaxAgeSeconds":86400,"authorizeTokenMaxAgeSeconds":300}},"servingInfo":{"bindAddress":"0.0.0.0:6443","bindNetwork":"tcp","certFile":"/var/config/system/secrets/v4-0-config-system-serving-cert/tls.crt","cipherSuites":["TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256","TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"],"keyFile":"/var/config/system/secrets/v4-0-config-system-serving-cert/tls.key","maxRequestsInFlight":1000,"minTLSVersion":"VersionTLS12","namedCertificates":[{"certFile":"/var/config/system/secrets/v4-0-config-system-router-certs/apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org","keyFile":"/var/config/system/secrets/v4-0-config-system-router-certs/apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org","names":["*.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org"]}],"requestTimeoutSeconds":300},"storageConfig":{"ca":"","certFile":"","keyFile":"","storagePrefix":""}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:19Z"
+  labels:
+    app: oauth-openshift
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:v4-0-config-system-cliconfig: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+    manager: authentication-operator
+    operation: Update
+    time: "2024-11-11T03:11:46Z"
+  name: v4-0-config-system-cliconfig
+  namespace: openshift-authentication
+  resourceVersion: "25031"
+  uid: ff74b9b8-9034-4c7c-b466-353aab8c0e98

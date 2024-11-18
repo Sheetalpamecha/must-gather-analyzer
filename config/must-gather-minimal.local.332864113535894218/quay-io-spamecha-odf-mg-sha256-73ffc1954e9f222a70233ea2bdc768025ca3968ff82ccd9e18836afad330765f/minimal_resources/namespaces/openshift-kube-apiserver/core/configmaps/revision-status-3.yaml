@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: required configmap/config has changed
+  revision: "3"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:05:11Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:05:11Z"
+  name: revision-status-3
+  namespace: openshift-kube-apiserver
+  resourceVersion: "12577"
+  uid: 953b652d-746a-4d03-8ef7-d11c4fd10567

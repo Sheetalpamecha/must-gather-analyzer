@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDhTCCAm2gAwIBAgIIVTL4UiQFVz8wDQYJKoZIhvcNAQELBQAwUDFOMEwGA1UE
+    AwxFb3BlbnNoaWZ0LWt1YmUtYXBpc2VydmVyLW9wZXJhdG9yX25vZGUtc3lzdGVt
+    LWFkbWluLXNpZ25lckAxNzMxMjk0MTQwMB4XDTI0MTExMTAzMDIxOVoXDTI1MTEx
+    MTAzMDIyMFowUDFOMEwGA1UEAwxFb3BlbnNoaWZ0LWt1YmUtYXBpc2VydmVyLW9w
+    ZXJhdG9yX25vZGUtc3lzdGVtLWFkbWluLXNpZ25lckAxNzMxMjk0MTQwMIIBIjAN
+    BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzRhNUvB77wXFSImzYlsVQ07J0yit
+    thHleCoM9gRQfQ4tEYyBkBYx+84f+LkxL7g0pW19EjgKlbNrFDWBCsgmKy/TZtmE
+    WXoXKcl+xeL1LiJARi+lZKlTs23FmM0yPtdgPNXWVbMOAeLzQ8On56xc7G5lTBQe
+    S6PIInVHCWZdWI3qDtHW2e2+lv7n1yQCAosK16KbpyXp84Q5cSMQi3kLQ9w3RgVf
+    lxc1+yIV0Phqez+o88o5i8MZtEFBlPyxB/VGfhDL8oPJQnaXoNtScs4gA/+tCmw8
+    XUioxYOiTwbLv+vS+gueNdKdES4kMyRCbUPIUrGopD32DXdBtWtNFCCQRQIDAQAB
+    o2MwYTAOBgNVHQ8BAf8EBAMCAqQwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQU
+    c6xF9AkaZNrSjHJDGdVsIQ2SuVMwHwYDVR0jBBgwFoAUc6xF9AkaZNrSjHJDGdVs
+    IQ2SuVMwDQYJKoZIhvcNAQELBQADggEBAHkVYRqlharC0gP2dtZ4QzgwslheFRtv
+    j2FIbGKotV+vLw3Oa9uA1Jbccpsdqrb++iwy79U+KbTc0qXumuTogbJTCSThVMrB
+    7UR9wuFJxznsxAXK8po7dBocvVHptUzzjqNeGCuTqTSqLYsSegA1C3QcyCkhySdn
+    G6L5W2sUhsrSFq7RPO4MfPQZr886iVKzE1fVrAwnm6lI1bFeQbe7SQnyoNEl3INa
+    4T59GxobudT8mvh5/xYRSPPw903bTc9HmfQCEN9mzL2kFHI9eMFM66L+aYafk02C
+    S/2q76hQZQsznOvX0YWaaVZNO1EW6MSP8yK14JoIYyJyUJWGNp6sDNw=
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:34Z"
+  labels:
+    auth.openshift.io/managed-certificate-type: ca-bundle
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca-bundle.crt: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:auth.openshift.io/managed-certificate-type: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:02:34Z"
+  name: node-system-admin-ca
+  namespace: openshift-kube-apiserver-operator
+  resourceVersion: "6407"
+  uid: 32c7467e-a903-47b0-8459-70f8c5f1e17b

@@ -1,0 +1,46 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:01:02Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:ownerReferences:
+          k:{"uid":"3fc47453-0621-4bee-ac3f-e3cec88fc937"}: {}
+      f:rules: {}
+    manager: cluster-network-operator/operconfig
+    operation: Apply
+    time: "2024-11-11T03:01:02Z"
+  name: whereabouts-cni
+  ownerReferences:
+  - apiVersion: operator.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Network
+    name: cluster
+    uid: 3fc47453-0621-4bee-ac3f-e3cec88fc937
+  resourceVersion: "3476"
+  uid: f90e2c21-2f09-4230-9181-c13881ca3501
+rules:
+- apiGroups:
+  - whereabouts.cni.cncf.io
+  resources:
+  - ippools
+  - overlappingrangeipreservations
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - list

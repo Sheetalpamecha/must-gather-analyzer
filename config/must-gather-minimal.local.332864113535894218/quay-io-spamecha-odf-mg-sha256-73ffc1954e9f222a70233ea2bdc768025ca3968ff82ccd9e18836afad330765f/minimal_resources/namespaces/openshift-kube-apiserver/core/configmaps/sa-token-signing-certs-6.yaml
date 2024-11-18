@@ -1,0 +1,55 @@
+---
+apiVersion: v1
+data:
+  service-account-001.pub: |
+    -----BEGIN RSA PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8U6ySgT7ZOIOLnU3sTXD
+    1lWlWX1HZcmK3FH74YKejpV9vs7lAQ17nxBuDnCfrsxbPHQ04POjc1hx6H0OFIya
+    kWLtYEVr8OOmK6kfP+/yU2L6EOT1WV9FPjnmoNHo5PYD7+Ae46tdtSbRWntqlDVF
+    HgAQM58qhDorrLuoTlcCXMBQZr+Yq33RPB3bZJTh+KcianzVZDsfWdUwXdzmMhGY
+    RQDBaNHJkYljtOlJ0w3hpzQf/OHM1F3Nkje+ocjnqjWLrLZr9YNYHNflYSpw/+Zj
+    u7FXGMgh9ci6gkTVDRQGmlzgU2S4R/VL05pW0dg2MbxnzoMsPa57GqrOBS8EMh4n
+    GQIDAQAB
+    -----END RSA PUBLIC KEY-----
+  service-account-002.pub: |
+    -----BEGIN RSA PUBLIC KEY-----
+    MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3bNy61YnAkvPKRWJc2Y8
+    MjUsvWU5ZOtthgwLT2E8tQmE5NuHXqzX/gJtpC4rprN0WSLArPbJEQ9Af7FqMoIV
+    872DKVi+LHWE15CkRM+HssWV36I+Aan6/3X9lbMhsReZSnYIzOKHLYxoRMo4TolQ
+    fe2TsMvXyBONBS9VhvxBmLB/+wjZq1kbYK08pXek0lLIVg6Ny/Vg2znj0fO9zQUf
+    +pZzqB5kf90an/3TTpxp+MHiELtv2uMiH9CdPZreWLeCmq6k/sxUqXTRYh9qlFxq
+    NE4ajB7iHQRKkEbZkciLQt3TYFc3YIIU1fllknm+WYF/pMHbTAxhw59A9KKiJd85
+    +R44+mMMgNoJBb3C1kV0VqeAkyGpRJem8uxSslGYbHEF8//7ejmEihfqLPW04t/4
+    YwOhNZKtpMMbH8mTsB+UjyNRIFTi2iVLL/4QfVCU0A1NGsJw4xckTFWTX1/mDOLB
+    zZkH1VnU0vpQFOL4s8NfjXtP/ctLvAx2KwfJqfMhTiaSmzlkiKdvlcbJq9483rM2
+    sOG9f7bbhRr2kJYMNV2wmqPCedj0Vf30MEj4Ab9n78q5YPN7CrnV1WTWWT4+vfZS
+    prMgu46bRz663KIWnnjiqTB5mDRehZd5jyvr210X5nEdp5LApuduFQJh4A0zw8RV
+    /omyvDQw0j/9/UmTANo9h7MCAwEAAQ==
+    -----END RSA PUBLIC KEY-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:23Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:service-account-001.pub: {}
+        f:service-account-002.pub: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5446608c-9ebc-48b8-ac3a-565019d6b5b9"}: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:11:23Z"
+  name: sa-token-signing-certs-6
+  namespace: openshift-kube-apiserver
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-6
+    uid: 5446608c-9ebc-48b8-ac3a-565019d6b5b9
+  resourceVersion: "23614"
+  uid: 5f13b7d1-cbc7-4cf3-9ad8-4f6ae060dd47

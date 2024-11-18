@@ -1,0 +1,42 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:11:15Z"
+  labels:
+    app.kubernetes.io/component: metrics-adapter
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/name: prometheus-adapter
+    app.kubernetes.io/part-of: openshift-monitoring
+    app.kubernetes.io/version: 0.10.0
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:rules: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:11:14Z"
+  name: prometheus-adapter
+  resourceVersion: "22598"
+  uid: 0e3e3700-9a49-4afc-adbc-003ac72db4fc
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  - namespaces
+  - pods
+  - services
+  verbs:
+  - get
+  - list
+  - watch

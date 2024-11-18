@@ -1,0 +1,29 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  creationTimestamp: "2024-11-11T03:02:43Z"
+  managedFields:
+  - apiVersion: storage.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:allowVolumeExpansion: {}
+      f:parameters:
+        .: {}
+        f:encrypted: {}
+        f:type: {}
+      f:provisioner: {}
+      f:reclaimPolicy: {}
+      f:volumeBindingMode: {}
+    manager: aws-ebs-csi-driver-operator
+    operation: Update
+    time: "2024-11-11T03:02:43Z"
+  name: gp2-csi
+  resourceVersion: "6781"
+  uid: 198a4a84-8059-417d-91a6-84e52c3e49f9
+parameters:
+  encrypted: "true"
+  type: gp2
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer

@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:21Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"940d92da-9888-4b74-9dea-9c52c1852095"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:21Z"
+  name: reclaimspacecronjobs.csiaddons.openshift.io-v1alpha1-admin
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: reclaimspacecronjobs.csiaddons.openshift.io
+    uid: 940d92da-9888-4b74-9dea-9c52c1852095
+  resourceVersion: "33790"
+  uid: 8c8b00f2-b35e-4377-b6f5-b9ad9a67eb2e
+rules:
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - '*'

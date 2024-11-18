@@ -1,0 +1,65 @@
+---
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDOTCCAiGgAwIBAgIIdAk35ZpE/uwwDQYJKoZIhvcNAQELBQAwKjESMBAGA1UE
+    CxMJb3BlbnNoaWZ0MRQwEgYDVQQDEwtldGNkLXNpZ25lcjAeFw0yNDExMTEwMjU3
+    MDZaFw0zNDExMDkwMjU3MDdaMCoxEjAQBgNVBAsTCW9wZW5zaGlmdDEUMBIGA1UE
+    AxMLZXRjZC1zaWduZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCz
+    1DTaFjJoFRc1+pP51yIjtFBLkfPPOglaSb1QxnFBrguh7i9H+RWbhXYE8dzEqJje
+    0+f9NfHWzd39V5ToLXNu2xkxAUMEa+2Uz2JZ4eFzDpfA6YKFREjhyGoowjxRkndZ
+    zU+KOg9QK8xldFem90IlJyrAxLBhSEKWr8qVs6Ywh9fZn5ySHNGbQghcRW163WEv
+    a5MCUpXwSoJGrTMXJodSwavUUgln+lAhehdV3vQmJfqMugKEFoDraXK/A9NKBFfk
+    qsZ3+iaN/+ox7sbqehwicqVcvifpjT/XVF/8zn40O0nfIl/okmtUk9MBVwfy1rF4
+    nvK2v2FKSFtRNpoAjZrvAgMBAAGjYzBhMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMB
+    Af8EBTADAQH/MB0GA1UdDgQWBBRzuoCzZbZOtG0uDuQWPNpgKOz4TjAfBgNVHSME
+    GDAWgBRzuoCzZbZOtG0uDuQWPNpgKOz4TjANBgkqhkiG9w0BAQsFAAOCAQEAEYt5
+    eLoI7tBF4pnJPUKNXESxomQYnumHMjIcqQBQtdYYUk36jddasUOTQeHvzWLoELht
+    ZanXS8odHJiZX1cILEpUUZfWibexJ5OlscCNoRK2FLxk5vCjJZN//cbJK8nq957s
+    GHWVZmaRgB1d5A9vPYAB6SknTUgKPhNzdBFlqr+xZTYEnl/qwjQBCgvVhdtjcNuU
+    APKh4rg90tTaRH0OII+7izJbuJvy8IFDreJq1TWlMWHuZvfYz0PovLcnODcB+BDu
+    SfaQIYAutqC4D99thzMKHxakyoGKcU1SrdYR57Aqr3yiHbykZPl9ehDcyI400xUY
+    /1IYJ26aI2Qn4vSHtA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+    release.openshift.io/create-only: "true"
+  creationTimestamp: "2024-11-11T02:59:12Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+          f:release.openshift.io/create-only: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:12Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca-bundle.crt: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:02:25Z"
+  name: etcd-ca-bundle
+  namespace: openshift-etcd-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "5931"
+  uid: 5a733169-695d-4e06-9344-531191d965ef

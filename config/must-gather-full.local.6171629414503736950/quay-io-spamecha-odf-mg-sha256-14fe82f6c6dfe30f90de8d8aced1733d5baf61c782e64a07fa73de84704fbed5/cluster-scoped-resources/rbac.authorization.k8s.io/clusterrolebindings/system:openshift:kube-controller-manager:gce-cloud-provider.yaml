@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:28Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:02:28Z"
+  name: system:openshift:kube-controller-manager:gce-cloud-provider
+  resourceVersion: "6087"
+  uid: 2182170a-b463-431c-add7-8ebeee617de1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:kube-controller-manager:gce-cloud-provider
+subjects:
+- kind: ServiceAccount
+  name: cloud-provider
+  namespace: kube-system

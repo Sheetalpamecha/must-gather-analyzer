@@ -1,0 +1,66 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:34Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:rules: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:34Z"
+  name: system:sdn-reader
+  resourceVersion: "11550"
+  uid: 58eb69d5-83c7-47ef-9556-7e93dc80b7c4
+rules:
+- apiGroups:
+  - ""
+  - network.openshift.io
+  resources:
+  - egressnetworkpolicies
+  - hostsubnets
+  - netnamespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - networkpolicies
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - network.openshift.io
+  resources:
+  - clusternetworks
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update

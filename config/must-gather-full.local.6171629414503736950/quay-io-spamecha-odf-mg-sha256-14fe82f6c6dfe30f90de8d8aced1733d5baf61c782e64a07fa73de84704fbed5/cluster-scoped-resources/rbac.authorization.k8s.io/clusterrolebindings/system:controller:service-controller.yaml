@@ -1,0 +1,36 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T02:58:12Z"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+        f:labels:
+          .: {}
+          f:kubernetes.io/bootstrapping: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: kube-apiserver
+    operation: Update
+    time: "2024-11-11T02:58:12Z"
+  name: system:controller:service-controller
+  resourceVersion: "194"
+  uid: 3f5d4c1d-e24c-4f93-a2c2-bfde69e96e11
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:controller:service-controller
+subjects:
+- kind: ServiceAccount
+  name: service-controller
+  namespace: kube-system

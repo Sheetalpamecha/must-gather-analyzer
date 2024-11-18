@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:41Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"09bd687b-d0e8-4d9d-bea2-673884d45a5f"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:41Z"
+  name: cephcosidrivers.ceph.rook.io-v1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephcosidrivers.ceph.rook.io
+    uid: 09bd687b-d0e8-4d9d-bea2-673884d45a5f
+  resourceVersion: "34718"
+  uid: 8ebbebc2-41ba-4093-baa3-c0798f802e3b
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephcosidrivers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

@@ -1,0 +1,36 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T02:58:13Z"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+        f:labels:
+          .: {}
+          f:kubernetes.io/bootstrapping: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: kube-apiserver
+    operation: Update
+    time: "2024-11-11T02:58:13Z"
+  name: system:controller:pvc-protection-controller
+  resourceVersion: "198"
+  uid: 2052562c-1132-4115-9ce8-ce68e14041ae
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:controller:pvc-protection-controller
+subjects:
+- kind: ServiceAccount
+  name: pvc-protection-controller
+  namespace: kube-system

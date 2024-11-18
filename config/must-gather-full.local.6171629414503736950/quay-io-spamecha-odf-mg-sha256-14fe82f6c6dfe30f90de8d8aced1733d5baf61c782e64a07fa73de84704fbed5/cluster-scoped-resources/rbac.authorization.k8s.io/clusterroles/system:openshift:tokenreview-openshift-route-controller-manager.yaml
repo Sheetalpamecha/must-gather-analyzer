@@ -1,0 +1,29 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:02:19Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: cluster-openshift-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:02:19Z"
+  name: system:openshift:tokenreview-openshift-route-controller-manager
+  resourceVersion: "5059"
+  uid: d31f0a19-6d46-4609-8bff-19988e31ebbb
+rules:
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - subjectaccessreviews
+  verbs:
+  - create

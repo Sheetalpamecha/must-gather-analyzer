@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:03:09Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: machine-config-operator
+    operation: Update
+    time: "2024-11-11T03:03:09Z"
+  name: machine-config-daemon
+  resourceVersion: "8334"
+  uid: cdd3f390-3069-4b6d-b2dc-0ab414e8c3a2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: machine-config-daemon
+subjects:
+- kind: ServiceAccount
+  name: machine-config-daemon
+  namespace: openshift-machine-config-operator

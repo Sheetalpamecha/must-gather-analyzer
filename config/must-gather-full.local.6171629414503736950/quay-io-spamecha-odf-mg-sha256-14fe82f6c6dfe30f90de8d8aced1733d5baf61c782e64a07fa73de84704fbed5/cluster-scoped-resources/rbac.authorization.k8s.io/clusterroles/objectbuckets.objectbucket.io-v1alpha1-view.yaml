@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:27Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5fbfa308-1726-40ff-a39c-a9e4f53cdee5"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:27Z"
+  name: objectbuckets.objectbucket.io-v1alpha1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: objectbuckets.objectbucket.io
+    uid: 5fbfa308-1726-40ff-a39c-a9e4f53cdee5
+  resourceVersion: "34099"
+  uid: bb79532f-55f6-4c60-adc3-5e04fd79b449
+rules:
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - get
+  - list
+  - watch

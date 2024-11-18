@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:21Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c566595f-d932-4049-a6a0-caecd1030d49"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:21Z"
+  name: csiaddonsnodes.csiaddons.openshift.io-v1alpha1-crdview
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: csiaddonsnodes.csiaddons.openshift.io
+    uid: c566595f-d932-4049-a6a0-caecd1030d49
+  resourceVersion: "33757"
+  uid: dd1aa31c-2000-4554-a85b-50615be797bf
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - csiaddonsnodes.csiaddons.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get

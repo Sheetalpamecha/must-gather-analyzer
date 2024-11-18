@@ -1,0 +1,31 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T02:58:41Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:58:41Z"
+  name: system:openshift:controller:podsecurity-admission-label-syncer-controller
+  resourceVersion: "435"
+  uid: f4240cfe-5293-4a61-a8bb-2829afa6249a
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:controller:podsecurity-admission-label-syncer-controller
+subjects:
+- kind: ServiceAccount
+  name: podsecurity-admission-label-syncer-controller
+  namespace: openshift-infra

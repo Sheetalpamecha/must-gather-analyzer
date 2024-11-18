@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+data:
+  config-file.yaml: |
+    authorization:
+      resourceAttributes:
+        apiVersion: v1
+        resource: namespace
+        subresource: metrics
+        namespace: openshift-cluster-machine-approver
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:58Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config-file.yaml: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:58Z"
+  name: kube-rbac-proxy
+  namespace: openshift-cluster-machine-approver
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "2465"
+  uid: e59e2cc0-0bb8-41cf-9dbd-97651ea4cbe0

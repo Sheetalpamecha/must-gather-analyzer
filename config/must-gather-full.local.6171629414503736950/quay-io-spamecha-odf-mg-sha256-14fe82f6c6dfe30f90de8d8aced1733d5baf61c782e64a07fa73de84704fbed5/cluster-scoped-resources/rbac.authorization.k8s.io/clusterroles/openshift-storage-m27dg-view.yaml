@@ -1,0 +1,686 @@
+---
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ec7b67b48d8e612-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-d32acb4252badada-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-f03e7265e9e6e2d5-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-b280738eede00e42-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ca0e0d0722b44db-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-97beeaad9521bbe7-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3f0f4f6281994474-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e2f792f51ea1ef2b-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-41719b2096907ede-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-38cd97520e769cdd-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8506b5939604d5d8-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7bb907a72dc7116e-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-165268e7c6da0af8-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-edb57df2a130d63c-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-c08a45603993da75-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-1cf66995ee5bab83-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ed14b8217d5f81fc-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3a054534430a3631-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e58adfe3b19e9184-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5baa5929acc62195-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8dfc2a63e2feb6c9-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-44dd4fec5da1845-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-94d2dd7a0d8806e7-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5ccc51d57a9ce542-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-efb12a2ea66b6c64-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-9c626d79fb785c91-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a022983f817a132c-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-47bc7c1173ca756e-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-345775c37f11b6ca-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-62e2d1ee37777c10-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-view: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ca13f6cd334b1083-view: "true"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:23:57Z"
+  labels:
+    olm.owner: openshift-storage-m27dg
+    olm.owner.kind: OperatorGroup
+    olm.owner.namespace: openshift-storage
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: clusterrole-aggregation-controller
+    operation: Apply
+    time: "2024-11-11T04:27:55Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:aggregationRule:
+        .: {}
+        f:clusterRoleSelectors: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T04:27:55Z"
+  name: openshift-storage-m27dg-view
+  resourceVersion: "63291"
+  uid: 9e649666-9bbd-4a22-8f97-8656091ba036
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storageclusters.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - ocsinitializations.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - ocsinitializations
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephclusters.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephfilesystems.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystems
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - namespacestores.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - noobaa.io
+  resources:
+  - namespacestores
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - objectbucketclaims.objectbucket.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbucketclaims
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephbucketnotifications.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbucketnotifications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephobjectzonegroups.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzonegroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - networkfences.csiaddons.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephobjectrealms.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectrealms
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephobjectzones.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzones
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephclients.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclients
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - csiaddonsnodes.csiaddons.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storageclassrequests.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclassrequests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - noobaaaccounts.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaaaccounts
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephfilesystemsubvolumegroups.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemsubvolumegroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - bucketclasses.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - noobaa.io
+  resources:
+  - bucketclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephblockpools.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpools
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephrbdmirrors.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephrbdmirrors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - backingstores.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - noobaa.io
+  resources:
+  - backingstores
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - volumereplicationclasses.replication.storage.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplicationclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephfilesystemmirrors.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemmirrors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storageprofiles.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageprofiles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storageconsumers.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageconsumers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephobjectstores.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstores
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephbuckettopics.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbuckettopics
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephobjectstoreusers.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstoreusers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - reclaimspacejobs.csiaddons.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephblockpoolradosnamespaces.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpoolradosnamespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - reclaimspacecronjobs.csiaddons.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - volumereplications.replication.storage.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephcosidrivers.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephcosidrivers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephnfses.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephnfses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storagesystems.odf.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - odf.openshift.io
+  resources:
+  - storagesystems
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - objectbuckets.objectbucket.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - noobaas.noobaa.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaas
+  verbs:
+  - get
+  - list
+  - watch

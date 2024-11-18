@@ -1,0 +1,22 @@
+collection started at: 04:56:16 AM
+must-gather is using image: quay.io/spamecha/odf-mg:2.5
+checking for existing must-gather resource
+not creating helper pod since storagecluster is not present
+waiting for 96 97 98 to terminate
+collecting dump cephclusters
+Wrote inspect data to must-gather/minimal_resources.
+collecting dump cephblockpools
+Wrote inspect data to must-gather/minimal_resources.
+collecting dump cephfilesystems
+Wrote inspect data to must-gather/minimal_resources.
+collecting dump csv
+Wrote inspect data to must-gather/minimal_resources.
+collecting dump sc
+Wrote inspect data to must-gather/minimal_resources.
+collecting dump configmaps
+Wrote inspect data to must-gather/minimal_resources.
+Collecting storageclusters
+Minimal resources collection completed.
+total time taken by collection was 67 seconds 
+collection ended at: 04:57:23 AM 
+deleting empty files

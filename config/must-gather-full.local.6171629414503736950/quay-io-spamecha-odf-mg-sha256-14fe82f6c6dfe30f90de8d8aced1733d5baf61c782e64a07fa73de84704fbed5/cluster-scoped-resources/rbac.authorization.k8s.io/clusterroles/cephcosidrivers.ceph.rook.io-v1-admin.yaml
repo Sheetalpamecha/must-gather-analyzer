@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:41Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"09bd687b-d0e8-4d9d-bea2-673884d45a5f"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:41Z"
+  name: cephcosidrivers.ceph.rook.io-v1-admin
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephcosidrivers.ceph.rook.io
+    uid: 09bd687b-d0e8-4d9d-bea2-673884d45a5f
+  resourceVersion: "34712"
+  uid: eebe774e-2b21-4463-8fd0-7a6955348efe
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephcosidrivers
+  verbs:
+  - '*'

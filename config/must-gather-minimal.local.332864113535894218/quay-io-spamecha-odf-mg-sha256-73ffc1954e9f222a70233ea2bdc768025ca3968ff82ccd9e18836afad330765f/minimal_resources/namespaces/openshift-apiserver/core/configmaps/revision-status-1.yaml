@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: configmap "audit-0" not found
+  revision: "1"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:33Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-openshift-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:02:33Z"
+  name: revision-status-1
+  namespace: openshift-apiserver
+  resourceVersion: "6377"
+  uid: 93442ecb-96d4-4e2d-8469-cbae4ebf111f

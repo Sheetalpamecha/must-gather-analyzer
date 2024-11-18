@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+data:
+  images.json: |
+    {
+      "cloudControllerManagerOperator": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:618e9b46ef98484d0268d3acd1b6df7dcd86ecb0c81027a8a4ff0fe4de406ec6",
+      "cloudControllerManagerAlibaba": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:692dc82ae87eb985d3d42328946f2ff740bca437b2d6591b8963d9d0f8c424a3",
+      "cloudControllerManagerAWS": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:623f2c6e14ab8ab81ec15b60094fc9719eca0874bdc5a5749b5e1b23fb99507b",
+      "cloudControllerManagerAzure": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0de2d9a8f1fd59606919e501761aa693d4bed966593f44d9bf816b2bec240439",
+      "cloudNodeManagerAzure": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:454b6c325a5a9be6c3d9947fda73aa20f71c82e6f2c3faffafeadabb841429f1",
+      "cloudControllerManagerGCP": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1432404c3c3631edcd2d6550758f72e4d693a7aa0929087f3afadba2f96d40b6",
+      "cloudControllerManagerIBM": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f578dfd36f84f23daef0a802dbe19a4c1d22af26ae582ddc04e980e8bb02a161",
+      "cloudControllerManagerOpenStack": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:546974472c1dfce6992931f91173d5b599918a67dc87e9b619025526cf6c53a1",
+      "cloudControllerManagerPowerVS": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:fa9138b259d9c48dc4bfdcc63467493d14ad1b5d3d2b23c0d399dffced3a9894",
+      "cloudControllerManagerVSphere": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:093b0016c8e68c080100f826e848a1d1b4c91c339518daee50e2e132910a65ad",
+      "cloudControllerManagerNutanix": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3acfce56fc58cf1dd025c18f6c66e5e28ee973da31ba2dce7b2f739af9af99c2"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:06Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:images.json: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:06Z"
+  name: cloud-controller-manager-images
+  namespace: openshift-cloud-controller-manager-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1010"
+  uid: 1072af1f-3128-485a-bdc7-0f7376842481

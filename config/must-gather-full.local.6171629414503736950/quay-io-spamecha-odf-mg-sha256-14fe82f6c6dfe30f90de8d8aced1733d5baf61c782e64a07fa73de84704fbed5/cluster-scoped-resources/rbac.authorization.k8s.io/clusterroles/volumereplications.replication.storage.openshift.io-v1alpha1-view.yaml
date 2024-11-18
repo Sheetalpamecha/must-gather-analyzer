@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:22Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-47bc7c1173ca756e-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-47bc7c1173ca756e-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"802683fc-a996-4987-aa2d-cd6876c95bc4"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:22Z"
+  name: volumereplications.replication.storage.openshift.io-v1alpha1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: volumereplications.replication.storage.openshift.io
+    uid: 802683fc-a996-4987-aa2d-cd6876c95bc4
+  resourceVersion: "33881"
+  uid: 922b2427-4aab-4c88-8fea-47378a49e222
+rules:
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications
+  verbs:
+  - get
+  - list
+  - watch

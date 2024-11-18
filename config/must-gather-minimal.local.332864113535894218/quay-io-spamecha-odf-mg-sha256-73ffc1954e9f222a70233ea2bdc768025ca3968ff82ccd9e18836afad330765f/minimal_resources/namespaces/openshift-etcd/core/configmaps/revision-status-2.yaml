@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: configmap "etcd-pod-1" not found
+  revision: "2"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:03:04Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:03:04Z"
+  name: revision-status-2
+  namespace: openshift-etcd
+  resourceVersion: "8033"
+  uid: bec0c76e-ddfe-4ef4-9e2a-8da025aa175e

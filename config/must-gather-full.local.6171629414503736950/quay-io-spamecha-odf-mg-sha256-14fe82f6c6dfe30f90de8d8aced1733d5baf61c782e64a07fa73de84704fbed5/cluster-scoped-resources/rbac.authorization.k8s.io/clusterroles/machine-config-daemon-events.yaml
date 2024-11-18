@@ -1,0 +1,24 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:07Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: machine-config-operator
+    operation: Update
+    time: "2024-11-11T03:03:07Z"
+  name: machine-config-daemon-events
+  resourceVersion: "8256"
+  uid: 61375be0-d0fb-4d93-a842-0825b5e716a5
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch

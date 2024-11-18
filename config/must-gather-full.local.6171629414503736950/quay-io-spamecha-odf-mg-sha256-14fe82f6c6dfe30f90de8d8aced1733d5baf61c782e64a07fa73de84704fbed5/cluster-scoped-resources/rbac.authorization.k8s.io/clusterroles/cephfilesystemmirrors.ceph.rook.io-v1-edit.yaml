@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:39Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-5baa5929acc62195-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-5baa5929acc62195-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"59321107-a6c9-426d-a7a1-0853c8fa7763"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:39Z"
+  name: cephfilesystemmirrors.ceph.rook.io-v1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephfilesystemmirrors.ceph.rook.io
+    uid: 59321107-a6c9-426d-a7a1-0853c8fa7763
+  resourceVersion: "34529"
+  uid: 3ad0de4a-0d1d-4318-b319-90e13269fdb2
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemmirrors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

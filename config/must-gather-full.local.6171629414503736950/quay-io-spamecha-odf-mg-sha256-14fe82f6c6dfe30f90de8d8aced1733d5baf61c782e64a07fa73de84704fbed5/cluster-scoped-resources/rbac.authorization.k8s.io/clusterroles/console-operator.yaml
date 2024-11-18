@@ -1,0 +1,143 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    capability.openshift.io/name: Console
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T03:10:54Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+      f:rules: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T03:10:54Z"
+  name: console-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "20171"
+  uid: f3e67f7b-4b91-4864-8f4f-70f729b4b461
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - oauth.openshift.io
+  resourceNames:
+  - console
+  resources:
+  - oauthclients
+  verbs:
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - featuregates
+  - oauths
+  - infrastructures
+  - ingresses
+  - proxies
+  - clusterversions
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - consoles
+  - consoles/status
+  - clusteroperators
+  - clusteroperators/status
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - delete
+- apiGroups:
+  - operator.openshift.io
+  resources:
+  - consoles
+  - consoles/status
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - delete
+- apiGroups:
+  - console.openshift.io
+  resources:
+  - consoleclidownloads
+  - consolenotifications
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - delete
+- apiGroups:
+  - cluster.open-cluster-management.io
+  resources:
+  - managedclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operators.coreos.com
+  resources:
+  - olmconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - proxy.open-cluster-management.io
+  resources:
+  - managedproxyserviceresolvers
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - delete
+- apiGroups:
+  - apiextensions.k8s.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+  - list
+  - watch

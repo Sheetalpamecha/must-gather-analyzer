@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:37Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-7ec7b67b48d8e612-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-7ec7b67b48d8e612-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c87bc421-e1bb-4574-84aa-260be8793d03"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:37Z"
+  name: storageclusters.ocs.openshift.io-v1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: storageclusters.ocs.openshift.io
+    uid: c87bc421-e1bb-4574-84aa-260be8793d03
+  resourceVersion: "34319"
+  uid: 318f78f7-65e0-45e3-a3ee-3f5b091ff708
+rules:
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclusters
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

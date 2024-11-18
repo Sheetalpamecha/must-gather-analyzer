@@ -1,0 +1,100 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:24:48Z"
+  labels:
+    olm.owner: ocs-operator.v4.14.11-rhodf
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-storage
+    operators.coreos.com/ocs-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:rules: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:48Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/ocs-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:26:21Z"
+  name: ocs-operator.v4.14.11-rhodf-cb6fbb7d4
+  resourceVersion: "35460"
+  uid: d16a3b39-578c-4816-b54a-a8fc2238d524
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstores
+  - cephblockpools
+  - cephclusters
+  - cephrbdmirrors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - quota.openshift.io
+  resources:
+  - clusterresourcequotas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  - objectbucketclaims
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumes
+  - persistentvolumeclaims
+  - pods
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - storageclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageconsumers
+  - storageclusters
+  verbs:
+  - get
+  - list
+  - watch

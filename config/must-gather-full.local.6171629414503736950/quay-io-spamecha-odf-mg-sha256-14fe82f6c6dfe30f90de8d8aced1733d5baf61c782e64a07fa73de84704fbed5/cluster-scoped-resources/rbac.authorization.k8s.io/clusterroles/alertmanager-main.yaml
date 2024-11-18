@@ -1,0 +1,45 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:11:16Z"
+  labels:
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/part-of: openshift-monitoring
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/part-of: {}
+      f:rules: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:11:16Z"
+  name: alertmanager-main
+  resourceVersion: "22806"
+  uid: db5580f5-7deb-49d5-a707-bc43568d71a9
+rules:
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - subjectaccessreviews
+  verbs:
+  - create
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - nonroot
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use

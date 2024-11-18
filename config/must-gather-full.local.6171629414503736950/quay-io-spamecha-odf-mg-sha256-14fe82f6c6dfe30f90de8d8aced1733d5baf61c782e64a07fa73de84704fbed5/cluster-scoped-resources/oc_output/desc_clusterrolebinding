@@ -1,0 +1,3189 @@
+Name:         alertmanager-main
+Labels:       app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/part-of=openshift-monitoring
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  alertmanager-main
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  alertmanager-main  openshift-monitoring
+
+
+Name:         aws-ebs-csi-driver-operator-clusterrolebinding
+Labels:       <none>
+Annotations:  storage.openshift.io/remove-from: mgmt
+Role:
+  Kind:  ClusterRole
+  Name:  aws-ebs-csi-driver-operator-clusterrole
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  aws-ebs-csi-driver-operator  openshift-cluster-csi-drivers
+
+
+Name:         basic-users
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  basic-user
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         cloud-controller-manager
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cloud-controller-manager
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cloud-controller-manager  openshift-cloud-controller-manager
+
+
+Name:         cloud-credential-operator-rolebinding
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  cloud-credential-operator-role
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  cloud-credential-operator  openshift-cloud-credential-operator
+
+
+Name:         cloud-network-config-controller
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cloud-network-config-controller
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  cloud-network-config-controller  openshift-cloud-network-config-controller
+
+
+Name:         cloud-node-manager
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cloud-node-manager
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  cloud-node-manager  openshift-cloud-controller-manager
+
+
+Name:         cluster-admin
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind   Name            Namespace
+  ----   ----            ---------
+  Group  system:masters  
+
+
+Name:         cluster-admins
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind   Name                   Namespace
+  ----   ----                   ---------
+  Group  system:cluster-admins  
+  User   system:admin           
+
+
+Name:         cluster-autoscaler
+Labels:       k8s-addon=cluster-autoscaler.addons.k8s.io
+              k8s-app=cluster-autoscaler
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-autoscaler
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  cluster-autoscaler  openshift-machine-api
+
+
+Name:         cluster-autoscaler-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-autoscaler-operator
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  cluster-autoscaler-operator  openshift-machine-api
+
+
+Name:         cluster-baremetal-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: baremetal
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-baremetal-operator
+Subjects:
+  Kind            Name                        Namespace
+  ----            ----                        ---------
+  ServiceAccount  cluster-baremetal-operator  openshift-machine-api
+
+
+Name:         cluster-monitoring-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-monitoring-operator
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  cluster-monitoring-operator  openshift-monitoring
+
+
+Name:         cluster-node-tuning-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: NodeTuning
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-node-tuning-operator
+Subjects:
+  Kind            Name                          Namespace
+  ----            ----                          ---------
+  ServiceAccount  cluster-node-tuning-operator  openshift-cluster-node-tuning-operator
+
+
+Name:         cluster-node-tuning:tuned
+Labels:       <none>
+Annotations:  capability.openshift.io/name: NodeTuning
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-node-tuning:tuned
+Subjects:
+  Kind            Name   Namespace
+  ----            ----   ---------
+  ServiceAccount  tuned  openshift-cluster-node-tuning-operator
+
+
+Name:         cluster-readers
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-reader
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:cluster-readers  
+
+
+Name:         cluster-samples-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: openshift-samples
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-samples-operator
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cluster-samples-operator  openshift-cluster-samples-operator
+
+
+Name:         cluster-samples-operator-imageconfig-reader
+Labels:       <none>
+Annotations:  capability.openshift.io/name: openshift-samples
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-samples-operator-imageconfig-reader
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cluster-samples-operator  openshift-cluster-samples-operator
+
+
+Name:         cluster-samples-operator-proxy-reader
+Labels:       <none>
+Annotations:  capability.openshift.io/name: openshift-samples
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-samples-operator-proxy-reader
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cluster-samples-operator  openshift-cluster-samples-operator
+
+
+Name:         cluster-status-binding
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-status
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         cluster-storage-operator-role
+Labels:       addonmanager.kubernetes.io/mode=Reconcile
+              kubernetes.io/cluster-service=true
+Annotations:  capability.openshift.io/name: Storage
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cluster-storage-operator  openshift-cluster-storage-operator
+
+
+Name:         cluster-version-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              kubernetes.io/description: Grant the cluster-version operator permission to perform cluster-admin actions while managing the OpenShift core.
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name     Namespace
+  ----            ----     ---------
+  ServiceAccount  default  openshift-cluster-version
+
+
+Name:         console
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  console
+Subjects:
+  Kind            Name     Namespace
+  ----            ----     ---------
+  ServiceAccount  console  openshift-console
+
+
+Name:         console-auth-delegator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name     Namespace
+  ----            ----     ---------
+  ServiceAccount  console  openshift-console
+
+
+Name:         console-extensions-reader
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  console-extensions-reader
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         console-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  console-operator
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  console-operator  openshift-console-operator
+
+
+Name:         console-operator-auth-delegator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  console-operator  openshift-console-operator
+
+
+Name:         control-plane-machine-set-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: MachineAPI
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  control-plane-machine-set-operator
+Subjects:
+  Kind            Name                                Namespace
+  ----            ----                                ---------
+  ServiceAccount  control-plane-machine-set-operator  openshift-machine-api
+
+
+Name:         csi-addons-controller-manager-service-system:auth-delegator
+Labels:       olm.owner=odf-csi-addons-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/odf-csi-addons-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name                           Namespace
+  ----            ----                           ---------
+  ServiceAccount  csi-addons-controller-manager  openshift-storage
+
+
+Name:         csi-snapshot-controller-operator-clusterrole
+Labels:       addonmanager.kubernetes.io/mode=Reconcile
+              kubernetes.io/cluster-service=true
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  csi-snapshot-controller-operator-clusterrole
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  csi-snapshot-controller-operator  openshift-cluster-storage-operator
+
+
+Name:         csi-snapshot-controller-runner-operator
+Labels:       addonmanager.kubernetes.io/mode=Reconcile
+              kubernetes.io/cluster-service=true
+Annotations:  capability.openshift.io/name: CSISnapshot
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-snapshot-controller-runner
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  csi-snapshot-controller-operator  openshift-cluster-storage-operator
+
+
+Name:         csi-snapshot-webhook-clusterrolebinding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  csi-snapshot-webhook-clusterrole
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  csi-snapshot-webhook  openshift-cluster-storage-operator
+
+
+Name:         custom-account-openshift-machine-config-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  machine-config-operator  openshift-machine-config-operator
+
+
+Name:         default-account-cluster-image-registry-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: ImageRegistry
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-image-registry-operator
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  cluster-image-registry-operator  openshift-image-registry
+
+
+Name:         default-account-cluster-network-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name     Namespace
+  ----            ----     ---------
+  ServiceAccount  default  openshift-network-operator
+
+
+Name:         dns-monitoring
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  dns-monitoring
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  prometheus-k8s  openshift-monitoring
+
+
+Name:         ebs-csi-main-attacher-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-main-attacher-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-csi-main-provisioner-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-main-provisioner-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-csi-main-resizer-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-main-resizer-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-csi-main-snapshotter-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-main-snapshotter-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-csi-storageclass-reader-resizer-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-resizer-storageclass-reader-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-csi-volumesnapshot-reader-provisioner-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-provisioner-volumesnapshot-reader-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-kube-rbac-proxy-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ebs-kube-rbac-proxy-role
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  aws-ebs-csi-driver-controller-sa  openshift-cluster-csi-drivers
+
+
+Name:         ebs-node-privileged-binding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ebs-privileged-role
+Subjects:
+  Kind            Name                        Namespace
+  ----            ----                        ---------
+  ServiceAccount  aws-ebs-csi-driver-node-sa  openshift-cluster-csi-drivers
+
+
+Name:         event-exporter
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  view
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  event-exporter  openshift-e2e-loki
+
+
+Name:         helm-chartrepos-view
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Console
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+              release.openshift.io/create-only: true
+Role:
+  Kind:  ClusterRole
+  Name:  helm-chartrepos-viewer
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         insights-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Insights
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  insights-operator
+Subjects:
+  Kind            Name      Namespace
+  ----            ----      ---------
+  ServiceAccount  operator  openshift-insights
+
+
+Name:         insights-operator-auth
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Insights
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name      Namespace
+  ----            ----      ---------
+  ServiceAccount  operator  openshift-insights
+
+
+Name:         insights-operator-gather
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Insights
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  insights-operator-gather
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  gather  openshift-insights
+
+
+Name:         insights-operator-gather-reader
+Labels:       <none>
+Annotations:  capability.openshift.io/name: Insights
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-reader
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  gather  openshift-insights
+
+
+Name:         kube-apiserver
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  kube-apiserver
+Subjects:
+  Kind  Name                   Namespace
+  ----  ----                   ---------
+  User  kube-apiserver         
+  User  system:kube-apiserver  
+
+
+Name:         kube-state-metrics
+Labels:       app.kubernetes.io/component=exporter
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=kube-state-metrics
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=2.9.2
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  kube-state-metrics
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  kube-state-metrics  openshift-monitoring
+
+
+Name:         loki-promtail
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  loki-promtail
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  loki-promtail  openshift-e2e-loki
+
+
+Name:         loki-promtail-oauth
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  loki-promtail-oauth
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  loki-promtail  openshift-e2e-loki
+
+
+Name:         machine-api-controllers
+Labels:       <none>
+Annotations:  capability.openshift.io/name: MachineAPI
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  machine-api-controllers
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  machine-api-controllers  openshift-machine-api
+
+
+Name:         machine-api-controllers-baremetal
+Labels:       <none>
+Annotations:  exclude.release.openshift.io/internal-openshift-hosted: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  machine-api-controllers-metal3-remediation
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  machine-api-controllers  openshift-machine-api
+
+
+Name:         machine-api-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: MachineAPI
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  machine-api-operator
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  machine-api-operator  openshift-machine-api
+
+
+Name:         machine-api-operator-ext-remediation
+Labels:       <none>
+Annotations:  capability.openshift.io/name: MachineAPI
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  machine-api-operator-ext-remediation
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  machine-api-controllers  openshift-machine-api
+
+
+Name:         machine-config-controller
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  machine-config-controller
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  machine-config-controller  openshift-machine-config-operator
+
+
+Name:         machine-config-daemon
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  machine-config-daemon
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  machine-config-daemon  openshift-machine-config-operator
+
+
+Name:         machine-config-server
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  machine-config-server
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  machine-config-server  openshift-machine-config-operator
+
+
+Name:         machine-os-builder
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  machine-os-builder
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  machine-os-builder  openshift-machine-config-operator
+
+
+Name:         machine-os-builder-anyuid
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:scc:anyuid
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  machine-os-builder  openshift-machine-config-operator
+
+
+Name:         marketplace-operator
+Labels:       <none>
+Annotations:  capability.openshift.io/name: marketplace
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  marketplace-operator
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  marketplace-operator  openshift-marketplace
+
+
+Name:         mcg-operator.v4.14.11-rhodf-5d7b75796c
+Labels:       olm.owner=mcg-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/mcg-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  mcg-operator.v4.14.11-rhodf-5d7b75796c
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  noobaa  openshift-storage
+
+
+Name:         metrics-daemon-sa-rolebinding
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  metrics-daemon-role
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  metrics-daemon-sa  openshift-multus
+
+
+Name:         multus-admission-controller-webhook
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  multus-admission-controller-webhook
+Subjects:
+  Kind            Name       Namespace
+  ----            ----       ---------
+  ServiceAccount  multus-ac  openshift-multus
+
+
+Name:         multus-ancillary-tools
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  multus-ancillary-tools
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  multus-ancillary-tools  openshift-multus
+
+
+Name:         multus-cluster-readers
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  multus-ancillary-tools
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:cluster-readers  
+
+
+Name:         multus-group
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  multus
+Subjects:
+  Kind   Name           Namespace
+  ----   ----           ---------
+  Group  system:multus  
+
+
+Name:         multus-transient
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  multus-ancillary-tools
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  multus  openshift-multus
+
+
+Name:         multus-whereabouts
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  whereabouts-cni
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  multus-ancillary-tools  openshift-multus
+
+
+Name:         must-gather-7mg7r
+Labels:       <none>
+Annotations:  oc.openshift.io/command: oc adm must-gather
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name     Namespace
+  ----            ----     ---------
+  ServiceAccount  default  openshift-must-gather-6tc69
+
+
+Name:         network-diagnostics
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  network-diagnostics
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  network-diagnostics  openshift-network-diagnostics
+
+
+Name:         network-node-identity
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  network-node-identity
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  network-node-identity  openshift-network-node-identity
+
+
+Name:         node-exporter
+Labels:       app.kubernetes.io/component=exporter
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=node-exporter
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=1.6.1
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  node-exporter
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  node-exporter  openshift-monitoring
+
+
+Name:         noobaa-operator-service-system:auth-delegator
+Labels:       olm.owner=mcg-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/mcg-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  noobaa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-55b9f9ff8c
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-55b9f9ff8c
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  ux-backend-server  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-59966954fc
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-59966954fc
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  rook-ceph-osd  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-5b467f75b6
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-5b467f75b6
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  rook-csi-rbd-provisioner-sa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-6799c75457
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-6799c75457
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  ocs-operator  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-68f4d9c6cb
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-68f4d9c6cb
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  rook-csi-cephfs-plugin-sa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-69f5489b78
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-69f5489b78
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  rook-csi-nfs-plugin-sa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-74c7f569bb
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-74c7f569bb
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  rook-csi-nfs-provisioner-sa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-76b5789c6d
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-76b5789c6d
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  ocs-metrics-exporter  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-777755556c
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-777755556c
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  rook-ceph-system  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-778884bc48
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-778884bc48
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  rook-csi-rbd-plugin-sa  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-798b9c8794
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-798b9c8794
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  rook-ceph-mgr  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-cb6fbb7d4
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-cb6fbb7d4
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  ocs-metrics-exporter  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-cbdddc9c9
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-cbdddc9c9
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  rook-ceph-system  openshift-storage
+
+
+Name:         ocs-operator.v4.14.11-rhodf-df9c4b95b
+Labels:       olm.owner=ocs-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/ocs-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  ocs-operator.v4.14.11-rhodf-df9c4b95b
+Subjects:
+  Kind            Name                            Namespace
+  ----            ----                            ---------
+  ServiceAccount  rook-csi-cephfs-provisioner-sa  openshift-storage
+
+
+Name:         odf-csi-addons-operator.v4.14.11-rhodf-7f7cdf9d48
+Labels:       olm.owner=odf-csi-addons-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/odf-csi-addons-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  odf-csi-addons-operator.v4.14.11-rhodf-7f7cdf9d48
+Subjects:
+  Kind            Name                           Namespace
+  ----            ----                           ---------
+  ServiceAccount  csi-addons-controller-manager  openshift-storage
+
+
+Name:         odf-operator.v4.14.11-rhodf-67b6746445
+Labels:       olm.owner=odf-operator.v4.14.11-rhodf
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-storage
+              operators.coreos.com/odf-operator.openshift-storage=
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  odf-operator.v4.14.11-rhodf-67b6746445
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  odf-operator-controller-manager  openshift-storage
+
+
+Name:         olm-operator-binding-openshift-operator-lifecycle-manager
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:operator-lifecycle-manager
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  olm-operator-serviceaccount  openshift-operator-lifecycle-manager
+
+
+Name:         openshift-csi-snapshot-controller-role
+Labels:       <none>
+Annotations:  capability.openshift.io/name: CSISnapshot
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-csi-snapshot-controller-runner
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  csi-snapshot-controller  openshift-cluster-storage-operator
+
+
+Name:         openshift-dns
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-dns
+Subjects:
+  Kind            Name  Namespace
+  ----            ----  ---------
+  ServiceAccount  dns   openshift-dns
+
+
+Name:         openshift-dns-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-dns-operator
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  dns-operator  openshift-dns-operator
+
+
+Name:         openshift-image-registry-pruner
+Labels:       <none>
+Annotations:  imageregistry.operator.openshift.io/checksum: sha256:9c18924fae4eab4651205fc268268a67bd4b9025164b242656ab8e009955b634
+Role:
+  Kind:  ClusterRole
+  Name:  system:image-pruner
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  pruner  openshift-image-registry
+
+
+Name:         openshift-ingress-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ingress-operator
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  ingress-operator  openshift-ingress-operator
+
+
+Name:         openshift-ingress-router
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ingress-router
+Subjects:
+  Kind            Name    Namespace
+  ----            ----    ---------
+  ServiceAccount  router  openshift-ingress
+
+
+Name:         openshift-ovn-kubernetes-control-plane-limited
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ovn-kubernetes-control-plane-limited
+Subjects:
+  Kind            Name                          Namespace
+  ----            ----                          ---------
+  ServiceAccount  ovn-kubernetes-control-plane  openshift-ovn-kubernetes
+
+
+Name:         openshift-ovn-kubernetes-controller-limited
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ovn-kubernetes-controller-limited
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  ovn-kubernetes-controller  openshift-ovn-kubernetes
+
+
+Name:         openshift-ovn-kubernetes-node-identity-limited
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ovn-kubernetes-node-limited
+Subjects:
+  Kind   Name              Namespace
+  ----   ----              ---------
+  Group  system:ovn-nodes  
+
+
+Name:         openshift-ovn-kubernetes-node-kube-rbac-proxy
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-ovn-kubernetes-kube-rbac-proxy
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  ovn-kubernetes-node  openshift-ovn-kubernetes
+
+
+Name:         openshift-state-metrics
+Labels:       app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/part-of=openshift-monitoring
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  openshift-state-metrics
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  openshift-state-metrics  openshift-monitoring
+
+
+Name:         openstack-cloud-controller-manager
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  openstack-cloud-controller-manager
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  cloud-controller-manager  kube-system
+
+
+Name:         packageserver-service-system:auth-delegator
+Labels:       olm.owner=packageserver
+              olm.owner.kind=ClusterServiceVersion
+              olm.owner.namespace=openshift-operator-lifecycle-manager
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  olm-operator-serviceaccount  openshift-operator-lifecycle-manager
+
+
+Name:         pod-identity-webhook
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  pod-identity-webhook
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  pod-identity-webhook  openshift-cloud-credential-operator
+
+
+Name:         prometheus-adapter
+Labels:       app.kubernetes.io/component=metrics-adapter
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=prometheus-adapter
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=0.10.0
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  prometheus-adapter
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  prometheus-adapter  openshift-monitoring
+
+
+Name:         prometheus-adapter-view
+Labels:       app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/part-of=openshift-monitoring
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-monitoring-view
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  prometheus-adapter  openshift-monitoring
+
+
+Name:         prometheus-k8s
+Labels:       app.kubernetes.io/component=prometheus
+              app.kubernetes.io/instance=k8s
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=prometheus
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=2.46.0
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  prometheus-k8s
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  prometheus-k8s  openshift-monitoring
+
+
+Name:         prometheus-k8s-scheduler-resources
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  prometheus-k8s-scheduler-resources
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  prometheus-k8s  openshift-monitoring
+
+
+Name:         prometheus-operator
+Labels:       app.kubernetes.io/component=controller
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=prometheus-operator
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=0.67.1
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  prometheus-operator
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  prometheus-operator  openshift-monitoring
+
+
+Name:         registry-monitoring
+Labels:       <none>
+Annotations:  capability.openshift.io/name: ImageRegistry
+              include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  registry-monitoring
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  prometheus-k8s  openshift-monitoring
+
+
+Name:         registry-registry-role
+Labels:       <none>
+Annotations:  imageregistry.operator.openshift.io/checksum: sha256:74248883530fac21ef97d7c550c5f486050f236de11e2021e1f5961957eb75bc
+Role:
+  Kind:  ClusterRole
+  Name:  system:registry
+Subjects:
+  Kind            Name      Namespace
+  ----            ----      ---------
+  ServiceAccount  registry  openshift-image-registry
+
+
+Name:         resource-metrics:system:auth-delegator
+Labels:       app.kubernetes.io/component=metrics-adapter
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=prometheus-adapter
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=0.10.0
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  prometheus-adapter  openshift-monitoring
+
+
+Name:         router-monitoring
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  router-monitoring
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  prometheus-k8s  openshift-monitoring
+
+
+Name:         self-access-reviewers
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  self-access-reviewer
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         self-provisioners
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  self-provisioner
+Subjects:
+  Kind   Name                        Namespace
+  ----   ----                        ---------
+  Group  system:authenticated:oauth  
+
+
+Name:         storage-version-migration-migrator
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  kube-storage-version-migrator-sa  openshift-kube-storage-version-migrator
+
+
+Name:         system-bootstrap-node-bootstrapper
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-bootstrapper
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  node-bootstrapper  openshift-machine-config-operator
+
+
+Name:         system-bootstrap-node-renewal
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:certificates.k8s.io:certificatesigningrequests:selfnodeclient
+Subjects:
+  Kind   Name          Namespace
+  ----   ----          ---------
+  Group  system:nodes  
+
+
+Name:         system:basic-user
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:basic-user
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:build-strategy-docker-binding
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:build-strategy-docker
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:build-strategy-jenkinspipeline-binding
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:build-strategy-jenkinspipeline
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:build-strategy-source-binding
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:build-strategy-source
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:controller:attachdetach-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:attachdetach-controller
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  attachdetach-controller  kube-system
+
+
+Name:         system:controller:certificate-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:certificate-controller
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  certificate-controller  kube-system
+
+
+Name:         system:controller:clusterrole-aggregation-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:clusterrole-aggregation-controller
+Subjects:
+  Kind            Name                                Namespace
+  ----            ----                                ---------
+  ServiceAccount  clusterrole-aggregation-controller  kube-system
+
+
+Name:         system:controller:cronjob-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:cronjob-controller
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  cronjob-controller  kube-system
+
+
+Name:         system:controller:daemon-set-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:daemon-set-controller
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  daemon-set-controller  kube-system
+
+
+Name:         system:controller:deployment-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:deployment-controller
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  deployment-controller  kube-system
+
+
+Name:         system:controller:disruption-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:disruption-controller
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  disruption-controller  kube-system
+
+
+Name:         system:controller:endpoint-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:endpoint-controller
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  endpoint-controller  kube-system
+
+
+Name:         system:controller:endpointslice-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:endpointslice-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  endpointslice-controller  kube-system
+
+
+Name:         system:controller:endpointslicemirroring-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:endpointslicemirroring-controller
+Subjects:
+  Kind            Name                               Namespace
+  ----            ----                               ---------
+  ServiceAccount  endpointslicemirroring-controller  kube-system
+
+
+Name:         system:controller:ephemeral-volume-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:ephemeral-volume-controller
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  ephemeral-volume-controller  kube-system
+
+
+Name:         system:controller:expand-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:expand-controller
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  expand-controller  kube-system
+
+
+Name:         system:controller:generic-garbage-collector
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:generic-garbage-collector
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  generic-garbage-collector  kube-system
+
+
+Name:         system:controller:horizontal-pod-autoscaler
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:horizontal-pod-autoscaler
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  horizontal-pod-autoscaler  kube-system
+  ServiceAccount  horizontal-pod-autoscaler  openshift-infra
+
+
+Name:         system:controller:job-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:job-controller
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  job-controller  kube-system
+
+
+Name:         system:controller:namespace-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:namespace-controller
+Subjects:
+  Kind            Name                  Namespace
+  ----            ----                  ---------
+  ServiceAccount  namespace-controller  kube-system
+
+
+Name:         system:controller:node-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:node-controller
+Subjects:
+  Kind            Name             Namespace
+  ----            ----             ---------
+  ServiceAccount  node-controller  kube-system
+
+
+Name:         system:controller:persistent-volume-binder
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:persistent-volume-binder
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  persistent-volume-binder  kube-system
+
+
+Name:         system:controller:pod-garbage-collector
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:pod-garbage-collector
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  pod-garbage-collector  kube-system
+
+
+Name:         system:controller:pv-protection-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:pv-protection-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  pv-protection-controller  kube-system
+
+
+Name:         system:controller:pvc-protection-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:pvc-protection-controller
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  pvc-protection-controller  kube-system
+
+
+Name:         system:controller:replicaset-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:replicaset-controller
+Subjects:
+  Kind            Name                   Namespace
+  ----            ----                   ---------
+  ServiceAccount  replicaset-controller  kube-system
+
+
+Name:         system:controller:replication-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:replication-controller
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  replication-controller  kube-system
+
+
+Name:         system:controller:resourcequota-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:resourcequota-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  resourcequota-controller  kube-system
+
+
+Name:         system:controller:root-ca-cert-publisher
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:root-ca-cert-publisher
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  root-ca-cert-publisher  kube-system
+
+
+Name:         system:controller:route-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:route-controller
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  route-controller  kube-system
+
+
+Name:         system:controller:service-account-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:service-account-controller
+Subjects:
+  Kind            Name                        Namespace
+  ----            ----                        ---------
+  ServiceAccount  service-account-controller  kube-system
+
+
+Name:         system:controller:service-ca-cert-publisher
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:service-ca-cert-publisher
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  service-ca-cert-publisher  kube-system
+
+
+Name:         system:controller:service-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:service-controller
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  service-controller  kube-system
+
+
+Name:         system:controller:statefulset-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:statefulset-controller
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  statefulset-controller  kube-system
+
+
+Name:         system:controller:ttl-after-finished-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:ttl-after-finished-controller
+Subjects:
+  Kind            Name                           Namespace
+  ----            ----                           ---------
+  ServiceAccount  ttl-after-finished-controller  kube-system
+
+
+Name:         system:controller:ttl-controller
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:controller:ttl-controller
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  ttl-controller  kube-system
+
+
+Name:         system:deployer
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:deployer
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  default-rolebindings-controller  openshift-infra
+
+
+Name:         system:discovery
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:discovery
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:image-builder
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:image-builder
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  default-rolebindings-controller  openshift-infra
+
+
+Name:         system:image-puller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:image-puller
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  default-rolebindings-controller  openshift-infra
+
+
+Name:         system:kube-controller-manager
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:kube-controller-manager
+Subjects:
+  Kind  Name                            Namespace
+  ----  ----                            ---------
+  User  system:kube-controller-manager  
+
+
+Name:         system:kube-dns
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:kube-dns
+Subjects:
+  Kind            Name      Namespace
+  ----            ----      ---------
+  ServiceAccount  kube-dns  kube-system
+
+
+Name:         system:kube-scheduler
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:kube-scheduler
+Subjects:
+  Kind  Name                   Namespace
+  ----  ----                   ---------
+  User  system:kube-scheduler  
+
+
+Name:         system:masters
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:master
+Subjects:
+  Kind   Name            Namespace
+  ----   ----            ---------
+  Group  system:masters  
+
+
+Name:         system:monitoring
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:monitoring
+Subjects:
+  Kind   Name               Namespace
+  ----   ----               ---------
+  Group  system:monitoring  
+
+
+Name:         system:node
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node
+Subjects:
+  Kind  Name  Namespace
+  ----  ----  ---------
+
+
+Name:         system:node-admin
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-admin
+Subjects:
+  Kind   Name                   Namespace
+  ----   ----                   ---------
+  User   system:master          
+  User   system:kube-apiserver  
+  Group  system:node-admins     
+
+
+Name:         system:node-admins
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-admin
+Subjects:
+  Kind   Name                Namespace
+  ----   ----                ---------
+  User   system:master       
+  Group  system:node-admins  
+
+
+Name:         system:node-bootstrapper
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-bootstrapper
+Subjects:
+  Kind            Name               Namespace
+  ----            ----               ---------
+  ServiceAccount  node-bootstrapper  openshift-infra
+
+
+Name:         system:node-proxier
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-proxier
+Subjects:
+  Kind  Name               Namespace
+  ----  ----               ---------
+  User  system:kube-proxy  
+
+
+Name:         system:node-proxiers
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:node-proxier
+Subjects:
+  Kind   Name          Namespace
+  ----   ----          ---------
+  Group  system:nodes  
+
+
+Name:         system:oauth-token-deleters
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:oauth-token-deleter
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         system:openshift:controller:build-config-change-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:build-config-change-controller
+Subjects:
+  Kind            Name                            Namespace
+  ----            ----                            ---------
+  ServiceAccount  build-config-change-controller  openshift-infra
+
+
+Name:         system:openshift:controller:build-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:build-controller
+Subjects:
+  Kind            Name              Namespace
+  ----            ----              ---------
+  ServiceAccount  build-controller  openshift-infra
+
+
+Name:         system:openshift:controller:cluster-csr-approver-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:cluster-csr-approver-controller
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  cluster-csr-approver-controller  openshift-infra
+
+
+Name:         system:openshift:controller:cluster-quota-reconciliation-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:cluster-quota-reconciliation-controller
+Subjects:
+  Kind            Name                                     Namespace
+  ----            ----                                     ---------
+  ServiceAccount  cluster-quota-reconciliation-controller  openshift-infra
+
+
+Name:         system:openshift:controller:default-rolebindings-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:default-rolebindings-controller
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  default-rolebindings-controller  openshift-infra
+
+
+Name:         system:openshift:controller:deployer-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:deployer-controller
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  deployer-controller  openshift-infra
+
+
+Name:         system:openshift:controller:deploymentconfig-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:deploymentconfig-controller
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  deploymentconfig-controller  openshift-infra
+
+
+Name:         system:openshift:controller:horizontal-pod-autoscaler
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:horizontal-pod-autoscaler
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  horizontal-pod-autoscaler  openshift-infra
+
+
+Name:         system:openshift:controller:image-import-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:image-import-controller
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  image-import-controller  openshift-infra
+
+
+Name:         system:openshift:controller:image-trigger-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:image-trigger-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  image-trigger-controller  openshift-infra
+
+
+Name:         system:openshift:controller:kube-apiserver-check-endpoints-auth-delegator
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:auth-delegator
+Subjects:
+  Kind  Name                                                            Namespace
+  ----  ----                                                            ---------
+  User  system:serviceaccount:openshift-kube-apiserver:check-endpoints  
+
+
+Name:         system:openshift:controller:kube-apiserver-check-endpoints-crd-reader
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:check-endpoints-crd-reader
+Subjects:
+  Kind  Name                                                            Namespace
+  ----  ----                                                            ---------
+  User  system:serviceaccount:openshift-kube-apiserver:check-endpoints  
+
+
+Name:         system:openshift:controller:kube-apiserver-check-endpoints-node-reader
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:check-endpoints-node-reader
+Subjects:
+  Kind  Name                                                            Namespace
+  ----  ----                                                            ---------
+  User  system:serviceaccount:openshift-kube-apiserver:check-endpoints  
+
+
+Name:         system:openshift:controller:machine-approver
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:machine-approver
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  machine-approver-sa  openshift-cluster-machine-approver
+
+
+Name:         system:openshift:controller:namespace-security-allocation-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:namespace-security-allocation-controller
+Subjects:
+  Kind            Name                                      Namespace
+  ----            ----                                      ---------
+  ServiceAccount  namespace-security-allocation-controller  openshift-infra
+
+
+Name:         system:openshift:controller:origin-namespace-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:origin-namespace-controller
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  origin-namespace-controller  openshift-infra
+
+
+Name:         system:openshift:controller:podsecurity-admission-label-syncer-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:podsecurity-admission-label-syncer-controller
+Subjects:
+  Kind            Name                                           Namespace
+  ----            ----                                           ---------
+  ServiceAccount  podsecurity-admission-label-syncer-controller  openshift-infra
+
+
+Name:         system:openshift:controller:privileged-namespaces-psa-label-syncer
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:privileged-namespaces-psa-label-syncer
+Subjects:
+  Kind            Name                                    Namespace
+  ----            ----                                    ---------
+  ServiceAccount  privileged-namespaces-psa-label-syncer  openshift-infra
+
+
+Name:         system:openshift:controller:pv-recycler-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:pv-recycler-controller
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  pv-recycler-controller  openshift-infra
+
+
+Name:         system:openshift:controller:resourcequota-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:resourcequota-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  resourcequota-controller  openshift-infra
+
+
+Name:         system:openshift:controller:service-ca
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:service-ca
+Subjects:
+  Kind            Name        Namespace
+  ----            ----        ---------
+  ServiceAccount  service-ca  openshift-service-ca
+
+
+Name:         system:openshift:controller:service-ingress-ip-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:service-ingress-ip-controller
+Subjects:
+  Kind            Name                           Namespace
+  ----            ----                           ---------
+  ServiceAccount  service-ingress-ip-controller  openshift-infra
+
+
+Name:         system:openshift:controller:service-serving-cert-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:service-serving-cert-controller
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  service-serving-cert-controller  openshift-infra
+
+
+Name:         system:openshift:controller:serviceaccount-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:serviceaccount-controller
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  serviceaccount-controller  openshift-infra
+
+
+Name:         system:openshift:controller:serviceaccount-pull-secrets-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:serviceaccount-pull-secrets-controller
+Subjects:
+  Kind            Name                                    Namespace
+  ----            ----                                    ---------
+  ServiceAccount  serviceaccount-pull-secrets-controller  openshift-infra
+
+
+Name:         system:openshift:controller:template-instance-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:template-instance-controller
+Subjects:
+  Kind            Name                          Namespace
+  ----            ----                          ---------
+  ServiceAccount  template-instance-controller  openshift-infra
+
+
+Name:         system:openshift:controller:template-instance-controller:admin
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  admin
+Subjects:
+  Kind            Name                          Namespace
+  ----            ----                          ---------
+  ServiceAccount  template-instance-controller  openshift-infra
+
+
+Name:         system:openshift:controller:template-instance-finalizer-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:template-instance-finalizer-controller
+Subjects:
+  Kind            Name                                    Namespace
+  ----            ----                                    ---------
+  ServiceAccount  template-instance-finalizer-controller  openshift-infra
+
+
+Name:         system:openshift:controller:template-instance-finalizer-controller:admin
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  admin
+Subjects:
+  Kind            Name                                    Namespace
+  ----            ----                                    ---------
+  ServiceAccount  template-instance-finalizer-controller  openshift-infra
+
+
+Name:         system:openshift:controller:template-service-broker
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:template-service-broker
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  template-service-broker  openshift-infra
+
+
+Name:         system:openshift:controller:unidling-controller
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:controller:unidling-controller
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  unidling-controller  openshift-infra
+
+
+Name:         system:openshift:discovery
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:discovery
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:openshift:kube-controller-manager:gce-cloud-provider
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:kube-controller-manager:gce-cloud-provider
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  cloud-provider  kube-system
+
+
+Name:         system:openshift:oauth-apiserver
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                Namespace
+  ----            ----                ---------
+  ServiceAccount  oauth-apiserver-sa  openshift-oauth-apiserver
+
+
+Name:         system:openshift:openshift-apiserver
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                    Namespace
+  ----            ----                    ---------
+  ServiceAccount  openshift-apiserver-sa  openshift-apiserver
+
+
+Name:         system:openshift:openshift-authentication
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name             Namespace
+  ----            ----             ---------
+  ServiceAccount  oauth-openshift  openshift-authentication
+
+
+Name:         system:openshift:openshift-controller-manager
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:openshift-controller-manager
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  openshift-controller-manager-sa  openshift-controller-manager
+
+
+Name:         system:openshift:openshift-controller-manager:image-trigger-controller
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:openshift-controller-manager:image-trigger-controller
+Subjects:
+  Kind            Name                      Namespace
+  ----            ----                      ---------
+  ServiceAccount  image-trigger-controller  openshift-infra
+
+
+Name:         system:openshift:openshift-controller-manager:ingress-to-route-controller
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:openshift-controller-manager:ingress-to-route-controller
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  ingress-to-route-controller  openshift-infra
+
+
+Name:         system:openshift:openshift-controller-manager:update-buildconfig-status
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:openshift-controller-manager:update-buildconfig-status
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  openshift-controller-manager-sa  openshift-controller-manager
+  ServiceAccount  build-config-change-controller   openshift-infra
+
+
+Name:         system:openshift:openshift-route-controller-manager
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:openshift-route-controller-manager
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  route-controller-manager-sa  openshift-route-controller-manager
+
+
+Name:         system:openshift:operator:authentication
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  authentication-operator  openshift-authentication-operator
+
+
+Name:         system:openshift:operator:cloud-controller-manager
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:operator:cloud-controller-manager
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  cluster-cloud-controller-manager  openshift-cloud-controller-manager-operator
+
+
+Name:         system:openshift:operator:cluster-kube-scheduler-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                               Namespace
+  ----            ----                               ---------
+  ServiceAccount  openshift-kube-scheduler-operator  openshift-kube-scheduler-operator
+
+
+Name:         system:openshift:operator:etcd-backup-crb
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:operator:etcd-backup-role
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  etcd-backup-sa  openshift-etcd
+
+
+Name:         system:openshift:operator:etcd-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name           Namespace
+  ----            ----           ---------
+  ServiceAccount  etcd-operator  openshift-etcd-operator
+
+
+Name:         system:openshift:operator:kube-apiserver-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                     Namespace
+  ----            ----                     ---------
+  ServiceAccount  kube-apiserver-operator  openshift-kube-apiserver-operator
+
+
+Name:         system:openshift:operator:kube-apiserver-recovery
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  localhost-recovery-client  openshift-kube-apiserver
+
+
+Name:         system:openshift:operator:kube-controller-manager-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                              Namespace
+  ----            ----                              ---------
+  ServiceAccount  kube-controller-manager-operator  openshift-kube-controller-manager-operator
+
+
+Name:         system:openshift:operator:kube-controller-manager-recovery
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  localhost-recovery-client  openshift-kube-controller-manager
+
+
+Name:         system:openshift:operator:kube-scheduler-recovery
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  localhost-recovery-client  openshift-kube-scheduler
+
+
+Name:         system:openshift:operator:kube-scheduler:public-2
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:kube-scheduler
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  openshift-kube-scheduler-sa  openshift-kube-scheduler
+
+
+Name:         system:openshift:operator:kube-storage-version-migrator-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                                    Namespace
+  ----            ----                                    ---------
+  ServiceAccount  kube-storage-version-migrator-operator  openshift-kube-storage-version-migrator-operator
+
+
+Name:         system:openshift:operator:openshift-apiserver-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                          Namespace
+  ----            ----                          ---------
+  ServiceAccount  openshift-apiserver-operator  openshift-apiserver-operator
+
+
+Name:         system:openshift:operator:openshift-config-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                       Namespace
+  ----            ----                       ---------
+  ServiceAccount  openshift-config-operator  openshift-config-operator
+
+
+Name:         system:openshift:operator:openshift-controller-manager-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                                   Namespace
+  ----            ----                                   ---------
+  ServiceAccount  openshift-controller-manager-operator  openshift-controller-manager-operator
+
+
+Name:         system:openshift:operator:openshift-etcd-installer
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  installer-sa  openshift-etcd
+
+
+Name:         system:openshift:operator:openshift-kube-apiserver-installer
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  installer-sa  openshift-kube-apiserver
+
+
+Name:         system:openshift:operator:openshift-kube-controller-manager-installer
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  installer-sa  openshift-kube-controller-manager
+
+
+Name:         system:openshift:operator:openshift-kube-scheduler-installer
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name          Namespace
+  ----            ----          ---------
+  ServiceAccount  installer-sa  openshift-kube-scheduler
+
+
+Name:         system:openshift:operator:service-ca-operator
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  cluster-admin
+Subjects:
+  Kind            Name                 Namespace
+  ----            ----                 ---------
+  ServiceAccount  service-ca-operator  openshift-service-ca-operator
+
+
+Name:         system:openshift:public-info-viewer
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:public-info-viewer
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         system:openshift:scc:restricted-v2
+Labels:       <none>
+Annotations:  include.release.openshift.io/ibm-cloud-managed: true
+              include.release.openshift.io/self-managed-high-availability: true
+              include.release.openshift.io/single-node-developer: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:scc:restricted-v2
+Subjects:
+  Kind   Name                  Namespace
+  ----   ----                  ---------
+  Group  system:authenticated  
+
+
+Name:         system:openshift:tokenreview-openshift-controller-manager
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:tokenreview-openshift-controller-manager
+Subjects:
+  Kind            Name                             Namespace
+  ----            ----                             ---------
+  ServiceAccount  openshift-controller-manager-sa  openshift-controller-manager
+
+
+Name:         system:openshift:tokenreview-openshift-route-controller-manager
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:tokenreview-openshift-route-controller-manager
+Subjects:
+  Kind            Name                         Namespace
+  ----            ----                         ---------
+  ServiceAccount  route-controller-manager-sa  openshift-route-controller-manager
+
+
+Name:         system:openshift:useroauthaccesstoken-manager
+Labels:       <none>
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  system:openshift:useroauthaccesstoken-manager
+Subjects:
+  Kind   Name                        Namespace
+  ----   ----                        ---------
+  Group  system:authenticated:oauth  
+
+
+Name:         system:public-info-viewer
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:public-info-viewer
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         system:scope-impersonation
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:scope-impersonation
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         system:sdn-readers
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:sdn-reader
+Subjects:
+  Kind   Name          Namespace
+  ----   ----          ---------
+  Group  system:nodes  
+
+
+Name:         system:service-account-issuer-discovery
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:service-account-issuer-discovery
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:serviceaccounts  
+
+
+Name:         system:volume-scheduler
+Labels:       kubernetes.io/bootstrapping=rbac-defaults
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:volume-scheduler
+Subjects:
+  Kind  Name                   Namespace
+  ----  ----                   ---------
+  User  system:kube-scheduler  
+
+
+Name:         system:webhooks
+Labels:       <none>
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  system:webhook
+Subjects:
+  Kind   Name                    Namespace
+  ----   ----                    ---------
+  Group  system:authenticated    
+  Group  system:unauthenticated  
+
+
+Name:         thanos-querier
+Labels:       app.kubernetes.io/component=query-layer
+              app.kubernetes.io/instance=thanos-querier
+              app.kubernetes.io/managed-by=cluster-monitoring-operator
+              app.kubernetes.io/name=thanos-query
+              app.kubernetes.io/part-of=openshift-monitoring
+              app.kubernetes.io/version=0.30.2
+Annotations:  <none>
+Role:
+  Kind:  ClusterRole
+  Name:  thanos-querier
+Subjects:
+  Kind            Name            Namespace
+  ----            ----            ---------
+  ServiceAccount  thanos-querier  openshift-monitoring

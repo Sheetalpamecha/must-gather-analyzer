@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"cloud-network-config-controller-76d986bdd4-ckttk","leaseDurationSeconds":137,"acquireTime":"2024-11-11T03:03:59Z","renewTime":"2024-11-11T04:57:06Z","leaderTransitions":0}'
+  creationTimestamp: "2024-11-11T03:03:59Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:control-plane.alpha.kubernetes.io/leader: {}
+    manager: cloud-network-config-controller
+    operation: Update
+    time: "2024-11-11T04:57:06Z"
+  name: cloud-network-config-controller-lock
+  namespace: openshift-cloud-network-config-controller
+  resourceVersion: "76159"
+  uid: bd7d4ebb-f214-464a-8cf4-1dba84bdefd3

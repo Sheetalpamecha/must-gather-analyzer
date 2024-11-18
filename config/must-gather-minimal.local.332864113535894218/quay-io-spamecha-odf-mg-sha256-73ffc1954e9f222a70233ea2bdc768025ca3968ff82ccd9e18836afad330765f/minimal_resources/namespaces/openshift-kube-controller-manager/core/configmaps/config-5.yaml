@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+data:
+  config.yaml: '{"apiVersion":"kubecontrolplane.config.openshift.io/v1","extendedArguments":{"allocate-node-cidrs":["false"],"cert-dir":["/var/run/kubernetes"],"cloud-config":["/etc/kubernetes/static-pod-resources/configmaps/cloud-config/cloud.conf"],"cloud-provider":["external"],"cluster-cidr":["10.128.0.0/14"],"cluster-name":["ci-ln-2s0x4sk-76ef8-2sx7w"],"cluster-signing-cert-file":["/etc/kubernetes/static-pod-certs/secrets/csr-signer/tls.crt"],"cluster-signing-duration":["720h"],"cluster-signing-key-file":["/etc/kubernetes/static-pod-certs/secrets/csr-signer/tls.key"],"configure-cloud-routes":["false"],"controllers":["*","-ttl","-bootstrapsigner","-tokencleaner"],"enable-dynamic-provisioning":["true"],"feature-gates":["AdminNetworkPolicy=false","AdmissionWebhookMatchConditions=false","AlibabaPlatform=true","AutomatedEtcdBackup=false","AzureWorkloadIdentity=true","BuildCSIVolumes=true","CSIDriverSharedResource=false","CloudDualStackNodeIPs=true","DynamicResourceAllocation=false","EventedPLEG=false","ExternalCloudProviderAzure=true","ExternalCloudProviderExternal=true","ExternalCloudProviderGCP=false","GCPLabelsTags=false","GatewayAPI=false","InsightsConfigAPI=false","MachineAPIOperatorDisableMachineHealthCheckController=false","MachineAPIProviderOpenStack=false","MaxUnavailableStatefulSet=false","NetworkLiveMigration=false","NodeSwap=false","OpenShiftPodSecurityAdmission=false","PrivateHostedZoneAWS=true","RetroactiveDefaultStorageClass=false","RouteExternalCertificate=false","SigstoreImageVerification=false","VSphereStaticIPs=false","ValidatingAdmissionPolicy=false"],"flex-volume-plugin-dir":["/etc/kubernetes/kubelet-plugins/volume/exec"],"kube-api-burst":["300"],"kube-api-qps":["150"],"leader-elect":["true"],"leader-elect-renew-deadline":["12s"],"leader-elect-resource-lock":["leases"],"leader-elect-retry-period":["3s"],"pv-recycler-pod-template-filepath-hostpath":["/etc/kubernetes/static-pod-resources/configmaps/recycler-config/recycler-pod.yaml"],"pv-recycler-pod-template-filepath-nfs":["/etc/kubernetes/static-pod-resources/configmaps/recycler-config/recycler-pod.yaml"],"root-ca-file":["/etc/kubernetes/static-pod-resources/configmaps/serviceaccount-ca/ca-bundle.crt"],"secure-port":["10257"],"service-account-private-key-file":["/etc/kubernetes/static-pod-resources/secrets/service-account-private-key/service-account.key"],"service-cluster-ip-range":["172.30.0.0/16"],"use-service-account-credentials":["true"]},"kind":"KubeControllerManagerConfig","serviceServingCert":{"certFile":"/etc/kubernetes/static-pod-resources/configmaps/service-ca/ca-bundle.crt"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:09Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0db12e5-71d2-48d7-bff2-5fd0ab67e13d"}: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:11:09Z"
+  name: config-5
+  namespace: openshift-kube-controller-manager
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-5
+    uid: c0db12e5-71d2-48d7-bff2-5fd0ab67e13d
+  resourceVersion: "22082"
+  uid: 0331d5f5-25b9-405e-9252-c4a4203353b6

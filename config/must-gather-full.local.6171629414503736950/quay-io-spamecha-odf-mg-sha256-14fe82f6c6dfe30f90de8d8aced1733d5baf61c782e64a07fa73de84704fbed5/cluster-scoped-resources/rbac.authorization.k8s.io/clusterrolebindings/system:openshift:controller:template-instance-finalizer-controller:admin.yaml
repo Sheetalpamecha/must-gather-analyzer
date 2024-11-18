@@ -1,0 +1,31 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:35Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:35Z"
+  name: system:openshift:controller:template-instance-finalizer-controller:admin
+  resourceVersion: "11618"
+  uid: 76fb0d63-d2c1-4084-a08f-102d3d6c11c4
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- kind: ServiceAccount
+  name: template-instance-finalizer-controller
+  namespace: openshift-infra

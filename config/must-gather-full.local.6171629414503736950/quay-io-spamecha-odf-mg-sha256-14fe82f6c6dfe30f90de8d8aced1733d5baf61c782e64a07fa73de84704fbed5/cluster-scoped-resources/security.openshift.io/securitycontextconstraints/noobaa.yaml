@@ -1,0 +1,92 @@
+---
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: false
+allowedCapabilities: null
+apiVersion: security.openshift.io/v1
+defaultAddCapabilities: null
+fsGroup:
+  type: RunAsAny
+groups: []
+kind: SecurityContextConstraints
+metadata:
+  creationTimestamp: "2024-11-11T03:25:09Z"
+  generation: 1
+  managedFields:
+  - apiVersion: security.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:allowHostDirVolumePlugin: {}
+      f:allowHostIPC: {}
+      f:allowHostNetwork: {}
+      f:allowHostPID: {}
+      f:allowHostPorts: {}
+      f:allowPrivilegedContainer: {}
+      f:allowedCapabilities: {}
+      f:defaultAddCapabilities: {}
+      f:fsGroup: {}
+      f:groups: {}
+      f:priority: {}
+      f:readOnlyRootFilesystem: {}
+      f:requiredDropCapabilities: {}
+      f:runAsUser:
+        .: {}
+        f:type: {}
+      f:seLinuxContext:
+        .: {}
+        f:type: {}
+      f:supplementalGroups:
+        .: {}
+        f:type: {}
+      f:users: {}
+      f:volumes: {}
+    manager: ocs-operator
+    operation: Update
+    time: "2024-11-11T04:09:01Z"
+  name: noobaa
+  resourceVersion: "54499"
+  uid: 6b50039e-1dda-4221-8f94-64e7d6706244
+priority: null
+readOnlyRootFilesystem: true
+requiredDropCapabilities:
+- ALL
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users: []
+volumes:
+- awsElasticBlockStore
+- azureDisk
+- azureFile
+- cephFS
+- cinder
+- configMap
+- csi
+- downwardAPI
+- emptyDir
+- ephemeral
+- fc
+- flexVolume
+- flocker
+- gcePersistentDisk
+- gitRepo
+- glusterfs
+- iscsi
+- nfs
+- persistentVolumeClaim
+- photonPersistentDisk
+- portworxVolume
+- projected
+- quobyte
+- rbd
+- scaleIO
+- secret
+- storageOS
+- vsphere

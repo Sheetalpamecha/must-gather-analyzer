@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+data:
+  controller-config.yaml: |
+    apiVersion: operator.openshift.io/v1alpha1
+    kind: GenericOperatorConfig
+    leaderElection:
+      namespace: openshift-console-operator
+    servingInfo:
+      bindNetwork: "tcp"
+kind: ConfigMap
+metadata:
+  annotations:
+    capability.openshift.io/name: Console
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T03:11:01Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:controller-config.yaml: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T03:11:01Z"
+  name: console-operator-config
+  namespace: openshift-console-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "21244"
+  uid: 0e81d69c-0062-47df-a2c2-0737d2f228de

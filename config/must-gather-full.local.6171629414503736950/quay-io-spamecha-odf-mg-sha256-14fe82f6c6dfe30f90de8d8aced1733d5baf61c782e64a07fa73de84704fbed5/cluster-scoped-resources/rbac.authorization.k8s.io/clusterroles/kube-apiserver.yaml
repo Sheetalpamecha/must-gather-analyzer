@@ -1,0 +1,24 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T02:58:54Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:58:54Z"
+  name: kube-apiserver
+  resourceVersion: "546"
+  uid: 9cecfb91-f4a8-4998-800b-20f26719f6f4
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes/proxy
+  verbs:
+  - get
+  - create

@@ -1,0 +1,48 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:11:15Z"
+  labels:
+    app.kubernetes.io/component: metrics-adapter
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/name: prometheus-adapter
+    app.kubernetes.io/part-of: openshift-monitoring
+    app.kubernetes.io/version: 0.10.0
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-cluster-reader: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-cluster-reader: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+      f:rules: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:11:15Z"
+  name: system:aggregated-metrics-reader
+  resourceVersion: "22645"
+  uid: 44317598-1252-4b7d-871c-df3ff2e75f67
+rules:
+- apiGroups:
+  - metrics.k8s.io
+  resources:
+  - pods
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch

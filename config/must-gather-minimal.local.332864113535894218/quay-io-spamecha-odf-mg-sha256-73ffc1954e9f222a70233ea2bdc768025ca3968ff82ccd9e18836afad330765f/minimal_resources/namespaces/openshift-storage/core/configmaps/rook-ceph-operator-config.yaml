@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:25:09Z"
+  name: rook-ceph-operator-config
+  namespace: openshift-storage
+  resourceVersion: "33479"
+  uid: 70496261-4983-47c9-8f29-f7943f12c5da

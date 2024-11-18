@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+data:
+  cloud.conf: |
+    [Global]
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:04:50Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:cloud.conf: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"50380b3a-ff15-4332-8371-f0ee21726a20"}: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:04:50Z"
+  name: cloud-config-2
+  namespace: openshift-kube-apiserver
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-2
+    uid: 50380b3a-ff15-4332-8371-f0ee21726a20
+  resourceVersion: "12071"
+  uid: 46f50a4b-371e-4a95-b7d7-e29805424eb7

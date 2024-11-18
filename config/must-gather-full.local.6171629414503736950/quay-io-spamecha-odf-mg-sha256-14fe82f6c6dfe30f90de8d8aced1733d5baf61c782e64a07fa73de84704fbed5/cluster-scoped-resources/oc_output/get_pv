@@ -1,0 +1,3 @@
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                   STORAGECLASS   REASON   AGE
+pvc-c530e3f9-c910-404f-ae7c-77a2cd8ba731   20Gi       RWO            Delete           Bound    openshift-monitoring/prometheus-data-prometheus-k8s-0   gp3-csi                 80m
+pvc-e819452a-aa95-49d6-9962-acea16932182   20Gi       RWO            Delete           Bound    openshift-monitoring/prometheus-data-prometheus-k8s-1   gp3-csi                 80m

@@ -1,0 +1,14 @@
+Name:             csi-aws-vsc
+Namespace:        
+Labels:           <none>
+Annotations:      snapshot.storage.kubernetes.io/is-default-class: true
+API Version:      snapshot.storage.k8s.io/v1
+Deletion Policy:  Delete
+Driver:           ebs.csi.aws.com
+Kind:             VolumeSnapshotClass
+Metadata:
+  Creation Timestamp:  2024-11-11T03:02:43Z
+  Generation:          1
+  Resource Version:    6789
+  UID:                 f0aa4ad3-1653-4909-a25e-56dfc6c16254
+Events:                <none>

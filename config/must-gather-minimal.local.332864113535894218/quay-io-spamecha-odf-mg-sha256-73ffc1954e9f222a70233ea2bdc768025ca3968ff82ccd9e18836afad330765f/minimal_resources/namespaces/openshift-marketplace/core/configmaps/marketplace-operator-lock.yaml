@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"marketplace-operator-85d5779fd8-j6bst","leaseDurationSeconds":90,"acquireTime":"2024-11-11T03:10:26Z","renewTime":"2024-11-11T04:57:02Z","leaderTransitions":1}'
+  creationTimestamp: "2024-11-11T03:03:19Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:control-plane.alpha.kubernetes.io/leader: {}
+    manager: marketplace-operator
+    operation: Update
+    time: "2024-11-11T04:57:02Z"
+  name: marketplace-operator-lock
+  namespace: openshift-marketplace
+  resourceVersion: "76113"
+  uid: 9a7727e9-c820-4f8a-83ad-4fe3274277ce

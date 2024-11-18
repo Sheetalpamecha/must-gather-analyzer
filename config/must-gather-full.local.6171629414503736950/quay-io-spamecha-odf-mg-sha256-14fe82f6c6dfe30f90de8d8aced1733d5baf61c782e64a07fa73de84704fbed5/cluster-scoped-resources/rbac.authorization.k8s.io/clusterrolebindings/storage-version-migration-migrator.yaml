@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:19Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-kube-storage-version-migrator-operator
+    operation: Update
+    time: "2024-11-11T03:02:19Z"
+  name: storage-version-migration-migrator
+  resourceVersion: "5158"
+  uid: e61d5bf0-2f40-492b-80b3-c33a7308f5a8
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: kube-storage-version-migrator-sa
+  namespace: openshift-kube-storage-version-migrator

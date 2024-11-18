@@ -1,0 +1,23 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:20Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:03:20Z"
+  name: dns-monitoring
+  resourceVersion: "9018"
+  uid: a2bdcac6-dd5c-4864-a40f-4e278a8c2645
+rules:
+- apiGroups:
+  - operator.openshift.io
+  resources:
+  - dnses
+  verbs:
+  - get

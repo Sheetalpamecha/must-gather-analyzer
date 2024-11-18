@@ -1,0 +1,49 @@
+---
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-4bca9f23e412d79d-edit: "true"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:05Z"
+  labels:
+    olm.owner: olm-operators
+    olm.owner.kind: OperatorGroup
+    olm.owner.namespace: openshift-operator-lifecycle-manager
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: clusterrole-aggregation-controller
+    operation: Apply
+    time: "2024-11-11T03:11:04Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:aggregationRule:
+        .: {}
+        f:clusterRoleSelectors: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:03:05Z"
+  name: olm-operators-edit
+  resourceVersion: "21399"
+  uid: 037cf72b-1cf8-4c5a-9c91-3fed261934d0
+rules:
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

@@ -1,0 +1,45 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:24:51Z"
+  labels:
+    olm.owner: mcg-operator.v4.14.11-rhodf
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-storage
+    operators.coreos.com/mcg-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:51Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/mcg-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:26:33Z"
+  name: mcg-operator.v4.14.11-rhodf-5d7b75796c
+  resourceVersion: "35667"
+  uid: 7f808f37-c16c-4108-91d9-a93bd2572f3b
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mcg-operator.v4.14.11-rhodf-5d7b75796c
+subjects:
+- kind: ServiceAccount
+  name: noobaa
+  namespace: openshift-storage

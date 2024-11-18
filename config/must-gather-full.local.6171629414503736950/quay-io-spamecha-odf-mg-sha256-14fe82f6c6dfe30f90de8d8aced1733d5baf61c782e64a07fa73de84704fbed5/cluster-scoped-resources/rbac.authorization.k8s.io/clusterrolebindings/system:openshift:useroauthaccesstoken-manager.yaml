@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:34Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: authentication-operator
+    operation: Update
+    time: "2024-11-11T03:02:34Z"
+  name: system:openshift:useroauthaccesstoken-manager
+  resourceVersion: "6419"
+  uid: bd4c0db1-23cf-484a-b2bd-d759b816986c
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:useroauthaccesstoken-manager
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:authenticated:oauth

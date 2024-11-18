@@ -1,0 +1,295 @@
+---
+apiVersion: v1
+data:
+  forceRedeploymentReason: ""
+  pod.yaml: "apiVersion: v1\nkind: Pod\nmetadata:\n  name: etcd\n  namespace: openshift-etcd\n
+    \ annotations:\n    kubectl.kubernetes.io/default-container: etcd\n    target.workload.openshift.io/management:
+    '{\"effect\": \"PreferredDuringScheduling\"}'\n  labels:\n    app: etcd\n    k8s-app:
+    etcd\n    etcd: \"true\"\n    revision: \"REVISION\"\nspec:\n  initContainers:\n
+    \   - name: setup\n      image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \     imagePullPolicy: IfNotPresent\n      terminationMessagePolicy: FallbackToLogsOnError\n
+    \     command:\n        - /bin/sh\n        - -c\n        - |\n          #!/bin/sh\n
+    \         echo -n \"Fixing etcd log permissions.\"\n          mkdir -p /var/log/etcd
+    && chmod 0700 /var/log/etcd\n      securityContext:\n        privileged: true\n
+    \     resources:\n        requests:\n          memory: 50Mi\n          cpu: 5m\n
+    \     volumeMounts:\n        - mountPath: /var/log/etcd\n          name: log-dir\n
+    \   - name: etcd-ensure-env-vars\n      image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \     imagePullPolicy: IfNotPresent\n      terminationMessagePolicy: FallbackToLogsOnError\n
+    \     command:\n        - /bin/sh\n        - -c\n        - |\n          #!/bin/sh\n
+    \         set -euo pipefail\n\n          : \"${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST?not
+    set}\"\n          : \"${NODE_NODE_ENVVAR_NAME_ETCD_NAME?not set}\"\n          :
+    \"${NODE_NODE_ENVVAR_NAME_IP?not set}\"\n\n          # check for ipv4 addresses
+    as well as ipv6 addresses with extra square brackets\n          if [[ \"${NODE_NODE_ENVVAR_NAME_IP}\"
+    != \"${NODE_IP}\" && \"${NODE_NODE_ENVVAR_NAME_IP}\" != \"[${NODE_IP}]\" ]]; then\n
+    \           # echo the error message to stderr\n            echo \"Expected node
+    IP to be ${NODE_IP} got ${NODE_NODE_ENVVAR_NAME_IP}\" >&2\n            exit 1\n
+    \         fi\n\n          # check for ipv4 addresses as well as ipv6 addresses
+    with extra square brackets\n          if [[ \"${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST}\"
+    != \"${NODE_IP}\" && \"${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST}\" != \"[${NODE_IP}]\"
+    ]]; then\n            # echo the error message to stderr\n            echo \"Expected
+    etcd url host to be ${NODE_IP} got ${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST}\" >&2\n
+    \           exit 1\n          fi\n\n      resources:\n        requests:\n          memory:
+    60Mi\n          cpu: 10m\n      securityContext:\n        privileged: true\n      env:\n
+    \     - name: \"ALL_ETCD_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379,https://10.0.139.241:2379\"\n
+    \     - name: \"ETCDCTL_API\"\n        value: \"3\"\n      - name: \"ETCDCTL_CACERT\"\n
+    \       value: \"/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt\"\n
+    \     - name: \"ETCDCTL_CERT\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt\"\n
+    \     - name: \"ETCDCTL_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379\"\n
+    \     - name: \"ETCDCTL_KEY\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key\"\n
+    \     - name: \"ETCD_CIPHER_SUITES\"\n        value: \"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\"\n
+    \     - name: \"ETCD_DATA_DIR\"\n        value: \"/var/lib/etcd\"\n      - name:
+    \"ETCD_ELECTION_TIMEOUT\"\n        value: \"1000\"\n      - name: \"ETCD_ENABLE_PPROF\"\n
+    \       value: \"true\"\n      - name: \"ETCD_EXPERIMENTAL_MAX_LEARNERS\"\n        value:
+    \"3\"\n      - name: \"ETCD_EXPERIMENTAL_WARNING_APPLY_DURATION\"\n        value:
+    \"200ms\"\n      - name: \"ETCD_EXPERIMENTAL_WATCH_PROGRESS_NOTIFY_INTERVAL\"\n
+    \       value: \"5s\"\n      - name: \"ETCD_HEARTBEAT_INTERVAL\"\n        value:
+    \"100\"\n      - name: \"ETCD_IMAGE\"\n        value: \"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\"\n
+    \     - name: \"ETCD_INITIAL_CLUSTER_STATE\"\n        value: \"existing\"\n      -
+    name: \"ETCD_QUOTA_BACKEND_BYTES\"\n        value: \"8589934592\"\n      - name:
+    \"ETCD_SOCKET_REUSE_ADDRESS\"\n        value: \"true\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-112-145.ec2.internal\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_IP\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-47-7.ec2.internal\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_IP\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-76-169.ec2.internal\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_IP\"\n
+    \       value: \"10.0.76.169\"\n      - name: NODE_IP\n        valueFrom:\n          fieldRef:\n
+    \           fieldPath: status.podIP\n    - name: etcd-resources-copy\n      image:
+    quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \     imagePullPolicy: IfNotPresent\n      terminationMessagePolicy: FallbackToLogsOnError\n
+    \     command:\n        - /bin/sh\n        - -c\n        - |\n          #!/bin/sh\n
+    \         set -euo pipefail\n\n          rm -f $(grep -l '^### Created by cluster-etcd-operator'
+    /usr/local/bin/*)\n          cp -p /etc/kubernetes/static-pod-certs/configmaps/etcd-scripts/*.sh
+    /usr/local/bin\n\n      resources:\n        requests:\n          memory: 60Mi\n
+    \         cpu: 10m\n      securityContext:\n        privileged: true\n      volumeMounts:\n
+    \       - mountPath: /etc/kubernetes/static-pod-resources\n          name: resource-dir\n
+    \       - mountPath: /etc/kubernetes/static-pod-certs\n          name: cert-dir\n
+    \       - mountPath: /usr/local/bin\n          name: usr-local-bin\n  containers:\n
+    \ # The etcdctl container should always be first. It is intended to be used\n
+    \ # to open a remote shell via `oc rsh` that is ready to run `etcdctl`.\n  - name:
+    etcdctl\n    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \   imagePullPolicy: IfNotPresent\n    terminationMessagePolicy: FallbackToLogsOnError\n
+    \   command:\n      - \"/bin/bash\"\n      - \"-c\"\n      - \"trap TERM INT;
+    sleep infinity & wait\"\n    resources:\n      requests:\n        memory: 60Mi\n
+    \       cpu: 10m\n    volumeMounts:\n      - mountPath: /etc/kubernetes/manifests\n
+    \       name: static-pod-dir\n      - mountPath: /etc/kubernetes/static-pod-resources\n
+    \       name: resource-dir\n      - mountPath: /etc/kubernetes/static-pod-certs\n
+    \       name: cert-dir\n      - mountPath: /var/lib/etcd/\n        name: data-dir\n
+    \   env:\n      - name: \"ALL_ETCD_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379,https://10.0.139.241:2379\"\n
+    \     - name: \"ETCDCTL_API\"\n        value: \"3\"\n      - name: \"ETCDCTL_CACERT\"\n
+    \       value: \"/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt\"\n
+    \     - name: \"ETCDCTL_CERT\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt\"\n
+    \     - name: \"ETCDCTL_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379\"\n
+    \     - name: \"ETCDCTL_KEY\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key\"\n
+    \     - name: \"ETCD_CIPHER_SUITES\"\n        value: \"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\"\n
+    \     - name: \"ETCD_DATA_DIR\"\n        value: \"/var/lib/etcd\"\n      - name:
+    \"ETCD_ELECTION_TIMEOUT\"\n        value: \"1000\"\n      - name: \"ETCD_ENABLE_PPROF\"\n
+    \       value: \"true\"\n      - name: \"ETCD_EXPERIMENTAL_MAX_LEARNERS\"\n        value:
+    \"3\"\n      - name: \"ETCD_EXPERIMENTAL_WARNING_APPLY_DURATION\"\n        value:
+    \"200ms\"\n      - name: \"ETCD_EXPERIMENTAL_WATCH_PROGRESS_NOTIFY_INTERVAL\"\n
+    \       value: \"5s\"\n      - name: \"ETCD_HEARTBEAT_INTERVAL\"\n        value:
+    \"100\"\n      - name: \"ETCD_IMAGE\"\n        value: \"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\"\n
+    \     - name: \"ETCD_INITIAL_CLUSTER_STATE\"\n        value: \"existing\"\n      -
+    name: \"ETCD_QUOTA_BACKEND_BYTES\"\n        value: \"8589934592\"\n      - name:
+    \"ETCD_SOCKET_REUSE_ADDRESS\"\n        value: \"true\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-112-145.ec2.internal\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_IP\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-47-7.ec2.internal\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_IP\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-76-169.ec2.internal\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_IP\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"ETCD_STATIC_POD_VERSION\"\n        value:
+    \"REVISION\"\n  - name: etcd\n    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \   imagePullPolicy: IfNotPresent\n    terminationMessagePolicy: FallbackToLogsOnError\n
+    \   command:\n      - /bin/sh\n      - -c\n      - |\n        #!/bin/sh\n        set
+    -euo pipefail\n\n        etcdctl member list || true\n\n        # this has a non-zero
+    return code if the command is non-zero.  If you use an export first, it doesn't
+    and you\n        # will succeed when you should fail.\n        ETCD_INITIAL_CLUSTER=$(discover-etcd-initial-cluster
+    \\\n          --cacert=/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt
+    \\\n          --cert=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt
+    \\\n          --key=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key
+    \\\n          --endpoints=${ALL_ETCD_ENDPOINTS} \\\n          --data-dir=/var/lib/etcd
+    \\\n          --target-peer-url-host=${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST} \\\n
+    \         --target-name=NODE_NAME)\n        export ETCD_INITIAL_CLUSTER\n\n        #
+    we cannot use the \"normal\" port conflict initcontainer because when we upgrade,
+    the existing static pod will never yield,\n        # so we do the detection in
+    etcd container itself.\n        echo -n \"Waiting for ports 2379, 2380 and 9978
+    to be released.\"\n        time while [ -n \"$(ss -Htan '( sport = 2379 or sport
+    = 2380 or sport = 9978 )')\" ]; do\n          echo -n \".\"\n          sleep 1\n
+    \       done\n\n        export ETCD_NAME=${NODE_NODE_ENVVAR_NAME_ETCD_NAME}\n
+    \       env | grep ETCD | grep -v NODE\n\n        set -x\n        # See https://etcd.io/docs/v3.4.0/tuning/
+    for why we use ionice\n        exec nice -n -19 ionice -c2 -n0 etcd \\\n          --logger=zap
+    \\\n          --log-level=info \\\n          --experimental-initial-corrupt-check=true
+    \\\n          --snapshot-count=10000 \\\n          --initial-advertise-peer-urls=https://${NODE_NODE_ENVVAR_NAME_IP}:2380
+    \\\n          --cert-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-NODE_NAME.crt
+    \\\n          --key-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-NODE_NAME.key
+    \\\n          --trusted-ca-file=/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt
+    \\\n          --client-cert-auth=true \\\n          --peer-cert-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt
+    \\\n          --peer-key-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key
+    \\\n          --peer-trusted-ca-file=/etc/kubernetes/static-pod-certs/configmaps/etcd-peer-client-ca/ca-bundle.crt
+    \\\n          --peer-client-cert-auth=true \\\n          --advertise-client-urls=https://${NODE_NODE_ENVVAR_NAME_IP}:2379
+    \\\n          --listen-client-urls=https://0.0.0.0:2379,unixs://${NODE_NODE_ENVVAR_NAME_IP}:0
+    \\\n          --listen-peer-urls=https://0.0.0.0:2380 \\\n          --metrics=extensive
+    \\\n          --listen-metrics-urls=https://0.0.0.0:9978 ||  mv /etc/kubernetes/etcd-backup-dir/etcd-member.yaml
+    /etc/kubernetes/manifests\n    env:\n      - name: \"ALL_ETCD_ENDPOINTS\"\n        value:
+    \"https://10.0.112.145:2379,https://10.0.139.241:2379\"\n      - name: \"ETCDCTL_API\"\n
+    \       value: \"3\"\n      - name: \"ETCDCTL_CACERT\"\n        value: \"/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt\"\n
+    \     - name: \"ETCDCTL_CERT\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt\"\n
+    \     - name: \"ETCDCTL_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379\"\n
+    \     - name: \"ETCDCTL_KEY\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key\"\n
+    \     - name: \"ETCD_CIPHER_SUITES\"\n        value: \"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\"\n
+    \     - name: \"ETCD_DATA_DIR\"\n        value: \"/var/lib/etcd\"\n      - name:
+    \"ETCD_ELECTION_TIMEOUT\"\n        value: \"1000\"\n      - name: \"ETCD_ENABLE_PPROF\"\n
+    \       value: \"true\"\n      - name: \"ETCD_EXPERIMENTAL_MAX_LEARNERS\"\n        value:
+    \"3\"\n      - name: \"ETCD_EXPERIMENTAL_WARNING_APPLY_DURATION\"\n        value:
+    \"200ms\"\n      - name: \"ETCD_EXPERIMENTAL_WATCH_PROGRESS_NOTIFY_INTERVAL\"\n
+    \       value: \"5s\"\n      - name: \"ETCD_HEARTBEAT_INTERVAL\"\n        value:
+    \"100\"\n      - name: \"ETCD_IMAGE\"\n        value: \"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\"\n
+    \     - name: \"ETCD_INITIAL_CLUSTER_STATE\"\n        value: \"existing\"\n      -
+    name: \"ETCD_QUOTA_BACKEND_BYTES\"\n        value: \"8589934592\"\n      - name:
+    \"ETCD_SOCKET_REUSE_ADDRESS\"\n        value: \"true\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-112-145.ec2.internal\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_IP\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-47-7.ec2.internal\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_IP\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-76-169.ec2.internal\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_IP\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"ETCD_STATIC_POD_VERSION\"\n        value:
+    \"REVISION\"\n    resources:\n      requests:\n        memory: 600Mi\n        cpu:
+    300m\n    readinessProbe:\n      httpGet:\n        port: 9980\n        path: readyz\n
+    \       scheme: HTTPS\n      timeoutSeconds: 30\n      failureThreshold: 5\n      periodSeconds:
+    5\n      successThreshold: 1\n    livenessProbe:\n      httpGet:\n        path:
+    healthz\n        port: 9980\n        scheme: HTTPS\n      timeoutSeconds: 30\n
+    \     periodSeconds: 5\n      successThreshold: 1\n      failureThreshold: 5\n
+    \   startupProbe:\n      httpGet:\n        port: 9980\n        path: readyz\n
+    \       scheme: HTTPS\n      initialDelaySeconds: 10\n      timeoutSeconds: 1\n
+    \     periodSeconds: 10\n      successThreshold: 1\n      failureThreshold: 18\n
+    \   securityContext:\n      privileged: true\n    volumeMounts:\n      - mountPath:
+    /etc/kubernetes/manifests\n        name: static-pod-dir\n      - mountPath: /etc/kubernetes/static-pod-resources\n
+    \       name: resource-dir\n      - mountPath: /etc/kubernetes/static-pod-certs\n
+    \       name: cert-dir\n      - mountPath: /var/lib/etcd/\n        name: data-dir\n
+    \ - name: etcd-metrics\n    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\n
+    \   imagePullPolicy: IfNotPresent\n    terminationMessagePolicy: FallbackToLogsOnError\n
+    \   command:\n      - /bin/sh\n      - -c\n      - |\n        #!/bin/sh\n        set
+    -euo pipefail\n\n        export ETCD_NAME=${NODE_NODE_ENVVAR_NAME_ETCD_NAME}\n\n
+    \       exec nice -n -18 etcd grpc-proxy start \\\n          --endpoints https://${NODE_NODE_ENVVAR_NAME_ETCD_URL_HOST}:9978
+    \\\n          --metrics-addr https://0.0.0.0:9979 \\\n          --listen-addr
+    127.0.0.1:9977 \\\n          --advertise-client-url \"\"  \\\n          --key
+    /etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key
+    \\\n          --key-file /etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-metrics-NODE_NAME.key
+    \\\n          --cert /etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt
+    \\\n          --cert-file /etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-metrics-NODE_NAME.crt
+    \\\n          --cacert /etc/kubernetes/static-pod-certs/configmaps/etcd-peer-client-ca/ca-bundle.crt
+    \\\n          --trusted-ca-file /etc/kubernetes/static-pod-certs/configmaps/etcd-metrics-proxy-serving-ca/ca-bundle.crt
+    \\\n          --listen-cipher-suites TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256\n
+    \   env:\n      - name: \"ALL_ETCD_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379,https://10.0.139.241:2379\"\n
+    \     - name: \"ETCDCTL_API\"\n        value: \"3\"\n      - name: \"ETCDCTL_CACERT\"\n
+    \       value: \"/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt\"\n
+    \     - name: \"ETCDCTL_CERT\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt\"\n
+    \     - name: \"ETCDCTL_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379\"\n
+    \     - name: \"ETCDCTL_KEY\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key\"\n
+    \     - name: \"ETCD_CIPHER_SUITES\"\n        value: \"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\"\n
+    \     - name: \"ETCD_DATA_DIR\"\n        value: \"/var/lib/etcd\"\n      - name:
+    \"ETCD_ELECTION_TIMEOUT\"\n        value: \"1000\"\n      - name: \"ETCD_ENABLE_PPROF\"\n
+    \       value: \"true\"\n      - name: \"ETCD_EXPERIMENTAL_MAX_LEARNERS\"\n        value:
+    \"3\"\n      - name: \"ETCD_EXPERIMENTAL_WARNING_APPLY_DURATION\"\n        value:
+    \"200ms\"\n      - name: \"ETCD_EXPERIMENTAL_WATCH_PROGRESS_NOTIFY_INTERVAL\"\n
+    \       value: \"5s\"\n      - name: \"ETCD_HEARTBEAT_INTERVAL\"\n        value:
+    \"100\"\n      - name: \"ETCD_IMAGE\"\n        value: \"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\"\n
+    \     - name: \"ETCD_INITIAL_CLUSTER_STATE\"\n        value: \"existing\"\n      -
+    name: \"ETCD_QUOTA_BACKEND_BYTES\"\n        value: \"8589934592\"\n      - name:
+    \"ETCD_SOCKET_REUSE_ADDRESS\"\n        value: \"true\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-112-145.ec2.internal\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_IP\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-47-7.ec2.internal\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_IP\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-76-169.ec2.internal\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_IP\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"ETCD_STATIC_POD_VERSION\"\n        value:
+    \"REVISION\"\n    resources:\n      requests:\n        memory: 200Mi\n        cpu:
+    40m\n    securityContext:\n      privileged: true\n    volumeMounts:\n      -
+    mountPath: /etc/kubernetes/static-pod-resources\n        name: resource-dir\n
+    \     - mountPath: /etc/kubernetes/static-pod-certs\n        name: cert-dir\n
+    \     - mountPath: /var/lib/etcd/\n        name: data-dir\n  - name: etcd-readyz\n
+    \   image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:100337b4ed953b3129632e295997314633c7adc895341cc6cd5a1e7fc6443592\n
+    \   imagePullPolicy: IfNotPresent\n    terminationMessagePolicy: FallbackToLogsOnError\n
+    \   command:\n      - /bin/sh\n      - -c\n      - |\n        #!/bin/sh\n        set
+    -euo pipefail\n        \n        exec nice -n -18 cluster-etcd-operator readyz
+    \\\n          --target=https://localhost:2379 \\\n          --listen-port=9980
+    \\\n          --serving-cert-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-NODE_NAME.crt
+    \\\n          --serving-key-file=/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-serving-NODE_NAME.key
+    \\\n          --client-cert-file=$(ETCDCTL_CERT) \\\n          --client-key-file=$(ETCDCTL_KEY)
+    \\\n          --client-cacert-file=$(ETCDCTL_CACERT)\n    securityContext:\n      privileged:
+    true\n    ports:\n    - containerPort: 9980\n      name: readyz\n      protocol:
+    TCP\n    resources:\n      requests:\n        memory: 50Mi\n        cpu: 10m\n
+    \   env:\n      - name: \"ALL_ETCD_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379,https://10.0.139.241:2379\"\n
+    \     - name: \"ETCDCTL_API\"\n        value: \"3\"\n      - name: \"ETCDCTL_CACERT\"\n
+    \       value: \"/etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt\"\n
+    \     - name: \"ETCDCTL_CERT\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.crt\"\n
+    \     - name: \"ETCDCTL_ENDPOINTS\"\n        value: \"https://10.0.112.145:2379\"\n
+    \     - name: \"ETCDCTL_KEY\"\n        value: \"/etc/kubernetes/static-pod-certs/secrets/etcd-all-certs/etcd-peer-NODE_NAME.key\"\n
+    \     - name: \"ETCD_CIPHER_SUITES\"\n        value: \"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\"\n
+    \     - name: \"ETCD_DATA_DIR\"\n        value: \"/var/lib/etcd\"\n      - name:
+    \"ETCD_ELECTION_TIMEOUT\"\n        value: \"1000\"\n      - name: \"ETCD_ENABLE_PPROF\"\n
+    \       value: \"true\"\n      - name: \"ETCD_EXPERIMENTAL_MAX_LEARNERS\"\n        value:
+    \"3\"\n      - name: \"ETCD_EXPERIMENTAL_WARNING_APPLY_DURATION\"\n        value:
+    \"200ms\"\n      - name: \"ETCD_EXPERIMENTAL_WATCH_PROGRESS_NOTIFY_INTERVAL\"\n
+    \       value: \"5s\"\n      - name: \"ETCD_HEARTBEAT_INTERVAL\"\n        value:
+    \"100\"\n      - name: \"ETCD_IMAGE\"\n        value: \"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:972eac00b1013f170963f9dec574dbbfa11b0759d7b5ee8a76e31b49e303321a\"\n
+    \     - name: \"ETCD_INITIAL_CLUSTER_STATE\"\n        value: \"existing\"\n      -
+    name: \"ETCD_QUOTA_BACKEND_BYTES\"\n        value: \"8589934592\"\n      - name:
+    \"ETCD_SOCKET_REUSE_ADDRESS\"\n        value: \"true\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-112-145.ec2.internal\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_112_145_ec2_internal_IP\"\n
+    \       value: \"10.0.112.145\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-47-7.ec2.internal\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_47_7_ec2_internal_IP\"\n
+    \       value: \"10.0.47.7\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_NAME\"\n
+    \       value: \"ip-10-0-76-169.ec2.internal\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_ETCD_URL_HOST\"\n
+    \       value: \"10.0.76.169\"\n      - name: \"NODE_ip_10_0_76_169_ec2_internal_IP\"\n
+    \       value: \"10.0.76.169\"\n    volumeMounts:\n      - mountPath: /var/log/etcd/\n
+    \       name: log-dir\n      - mountPath: /etc/kubernetes/static-pod-certs\n        name:
+    cert-dir\n  hostNetwork: true\n  priorityClassName: system-node-critical\n  tolerations:\n
+    \ - operator: \"Exists\"\n  volumes:\n    - hostPath:\n        path: /etc/kubernetes/manifests\n
+    \     name: static-pod-dir\n    - hostPath:\n        path: /etc/kubernetes/static-pod-resources/etcd-pod-REVISION\n
+    \     name: resource-dir\n    - hostPath:\n        path: /etc/kubernetes/static-pod-resources/etcd-certs\n
+    \     name: cert-dir\n    - hostPath:\n        path: /var/lib/etcd\n        type:
+    \"\"\n      name: data-dir\n    - hostPath:\n        path: /usr/local/bin\n      name:
+    usr-local-bin\n    - hostPath:\n        path: /var/log/etcd\n      name: log-dir\n"
+  version: 4.14.0-202411060037.p0.ga85f313.assembly.stream.el8-a85f313
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:04:10Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:forceRedeploymentReason: {}
+        f:pod.yaml: {}
+        f:version: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3751ede4-0bbc-4bba-a60d-5930af491d42"}: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:04:24Z"
+  name: etcd-pod-3
+  namespace: openshift-etcd
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-3
+    uid: 3751ede4-0bbc-4bba-a60d-5930af491d42
+  resourceVersion: "11208"
+  uid: 01cd626e-5939-4f75-8d4f-9ef4e4f6c38b

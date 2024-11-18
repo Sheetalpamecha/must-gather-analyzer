@@ -1,0 +1,288 @@
+collection started at: 04:30:37 AM
+must-gather is using image: quay.io/spamecha/odf-mg:3.1
+checking for existing must-gather resource
+not creating helper pod since storagecluster is not present
+waiting for 91 92 93 to terminate
+collecting oc command pv
+collecting dump of openshift-operators namespace
+collecting oc command ob
+collecting oc command sc
+error: the server doesn't have a resource type "storageclients"
+collecting oc command csidriver
+error: the server doesn't have a resource type "storageclaim"
+collecting oc command storageclients
+collecting oc command nodes -o wide --show-labels
+Generating journal logs from node ip-10-0-105-93.ec2.internal
+collecting oc command storageclaim
+collecting oc command clusterversion
+collecting oc command validatingwebhookconfiguration
+Gathering data for ns/openshift-operators...
+Warning: apps.openshift.io/v1 DeploymentConfig is deprecated in v4.14+, unavailable in v4.10000+
+Wrote inspect data to must-gather.
+collecting oc command secrets
+collecting oc command infrastructures.config
+Skipping ceph collection as Storage Cluster is not present
+Collecting MCG database information...
+collecting oc describe command storageclients
+collecting oc command configmap
+collecting output of oc get events with sorted timestamp
+collecting oc command clusterrole
+collecting oc describe command storageclaim
+collecting dump of status
+collecting oc command pods
+collecting oc describe command validatingwebhookconfiguration
+collecting oc command -owide
+collecting dump of objectbuckets
+collecting oc command clusterrolebinding
+collecting oc describe configmap -n openshift-operators
+time="2024-11-11T04:31:42Z" level=info msg="CLI version: 5.14.11\n"
+time="2024-11-11T04:31:42Z" level=info msg="noobaa-image: noobaa/noobaa-core:master-20230710\n"
+time="2024-11-11T04:31:42Z" level=info msg="operator-image: noobaa/noobaa-operator:5.14.11\n"
+time="2024-11-11T04:31:42Z" level=info msg="noobaa-db-image: centos/postgresql-12-centos7\n"
+time="2024-11-11T04:31:42Z" level=info msg="Namespace: openshift-storage"
+time="2024-11-11T04:31:42Z" level=info
+time="2024-11-11T04:31:42Z" level=info msg="CRD Status:"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"noobaas.noobaa.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"backingstores.noobaa.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"namespacestores.noobaa.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"bucketclasses.noobaa.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"noobaaaccounts.noobaa.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"objectbucketclaims.objectbucket.io\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: CustomResourceDefinition \"objectbuckets.objectbucket.io\"\n"
+time="2024-11-11T04:31:42Z" level=info
+time="2024-11-11T04:31:42Z" level=info msg="Operator Status:"
+Wrote inspect data to must-gather/namespaces/all/.
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: Namespace \"openshift-storage\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: ServiceAccount \"noobaa\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: ServiceAccount \"noobaa-endpoint\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: Role \"mcg-operator.v4.14.11-rhodf-noobaa-79698d6ccd\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: RoleBinding \"mcg-operator.v4.14.11-rhodf-noobaa-79698d6ccd\"\n"
+collecting oc get command pvc
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: Role \"mcg-operator.v4.14.11-rhodf-noobaa-endpoint-86cf4ccd9f\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: RoleBinding \"mcg-operator.v4.14.11-rhodf-noobaa-endpoint-86cf4ccd9f\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: ClusterRole \"mcg-operator.v4.14.11-rhodf-5d7b75796c\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: ClusterRoleBinding \"mcg-operator.v4.14.11-rhodf-5d7b75796c\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="⬛ (Optional) Not Found: ValidatingWebhookConfiguration \"admission-validation-webhook\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="⬛ (Optional) Not Found: Secret \"admission-webhook-secret\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="⬛ (Optional) Not Found: Service \"admission-webhook-service\"\n"
+time="2024-11-11T04:31:42Z" level=info msg="✅ Exists: Deployment \"noobaa-operator\"\n"
+time="2024-11-11T04:31:42Z" level=info
+time="2024-11-11T04:31:42Z" level=info msg="System Wait Ready:"
+time="2024-11-11T04:31:42Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:31:42Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+collecting oc command scc
+collecting oc describe command pvc
+collecting oc command volumereplicationclass
+Generating journal logs from node ip-10-0-25-79.ec2.internal
+collecting oc command volumesnapshotclass
+collecting oc command volumesnapshotcontent
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc command volumegroupsnapshotclass
+collecting oc get command volumesnapshot
+collecting oc command volumegroupsnapshotcontent
+collecting oc describe command volumesnapshot
+collecting oc command storageclusterpeers
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command volumegroupnapshot
+Wrote inspect data to must-gather.
+collecting oc describe command volumegroupnapshot
+Wrote inspect data to must-gather.
+Wrote inspect data to must-gather.
+error: the server doesn't have a resource type "volumegroupnapshot"
+Wrote inspect data to must-gather.
+collecting oc get command obc
+Wrote inspect data to must-gather.
+collecting oc describe command obc
+Wrote inspect data to must-gather.
+Generating journal logs from node ip-10-0-65-21.ec2.internal
+Wrote inspect data to must-gather.
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command volumereplication
+collecting oc describe command volumereplication
+Wrote inspect data to must-gather.
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command volumereplicationgroups
+collecting crash, journal and volume logs from node ip-10-0-105-93.ec2.internal
+waiting for 1180 1181 1183 1185 1186 to terminate
+collecting crash core dump from node ip-10-0-105-93.ec2.internal
+collecting Ceph daemon logs from node ip-10-0-105-93.ec2.internal
+collecting journal logs from node ip-10-0-105-93.ec2.internal
+collecting csi logs from node ip-10-0-105-93.ec2.internal
+collecting csi and ceph daemon logs from node ip-10-0-105-93.ec2.internal
+time="2024-11-11T04:31:45Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+Wrote inspect data to must-gather.
+collecting oc describe command volumereplicationgroups
+Wrote inspect data to must-gather.
+error: the server doesn't have a resource type "volumereplicationgroups"
+Wrote inspect data to must-gather.
+Wrote inspect data to must-gather.
+collecting oc get command csiaddonsnode
+Wrote inspect data to must-gather.
+collecting oc describe command csiaddonsnode
+error: the server doesn't have a resource type "volumegroupsnapshotclass"
+Wrote inspect data to must-gather/namespaces/all/.
+error: the server doesn't have a resource type "volumegroupsnapshotcontent"
+collecting oc get command storageclaim
+error: the server doesn't have a resource type "storageclusterpeers"
+collecting oc command pv
+collecting oc describe command storageclaim
+collecting oc command ob
+error: the server doesn't have a resource type "storageclaim"
+time="2024-11-11T04:31:48Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+collecting oc command sc
+collecting oc get command managedfusionoffering
+collecting oc describe command managedfusionoffering
+collecting oc command nodes
+error: the server doesn't have a resource type "managedfusionoffering"
+collecting oc get command reclaimspacejob
+collecting oc describe command reclaimspacejob
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command reclaimspacecronjobs
+collecting oc describe command reclaimspacecronjobs
+Deleting journal logs from node ip-10-0-105-93.ec2.internal
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command networkfence
+collecting oc describe command networkfence
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc get command network-attachment-definitions
+collecting oc command csidriver
+collecting oc describe command network-attachment-definitions
+Wrote inspect data to must-gather/namespaces/all/.
+collecting oc command clusterversion
+collecting oc get command encryptionkeyrotationjob
+collecting oc describe command encryptionkeyrotationjob
+collecting oc command infrastructures.config
+time="2024-11-11T04:31:51Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+collecting oc command clusterrole
+error: the server doesn't have a resource type "encryptionkeyrotationjob"
+collecting crash, journal and volume logs from node ip-10-0-25-79.ec2.internal
+collecting csi and ceph daemon logs from node ip-10-0-25-79.ec2.internal
+collecting Ceph daemon logs from node ip-10-0-25-79.ec2.internal
+collecting crash core dump from node ip-10-0-25-79.ec2.internal
+waiting for 1180 1181 1183 1185 1186 2050 2051 2052 2053 2055 to terminate
+collecting csi logs from node ip-10-0-25-79.ec2.internal
+collecting journal logs from node ip-10-0-25-79.ec2.internal
+collecting oc get command encryptionkeyrotationcronjob
+collecting oc describe command encryptionkeyrotationcronjob
+error: the server doesn't have a resource type "encryptionkeyrotationcronjob"
+collecting oc get command operatorconfigs.csi.ceph.io
+collecting oc describe command operatorconfigs.csi.ceph.io
+error: the server doesn't have a resource type "operatorconfigs"
+collecting oc get command drivers.csi.ceph.io
+collecting oc describe command drivers.csi.ceph.io
+time="2024-11-11T04:31:54Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+error: the server doesn't have a resource type "drivers"
+collecting oc get command cephconnections.csi.ceph.io
+collecting oc describe command cephconnections.csi.ceph.io
+collecting oc command clusterrolebinding
+error: the server doesn't have a resource type "cephconnections"
+collecting oc get command clientprofiles.csi.ceph.io
+collecting oc describe command clientprofiles.csi.ceph.io
+Deleting journal logs from node ip-10-0-25-79.ec2.internal
+error: the server doesn't have a resource type "clientprofiles"
+collecting oc get command clientprofilemappings.csi.ceph.io
+collecting oc describe command clientprofilemappings.csi.ceph.io
+collecting oc command scc
+collecting oc command volumereplicationclass
+error: the server doesn't have a resource type "clientprofilemappings"
+collecting oc command volumesnapshotclass
+collecting oc get command recipe.ramendr.openshift.io
+collecting oc describe command recipe.ramendr.openshift.io
+collecting oc command volumesnapshotcontent
+collecting oc command volumegroupsnapshotclass
+collecting oc command volumegroupsnapshotcontent
+error: the server doesn't have a resource type "recipe"
+collecting crash, journal and volume logs from node ip-10-0-65-21.ec2.internal
+waiting for 1180 1181 1183 1185 1186 2050 2051 2052 2053 2055 2746 2747 2748 2749 2750 to terminate
+collecting Ceph daemon logs from node ip-10-0-65-21.ec2.internal
+collecting journal logs from node ip-10-0-65-21.ec2.internal
+collecting csi and ceph daemon logs from node ip-10-0-65-21.ec2.internal
+collecting csi logs from node ip-10-0-65-21.ec2.internal
+collecting crash core dump from node ip-10-0-65-21.ec2.internal
+collecting oc command storageclusterpeers
+time="2024-11-11T04:31:57Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:00Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+Deleting journal logs from node ip-10-0-65-21.ec2.internal
+ceph core dump collection completed
+time="2024-11-11T04:32:03Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:06Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:09Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:12Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:15Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:18Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:21Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:24Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:27Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:30Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:33Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:36Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:39Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:42Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:45Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:48Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:51Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:54Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:32:57Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:00Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:03Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:06Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:09Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:12Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:15Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:18Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:21Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:24Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:27Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:30Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:33Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:36Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:39Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:42Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:45Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:48Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:51Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:54Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:33:57Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:00Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:03Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:06Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:09Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:12Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:15Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:18Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:21Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:24Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:27Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:30Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:33Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:36Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+time="2024-11-11T04:34:39Z" level=info msg="⏳ Failed to get system: noobaas.noobaa.io \"noobaa\" not found"
+collecting dump of obc list
+Command "diagnose" is deprecated, please use diagnostics collect
+time="2024-11-11T04:34:42Z" level=info msg="Running collection of diagnostics"
+time="2024-11-11T04:34:42Z" level=info msg="✅ kubectl exists - will use it for diagnostics\n"
+time="2024-11-11T04:34:42Z" level=info msg="Collecting pod logs"
+time="2024-11-11T04:34:42Z" level=info msg="Collecting PV logs"
+time="2024-11-11T04:34:42Z" level=info msg="Collecting PVC logs"
+time="2024-11-11T04:34:42Z" level=info msg="Collecting SCC logs"
+time="2024-11-11T04:34:42Z" level=info msg="✅ (Optional) Exists:  \"noobaa\"\n"
+time="2024-11-11T04:34:42Z" level=info msg="⬛ (Optional) Not Found:  \"noobaa-endpoint\"\n"
+time="2024-11-11T04:34:42Z" level=info msg="✅ Diagnostics logs were saved in must-gather/noobaa/raw_output//noobaa_diagnostics_1731299682.tar.gz\n"
+collecting dump of noobaa
+Wrote inspect data to must-gather/noobaa.
+collecting dump of backingstore
+Wrote inspect data to must-gather/noobaa.
+collecting dump of namespacestore
+Wrote inspect data to must-gather/noobaa.
+collecting dump of bucketclass
+Wrote inspect data to must-gather/noobaa.
+collecting dump of obc
+Wrote inspect data to must-gather/noobaa.
+collecting dump of ob
+Wrote inspect data to must-gather/noobaa.
+collecting dump of noobaa-operator-66c974fdc-lg4j8 pod from openshift-storage
+collecting oc describe command pod noobaa-db-pg-0
+collecting oc describe command statefulset.apps noobaa-db-pg
+total time taken by collection was 250 seconds 
+collection ended at: 04:34:47 AM 
+deleting empty files

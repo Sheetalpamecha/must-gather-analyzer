@@ -1,0 +1,26 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:05Z"
+  labels:
+    olm.owner: global-operators
+    olm.owner.kind: OperatorGroup
+    olm.owner.namespace: openshift-operators
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:03:05Z"
+  name: global-operators-admin
+  resourceVersion: "8119"
+  uid: d3bea3bc-8012-444a-9a6e-adc07f69b95d
+rules: null

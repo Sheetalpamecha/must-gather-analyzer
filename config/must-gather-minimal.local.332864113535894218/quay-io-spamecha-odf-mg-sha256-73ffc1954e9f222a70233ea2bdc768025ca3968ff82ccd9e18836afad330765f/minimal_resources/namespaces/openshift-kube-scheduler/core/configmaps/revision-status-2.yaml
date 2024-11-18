@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: configmap "kube-scheduler-pod-1" not found
+  revision: "2"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:28Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-kube-scheduler-operator
+    operation: Update
+    time: "2024-11-11T03:02:32Z"
+  name: revision-status-2
+  namespace: openshift-kube-scheduler
+  resourceVersion: "6295"
+  uid: 5ebca438-6d4c-4073-9a42-320b780a7e62

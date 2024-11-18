@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:38Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"e4b8c019-999b-4c30-a2ff-98eac7b8e425"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:38Z"
+  name: cephblockpools.ceph.rook.io-v1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephblockpools.ceph.rook.io
+    uid: e4b8c019-999b-4c30-a2ff-98eac7b8e425
+  resourceVersion: "34400"
+  uid: fbd3a360-a598-47f5-9ab5-c979b59725e2
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpools
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

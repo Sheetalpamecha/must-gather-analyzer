@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+data:
+  oauthMetadata: |-
+    {
+      "issuer": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org",
+      "authorization_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/authorize",
+      "token_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/token",
+      "scopes_supported": [
+        "user:check-access",
+        "user:full",
+        "user:info",
+        "user:list-projects",
+        "user:list-scoped-projects"
+      ],
+      "response_types_supported": [
+        "code",
+        "token"
+      ],
+      "grant_types_supported": [
+        "authorization_code",
+        "implicit"
+      ],
+      "code_challenge_methods_supported": [
+        "plain",
+        "S256"
+      ]
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:18Z"
+  labels:
+    app: oauth-openshift
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:oauthMetadata: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+    manager: authentication-operator
+    operation: Update
+    time: "2024-11-11T03:11:18Z"
+  name: v4-0-config-system-metadata
+  namespace: openshift-authentication
+  resourceVersion: "23109"
+  uid: f61e55bc-5443-4f62-83d3-ac916bb7bee2

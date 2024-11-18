@@ -1,0 +1,101 @@
+---
+apiVersion: v1
+data:
+  CSIADDONS_SUBSCRIPTION_CATALOGSOURCE: redhat-operators
+  CSIADDONS_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: openshift-marketplace
+  CSIADDONS_SUBSCRIPTION_CHANNEL: stable-4.14
+  CSIADDONS_SUBSCRIPTION_NAME: odf-csi-addons-operator
+  CSIADDONS_SUBSCRIPTION_PACKAGE: odf-csi-addons-operator
+  CSIADDONS_SUBSCRIPTION_STARTINGCSV: odf-csi-addons-operator.v4.14.11-rhodf
+  IBM_SUBSCRIPTION_CATALOGSOURCE: certified-operators
+  IBM_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: openshift-marketplace
+  IBM_SUBSCRIPTION_CHANNEL: stable-v1.5
+  IBM_SUBSCRIPTION_NAME: ibm-storage-odf-operator
+  IBM_SUBSCRIPTION_PACKAGE: ibm-storage-odf-operator
+  IBM_SUBSCRIPTION_STARTINGCSV: ibm-storage-odf-operator.v1.5.0
+  NOOBAA_SUBSCRIPTION_CATALOGSOURCE: redhat-operators
+  NOOBAA_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: openshift-marketplace
+  NOOBAA_SUBSCRIPTION_CHANNEL: stable-4.14
+  NOOBAA_SUBSCRIPTION_NAME: mcg-operator
+  NOOBAA_SUBSCRIPTION_PACKAGE: mcg-operator
+  NOOBAA_SUBSCRIPTION_STARTINGCSV: mcg-operator.v4.14.11-rhodf
+  OCS_SUBSCRIPTION_CATALOGSOURCE: redhat-operators
+  OCS_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: openshift-marketplace
+  OCS_SUBSCRIPTION_CHANNEL: stable-4.14
+  OCS_SUBSCRIPTION_NAME: ocs-operator
+  OCS_SUBSCRIPTION_PACKAGE: ocs-operator
+  OCS_SUBSCRIPTION_STARTINGCSV: ocs-operator.v4.14.11-rhodf
+  controller_manager_config.yaml: |
+    apiVersion: controller-runtime.sigs.k8s.io/v1alpha1
+    kind: ControllerManagerConfig
+    health:
+      healthProbeBindAddress: :8081
+    metrics:
+      bindAddress: 127.0.0.1:8080
+    leaderElection:
+      leaderElect: true
+      resourceName: 4fd470de.openshift.io
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:24:30Z"
+  labels:
+    operators.coreos.com/odf-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:CSIADDONS_SUBSCRIPTION_CATALOGSOURCE: {}
+        f:CSIADDONS_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: {}
+        f:CSIADDONS_SUBSCRIPTION_CHANNEL: {}
+        f:CSIADDONS_SUBSCRIPTION_NAME: {}
+        f:CSIADDONS_SUBSCRIPTION_PACKAGE: {}
+        f:CSIADDONS_SUBSCRIPTION_STARTINGCSV: {}
+        f:IBM_SUBSCRIPTION_CATALOGSOURCE: {}
+        f:IBM_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: {}
+        f:IBM_SUBSCRIPTION_CHANNEL: {}
+        f:IBM_SUBSCRIPTION_NAME: {}
+        f:IBM_SUBSCRIPTION_PACKAGE: {}
+        f:IBM_SUBSCRIPTION_STARTINGCSV: {}
+        f:NOOBAA_SUBSCRIPTION_CATALOGSOURCE: {}
+        f:NOOBAA_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: {}
+        f:NOOBAA_SUBSCRIPTION_CHANNEL: {}
+        f:NOOBAA_SUBSCRIPTION_NAME: {}
+        f:NOOBAA_SUBSCRIPTION_PACKAGE: {}
+        f:NOOBAA_SUBSCRIPTION_STARTINGCSV: {}
+        f:OCS_SUBSCRIPTION_CATALOGSOURCE: {}
+        f:OCS_SUBSCRIPTION_CATALOGSOURCE_NAMESPACE: {}
+        f:OCS_SUBSCRIPTION_CHANNEL: {}
+        f:OCS_SUBSCRIPTION_NAME: {}
+        f:OCS_SUBSCRIPTION_PACKAGE: {}
+        f:OCS_SUBSCRIPTION_STARTINGCSV: {}
+        f:controller_manager_config.yaml: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"6dfbf63c-064c-4367-85e4-d951163b0a17"}: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:30Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:operators.coreos.com/odf-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:25:49Z"
+  name: odf-operator-manager-config
+  namespace: openshift-storage
+  ownerReferences:
+  - apiVersion: operators.coreos.com/v1alpha1
+    blockOwnerDeletion: false
+    controller: false
+    kind: ClusterServiceVersion
+    name: odf-operator.v4.14.11-rhodf
+    uid: 6dfbf63c-064c-4367-85e4-d951163b0a17
+  resourceVersion: "34942"
+  uid: 754f531a-592c-4829-9ba9-730e6b25badb

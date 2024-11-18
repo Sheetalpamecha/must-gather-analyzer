@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+data:
+  oauthMetadata: |-
+    {
+      "issuer": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org",
+      "authorization_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/authorize",
+      "token_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/token",
+      "scopes_supported": [
+        "user:check-access",
+        "user:full",
+        "user:info",
+        "user:list-projects",
+        "user:list-scoped-projects"
+      ],
+      "response_types_supported": [
+        "code",
+        "token"
+      ],
+      "grant_types_supported": [
+        "authorization_code",
+        "implicit"
+      ],
+      "code_challenge_methods_supported": [
+        "plain",
+        "S256"
+      ]
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:21Z"
+  labels:
+    app: oauth-openshift
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:oauthMetadata: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:11:21Z"
+  name: oauth-metadata
+  namespace: openshift-kube-apiserver
+  resourceVersion: "23508"
+  uid: e07964e2-e356-4313-93b5-5313c367cb38

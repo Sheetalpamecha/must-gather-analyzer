@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+data:
+  forceRedeploymentReason: ""
+  pod.yaml: |
+    {"kind":"Pod","apiVersion":"v1","metadata":{"name":"openshift-kube-scheduler","namespace":"openshift-kube-scheduler","creationTimestamp":null,"labels":{"app":"openshift-kube-scheduler","revision":"REVISION","scheduler":"true"},"annotations":{"kubectl.kubernetes.io/default-container":"kube-scheduler","target.workload.openshift.io/management":"{\"effect\": \"PreferredDuringScheduling\"}"}},"spec":{"volumes":[{"name":"resource-dir","hostPath":{"path":"/etc/kubernetes/static-pod-resources/kube-scheduler-pod-REVISION"}},{"name":"cert-dir","hostPath":{"path":"/etc/kubernetes/static-pod-resources/kube-scheduler-certs"}}],"initContainers":[{"name":"wait-for-host-port","image":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:86ab79ad41874068c7d3cd8a02cf686eac1337c096d43ab3221e0d5d32561914","command":["/usr/bin/timeout","30","/bin/bash","-c"],"args":["echo -n \"Waiting for port :10259 to be released.\"\nwhile [ -n \"$(ss -Htan '( sport = 10259 )')\" ]; do\n  echo -n \".\"\n  sleep 1\ndone\n"],"resources":{"requests":{"cpu":"15m","memory":"50Mi"}},"terminationMessagePolicy":"FallbackToLogsOnError","imagePullPolicy":"IfNotPresent"}],"containers":[{"name":"kube-scheduler","image":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:86ab79ad41874068c7d3cd8a02cf686eac1337c096d43ab3221e0d5d32561914","command":["hyperkube","kube-scheduler"],"args":["--config=/etc/kubernetes/static-pod-resources/configmaps/config/config.yaml","--cert-dir=/var/run/kubernetes","--authentication-kubeconfig=/etc/kubernetes/static-pod-resources/configmaps/scheduler-kubeconfig/kubeconfig","--authorization-kubeconfig=/etc/kubernetes/static-pod-resources/configmaps/scheduler-kubeconfig/kubeconfig","--feature-gates=AdminNetworkPolicy=false,AdmissionWebhookMatchConditions=false,AlibabaPlatform=true,AutomatedEtcdBackup=false,AzureWorkloadIdentity=true,BuildCSIVolumes=true,CSIDriverSharedResource=false,CloudDualStackNodeIPs=true,DynamicResourceAllocation=false,EventedPLEG=false,ExternalCloudProvider=false,ExternalCloudProviderAzure=true,ExternalCloudProviderExternal=true,ExternalCloudProviderGCP=false,GCPLabelsTags=false,GatewayAPI=false,InsightsConfigAPI=false,MachineAPIOperatorDisableMachineHealthCheckController=false,MachineAPIProviderOpenStack=false,MaxUnavailableStatefulSet=false,NetworkLiveMigration=false,NodeSwap=false,OpenShiftPodSecurityAdmission=false,PrivateHostedZoneAWS=true,RetroactiveDefaultStorageClass=false,RouteExternalCertificate=false,SigstoreImageVerification=false,VSphereStaticIPs=false,ValidatingAdmissionPolicy=false","-v=2","--tls-cert-file=/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.crt","--tls-private-key-file=/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.key","--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256","--tls-min-version=VersionTLS12"],"ports":[{"containerPort":10259}],"resources":{"requests":{"cpu":"15m","memory":"50Mi"}},"volumeMounts":[{"name":"resource-dir","mountPath":"/etc/kubernetes/static-pod-resources"},{"name":"cert-dir","mountPath":"/etc/kubernetes/static-pod-certs"}],"livenessProbe":{"httpGet":{"path":"healthz","port":10259,"scheme":"HTTPS"},"initialDelaySeconds":45},"readinessProbe":{"httpGet":{"path":"healthz","port":10259,"scheme":"HTTPS"},"initialDelaySeconds":45},"terminationMessagePolicy":"FallbackToLogsOnError","imagePullPolicy":"IfNotPresent"},{"name":"kube-scheduler-cert-syncer","image":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:337d5f4c8e6cd5ad1d4f09d8c75d418fb786a0f6065778ca11efb0436e6b36ec","command":["cluster-kube-scheduler-operator","cert-syncer"],"args":["--kubeconfig=/etc/kubernetes/static-pod-resources/configmaps/kube-scheduler-cert-syncer-kubeconfig/kubeconfig","--namespace=$(POD_NAMESPACE)","--destination-dir=/etc/kubernetes/static-pod-certs"],"env":[{"name":"POD_NAME","valueFrom":{"fieldRef":{"fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"resources":{"requests":{"cpu":"5m","memory":"50Mi"}},"volumeMounts":[{"name":"resource-dir","mountPath":"/etc/kubernetes/static-pod-resources"},{"name":"cert-dir","mountPath":"/etc/kubernetes/static-pod-certs"}],"terminationMessagePolicy":"FallbackToLogsOnError","imagePullPolicy":"IfNotPresent"},{"name":"kube-scheduler-recovery-controller","image":"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:337d5f4c8e6cd5ad1d4f09d8c75d418fb786a0f6065778ca11efb0436e6b36ec","command":["/bin/bash","-euxo","pipefail","-c"],"args":["timeout 3m /bin/bash -exuo pipefail -c 'while [ -n \"$(ss -Htanop \\( sport = 11443 \\))\" ]; do sleep 1; done'\n\nexec cluster-kube-scheduler-operator cert-recovery-controller --kubeconfig=/etc/kubernetes/static-pod-resources/configmaps/kube-scheduler-cert-syncer-kubeconfig/kubeconfig  --namespace=${POD_NAMESPACE} --listen=0.0.0.0:11443 -v=2\n"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"resources":{"requests":{"cpu":"5m","memory":"50Mi"}},"volumeMounts":[{"name":"resource-dir","mountPath":"/etc/kubernetes/static-pod-resources"},{"name":"cert-dir","mountPath":"/etc/kubernetes/static-pod-certs"}],"terminationMessagePolicy":"FallbackToLogsOnError","imagePullPolicy":"IfNotPresent"}],"hostNetwork":true,"tolerations":[{"operator":"Exists"}],"priorityClassName":"system-node-critical"},"status":{}}
+  version: 4.14.0-202411060037.p0.g33f630d.assembly.stream.el8-33f630d
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:55Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:forceRedeploymentReason: {}
+        f:pod.yaml: {}
+        f:version: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"a0d413be-72b9-4f5a-9cbe-4e5ab649ccbf"}: {}
+    manager: cluster-kube-scheduler-operator
+    operation: Update
+    time: "2024-11-11T03:03:05Z"
+  name: kube-scheduler-pod-4
+  namespace: openshift-kube-scheduler
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-4
+    uid: a0d413be-72b9-4f5a-9cbe-4e5ab649ccbf
+  resourceVersion: "8091"
+  uid: df349dda-a13a-48c9-a2d3-eb6e27179d3b

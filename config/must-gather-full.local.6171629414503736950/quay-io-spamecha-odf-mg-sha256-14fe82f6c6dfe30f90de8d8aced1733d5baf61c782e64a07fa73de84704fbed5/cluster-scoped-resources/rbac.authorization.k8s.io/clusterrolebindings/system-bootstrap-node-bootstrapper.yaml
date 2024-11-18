@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T02:58:58Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:58:58Z"
+  name: system-bootstrap-node-bootstrapper
+  resourceVersion: "556"
+  uid: 7e82f01b-911a-412f-8c51-9246f404c45c
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:node-bootstrapper
+subjects:
+- kind: ServiceAccount
+  name: node-bootstrapper
+  namespace: openshift-machine-config-operator

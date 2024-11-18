@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:21Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-41719b2096907ede-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-41719b2096907ede-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"60296da2-c49c-4834-936b-24c24947cd66"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:21Z"
+  name: networkfences.csiaddons.openshift.io-v1alpha1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: networkfences.csiaddons.openshift.io
+    uid: 60296da2-c49c-4834-936b-24c24947cd66
+  resourceVersion: "33775"
+  uid: 0c0d357f-22bc-424a-b95a-e032669c0a96
+rules:
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences
+  verbs:
+  - get
+  - list
+  - watch

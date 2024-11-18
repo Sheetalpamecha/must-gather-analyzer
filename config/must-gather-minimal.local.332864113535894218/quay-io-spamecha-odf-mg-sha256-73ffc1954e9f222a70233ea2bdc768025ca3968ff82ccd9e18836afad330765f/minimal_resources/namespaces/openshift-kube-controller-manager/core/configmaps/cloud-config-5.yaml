@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+data:
+  cloud.conf: |
+    [Global]
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:13Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:cloud.conf: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0db12e5-71d2-48d7-bff2-5fd0ab67e13d"}: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:11:13Z"
+  name: cloud-config-5
+  namespace: openshift-kube-controller-manager
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-5
+    uid: c0db12e5-71d2-48d7-bff2-5fd0ab67e13d
+  resourceVersion: "22299"
+  uid: 156c3779-3b8f-4713-9f82-d71b27eb3400

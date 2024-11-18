@@ -1,0 +1,3 @@
+NAME                PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+gp2-csi             ebs.csi.aws.com   Delete          WaitForFirstConsumer   true                   88m
+gp3-csi (default)   ebs.csi.aws.com   Delete          WaitForFirstConsumer   true                   88m

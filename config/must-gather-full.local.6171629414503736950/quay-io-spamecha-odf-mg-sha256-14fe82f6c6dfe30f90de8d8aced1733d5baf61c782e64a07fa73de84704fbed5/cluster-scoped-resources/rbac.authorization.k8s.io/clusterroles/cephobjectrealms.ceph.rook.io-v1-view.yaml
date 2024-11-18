@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:39Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-38cd97520e769cdd-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-38cd97520e769cdd-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"290ceeec-637a-4424-819e-b814cf505c8e"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:39Z"
+  name: cephobjectrealms.ceph.rook.io-v1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephobjectrealms.ceph.rook.io
+    uid: 290ceeec-637a-4424-819e-b814cf505c8e
+  resourceVersion: "34574"
+  uid: b08aeca3-e6ea-44fd-b944-5281eb1894ae
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectrealms
+  verbs:
+  - get
+  - list
+  - watch

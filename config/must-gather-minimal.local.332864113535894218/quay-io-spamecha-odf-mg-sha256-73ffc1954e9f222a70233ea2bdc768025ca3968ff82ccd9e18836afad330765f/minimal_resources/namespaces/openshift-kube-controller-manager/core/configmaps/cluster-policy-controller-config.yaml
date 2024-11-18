@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+data:
+  config.yaml: '{"apiVersion":"openshiftcontrolplane.config.openshift.io/v1","featureGates":["AdminNetworkPolicy=false","AdmissionWebhookMatchConditions=false","AlibabaPlatform=true","AutomatedEtcdBackup=false","AzureWorkloadIdentity=true","BuildCSIVolumes=true","CSIDriverSharedResource=false","CloudDualStackNodeIPs=true","DynamicResourceAllocation=false","EventedPLEG=false","ExternalCloudProvider=false","ExternalCloudProviderAzure=true","ExternalCloudProviderExternal=true","ExternalCloudProviderGCP=false","GCPLabelsTags=false","GatewayAPI=false","InsightsConfigAPI=false","MachineAPIOperatorDisableMachineHealthCheckController=false","MachineAPIProviderOpenStack=false","MaxUnavailableStatefulSet=false","NetworkLiveMigration=false","NodeSwap=false","OpenShiftPodSecurityAdmission=false","PrivateHostedZoneAWS=true","RetroactiveDefaultStorageClass=false","RouteExternalCertificate=false","SigstoreImageVerification=false","VSphereStaticIPs=false","ValidatingAdmissionPolicy=false"],"kind":"OpenShiftControllerManagerConfig","serviceServingCert":{},"servingInfo":{"bindAddress":"0.0.0.0:10357","bindNetwork":"tcp","certFile":"/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.crt","cipherSuites":["TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256","TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"],"clientCA":"/etc/kubernetes/static-pod-certs/configmaps/client-ca/ca-bundle.crt","keyFile":"/etc/kubernetes/static-pod-resources/secrets/serving-cert/tls.key","minTLSVersion":"VersionTLS12"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:55Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:config.yaml: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:02:55Z"
+  name: cluster-policy-controller-config
+  namespace: openshift-kube-controller-manager
+  resourceVersion: "7509"
+  uid: 9f35a1b2-6aa9-4cdd-a50b-e429312ea866

@@ -1,0 +1,67 @@
+---
+apiVersion: v1
+data:
+  service-ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDUTCCAjmgAwIBAgIIV6y065t+YYYwDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE
+    Awwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTczMTI5NDE0MjAe
+    Fw0yNDExMTEwMzAyMjFaFw0yNzAxMTAwMzAyMjJaMDYxNDAyBgNVBAMMK29wZW5z
+    aGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE3MzEyOTQxNDIwggEiMA0GCSqG
+    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBpiU3d1Phhx8/ksLzUPqoIV6IxXChKFGD
+    g5y0JdluMrWZYbsmTG7mvztgwqr162yzEjGHrEZLGunN74PZ8QVerXqVeUvgSCIT
+    pzKchHhUQQDJooM6n5d7n7RxIKzFvFb2Sm5/SuTMOxuC/1xC1MFrJ1X0/7D9SEci
+    nJECrhWF/u1PVRhg5ivXuQ7PjrtO86NK8NVJM39U9R/IYKLRJ1BmYuDimtCkm2eJ
+    kcT+JufePN1C4pRy59YCrCS9lLLMDK6cljdnE/AGGmbNDQJY8DXzqwrxejR/H9a7
+    9FeQNE9YfNFWbU6ZQWnm+3nu42zrBaFdaumefjNJphjzoBDsNXXlAgMBAAGjYzBh
+    MA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBT7IcZm
+    wLf5o7pw4Zd3HhyHdA8rSzAfBgNVHSMEGDAWgBT7IcZmwLf5o7pw4Zd3HhyHdA8r
+    SzANBgkqhkiG9w0BAQsFAAOCAQEAVQ++WJT9M7drgWElxNgFru19ccE4YpAIawW4
+    jUQBj0KZgl9CQYnfMtli0p3TIirJPZMmHKVsEC3tnG09a3IYcr0EFZGcbzdCsD1C
+    aP9PVkWM34lldJB0ma8meIZFQ+qPPR9URdtY0neNHP7vf9l5/lxp7uaQersY/v1j
+    1MvWUcZj0K6doWb9adDMevOKJM1Zw05tuDjahQ0kOzDdcAShlAcswaFMX0N4YHtx
+    iXlYtSV0/V0/HLxmV5wCe+3p3wzEtUUjjudiNYHDTImLZ8rw2GMgYq6s1uJ4aJM1
+    zcpOwe0R0r+RVPOX0Lsyms22GUaM2OZ8+DbhfsvJx9NSh/3gZA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+    release.openshift.io/create-only: "true"
+    service.beta.openshift.io/inject-cabundle: "true"
+  creationTimestamp: "2024-11-11T02:59:14Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+          f:release.openshift.io/create-only: {}
+          f:service.beta.openshift.io/inject-cabundle: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:14Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:service-ca.crt: {}
+    manager: service-ca-operator
+    operation: Update
+    time: "2024-11-11T03:02:48Z"
+  name: etcd-service-ca-bundle
+  namespace: openshift-etcd-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "7204"
+  uid: 010533be-8ce2-4317-889f-b7636ce922d7

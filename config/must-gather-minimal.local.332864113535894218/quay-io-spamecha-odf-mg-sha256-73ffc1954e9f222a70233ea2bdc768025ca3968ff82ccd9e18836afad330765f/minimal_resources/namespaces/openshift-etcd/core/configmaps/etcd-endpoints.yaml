@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+data:
+  652e9690a7d5b238: 10.0.76.169
+  79553d7fc8928de4: 10.0.112.145
+  346035a2e5c1671b: 10.0.47.7
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T02:59:15Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:652e9690a7d5b238: {}
+        f:79553d7fc8928de4: {}
+        f:346035a2e5c1671b: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:06:48Z"
+  name: etcd-endpoints
+  namespace: openshift-etcd
+  resourceVersion: "28022"
+  uid: e1ba40c5-5ee7-4911-9469-17f6bcdb88ea

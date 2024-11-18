@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:21Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: service-ca-operator
+    operation: Update
+    time: "2024-11-11T03:02:21Z"
+  name: system:openshift:controller:service-ca
+  resourceVersion: "5610"
+  uid: befb897b-7421-4db7-8890-0dad14fb0b72
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:controller:service-ca
+subjects:
+- kind: ServiceAccount
+  name: service-ca
+  namespace: openshift-service-ca

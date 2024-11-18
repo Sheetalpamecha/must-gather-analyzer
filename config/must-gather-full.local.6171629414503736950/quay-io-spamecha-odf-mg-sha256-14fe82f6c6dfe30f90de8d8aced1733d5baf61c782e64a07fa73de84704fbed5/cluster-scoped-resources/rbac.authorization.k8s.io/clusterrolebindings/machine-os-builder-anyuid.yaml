@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:04:03Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: machine-config-operator
+    operation: Update
+    time: "2024-11-11T03:04:03Z"
+  name: machine-os-builder-anyuid
+  resourceVersion: "10537"
+  uid: 04d199bf-d195-440c-af44-a10922591290
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:anyuid
+subjects:
+- kind: ServiceAccount
+  name: machine-os-builder
+  namespace: openshift-machine-config-operator

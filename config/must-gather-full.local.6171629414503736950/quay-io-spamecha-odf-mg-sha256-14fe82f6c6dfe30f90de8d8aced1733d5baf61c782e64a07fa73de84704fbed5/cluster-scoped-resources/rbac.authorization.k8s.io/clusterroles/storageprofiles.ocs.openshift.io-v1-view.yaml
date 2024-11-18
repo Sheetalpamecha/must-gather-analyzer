@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:37Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-8dfc2a63e2feb6c9-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-8dfc2a63e2feb6c9-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"e94b5285-aa3c-4121-922c-68c9222c2e03"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:37Z"
+  name: storageprofiles.ocs.openshift.io-v1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: storageprofiles.ocs.openshift.io
+    uid: e94b5285-aa3c-4121-922c-68c9222c2e03
+  resourceVersion: "34366"
+  uid: 4950810e-d26d-4b3b-8537-5959390435c3
+rules:
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageprofiles
+  verbs:
+  - get
+  - list
+  - watch

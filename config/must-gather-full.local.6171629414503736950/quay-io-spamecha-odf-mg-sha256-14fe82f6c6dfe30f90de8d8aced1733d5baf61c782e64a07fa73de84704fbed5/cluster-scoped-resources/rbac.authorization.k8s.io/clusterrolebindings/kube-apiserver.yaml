@@ -1,0 +1,28 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T02:58:54Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:58:54Z"
+  name: kube-apiserver
+  resourceVersion: "544"
+  uid: a8084a48-9d69-4ba8-b653-5fe55acb402d
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kube-apiserver
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: kube-apiserver
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:kube-apiserver

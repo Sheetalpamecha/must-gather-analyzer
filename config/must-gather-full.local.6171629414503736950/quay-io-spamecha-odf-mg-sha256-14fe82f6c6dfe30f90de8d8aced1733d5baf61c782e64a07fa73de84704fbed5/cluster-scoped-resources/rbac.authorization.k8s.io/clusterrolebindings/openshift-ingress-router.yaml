@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:03:20Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:03:20Z"
+  name: openshift-ingress-router
+  resourceVersion: "8955"
+  uid: 4dc0237e-6332-4a12-bfdc-ac2c85ee3578
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: openshift-ingress-router
+subjects:
+- kind: ServiceAccount
+  name: router
+  namespace: openshift-ingress

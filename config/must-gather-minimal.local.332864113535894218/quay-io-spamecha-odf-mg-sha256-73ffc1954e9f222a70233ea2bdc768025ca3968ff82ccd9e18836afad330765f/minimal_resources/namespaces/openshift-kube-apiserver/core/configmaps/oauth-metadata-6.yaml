@@ -1,0 +1,59 @@
+---
+apiVersion: v1
+data:
+  oauthMetadata: |-
+    {
+      "issuer": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org",
+      "authorization_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/authorize",
+      "token_endpoint": "https://oauth-openshift.apps.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org/oauth/token",
+      "scopes_supported": [
+        "user:check-access",
+        "user:full",
+        "user:info",
+        "user:list-projects",
+        "user:list-scoped-projects"
+      ],
+      "response_types_supported": [
+        "code",
+        "token"
+      ],
+      "grant_types_supported": [
+        "authorization_code",
+        "implicit"
+      ],
+      "code_challenge_methods_supported": [
+        "plain",
+        "S256"
+      ]
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:39Z"
+  labels:
+    app: oauth-openshift
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:oauthMetadata: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5446608c-9ebc-48b8-ac3a-565019d6b5b9"}: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:11:39Z"
+  name: oauth-metadata-6
+  namespace: openshift-kube-apiserver
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-6
+    uid: 5446608c-9ebc-48b8-ac3a-565019d6b5b9
+  resourceVersion: "24736"
+  uid: 8b245628-8ef7-4875-b337-9518b85d468f

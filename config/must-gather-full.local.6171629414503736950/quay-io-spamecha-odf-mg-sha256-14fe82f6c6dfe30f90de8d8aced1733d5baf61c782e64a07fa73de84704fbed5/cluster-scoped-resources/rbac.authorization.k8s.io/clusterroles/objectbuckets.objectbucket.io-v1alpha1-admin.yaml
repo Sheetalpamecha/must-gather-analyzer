@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:26Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5fbfa308-1726-40ff-a39c-a9e4f53cdee5"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:26Z"
+  name: objectbuckets.objectbucket.io-v1alpha1-admin
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: objectbuckets.objectbucket.io
+    uid: 5fbfa308-1726-40ff-a39c-a9e4f53cdee5
+  resourceVersion: "34087"
+  uid: ec30612f-4576-4181-8e3b-f063d631ba31
+rules:
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - '*'

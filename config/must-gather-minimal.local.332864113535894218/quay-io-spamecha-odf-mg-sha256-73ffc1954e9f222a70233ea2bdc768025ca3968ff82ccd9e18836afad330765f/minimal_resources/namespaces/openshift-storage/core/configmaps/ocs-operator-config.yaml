@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+data:
+  CSI_CEPHFS_KERNEL_MOUNT_OPTIONS: ms_mode=prefer-crc
+  CSI_CLUSTER_NAME: 51bc86c4-35d5-4938-9848-c4edcc2684e9
+  CSI_ENABLE_READ_AFFINITY: "true"
+  CSI_ENABLE_TOPOLOGY: "false"
+  CSI_TOPOLOGY_DOMAIN_LABELS: ""
+  ROOK_CSI_ENABLE_NFS: "false"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:25:09Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:CSI_CEPHFS_KERNEL_MOUNT_OPTIONS: {}
+        f:CSI_CLUSTER_NAME: {}
+        f:CSI_ENABLE_READ_AFFINITY: {}
+        f:CSI_ENABLE_TOPOLOGY: {}
+        f:CSI_TOPOLOGY_DOMAIN_LABELS: {}
+        f:ROOK_CSI_ENABLE_NFS: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"4f4dac99-8841-44b1-91bf-95caf5e84e6b"}: {}
+    manager: ocs-operator
+    operation: Update
+    time: "2024-11-11T03:25:09Z"
+  name: ocs-operator-config
+  namespace: openshift-storage
+  ownerReferences:
+  - apiVersion: ocs.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: OCSInitialization
+    name: ocsinit
+    uid: 4f4dac99-8841-44b1-91bf-95caf5e84e6b
+  resourceVersion: "33484"
+  uid: f07a2dc2-3033-409b-837a-5bb3374f6e2b

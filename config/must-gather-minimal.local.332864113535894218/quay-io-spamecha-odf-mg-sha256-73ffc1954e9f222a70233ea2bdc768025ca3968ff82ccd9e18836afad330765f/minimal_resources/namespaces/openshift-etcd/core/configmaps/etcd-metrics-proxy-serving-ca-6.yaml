@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDRzCCAi+gAwIBAgIICXFibAczWOAwDQYJKoZIhvcNAQELBQAwMTESMBAGA1UE
+    CxMJb3BlbnNoaWZ0MRswGQYDVQQDExJldGNkLW1ldHJpYy1zaWduZXIwHhcNMjQx
+    MTExMDI1NzA2WhcNMzQxMTA5MDI1NzA3WjAxMRIwEAYDVQQLEwlvcGVuc2hpZnQx
+    GzAZBgNVBAMTEmV0Y2QtbWV0cmljLXNpZ25lcjCCASIwDQYJKoZIhvcNAQEBBQAD
+    ggEPADCCAQoCggEBALACZC2hB64b7LBRgcNCqBPbqu4om0UtWOuGe3FS2l9sMc1d
+    HZjfaY6d1Lvq6ardlxI2iHoYWn2xGilCZ8zbDFoSdnra5pWpjEbKkkWQnqiC2WSp
+    8/et68B8Q2CTEnyiZqwUr1f91EIWQWgYP1gq6hEsWMMUAumG13qq8IU4cuf8lvD5
+    3m0wOx1uGuMKRrn0TDnZbDlSNt/Az2rwVz635ZitRTEpbjX6uvuPBrdYjO/yT+XO
+    QgePxwJkjhxaG8F9h5vKJSoFOYgunNDioF27J31vYVLQCYu2i7slMXVyfPIoKk7D
+    t1mIieMTaX5UKhH9u5ALnxnC3CYBvoOnOLYBpzMCAwEAAaNjMGEwDgYDVR0PAQH/
+    BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFP4S3J74hSEFXRWd/mWs
+    YZWByhsLMB8GA1UdIwQYMBaAFP4S3J74hSEFXRWd/mWsYZWByhsLMA0GCSqGSIb3
+    DQEBCwUAA4IBAQB/XHPG/ogRByqP3hfunwbrDugjL0zGUJ+htN91k1xbvIuLGKI3
+    F2QprAapQNYejeYyRpWjde6gvkKV8QqHFvLnki4ImNUcjWxw7V9q7mV4FggZK0Wy
+    T6igyOiDLTE+F3KfKhXPhydP2jKkY/dJxBAhRnR2z18T2jNGbdRISalrAIO0wLzZ
+    4TR0cUIvA2tZjOPUq/GvPbsQjB8VJ6zV+qGQTr+PCttjJzxxuZXNPLTdRxCGx8gN
+    djWT3n2hxg6KS6CKj4Yk7pYfGnDo2k/YJosOAfoxWDSoGR2FWgrHc8wkpveII+R5
+    tFEJ9NzAJ3mahs5P2r5eD0qmhcNC1QcQLPZ1
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:15:50Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca-bundle.crt: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3a2d2c3f-65bc-42a9-887d-05b5ffe6b4f6"}: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:15:50Z"
+  name: etcd-metrics-proxy-serving-ca-6
+  namespace: openshift-etcd
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-6
+    uid: 3a2d2c3f-65bc-42a9-887d-05b5ffe6b4f6
+  resourceVersion: "28634"
+  uid: 8b9be5f6-ee5a-4d1d-bb7f-153d33e851d8

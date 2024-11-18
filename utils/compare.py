@@ -1,10 +1,14 @@
+"""
+Utilities for loading standards and comparing YAML data against them.
+"""
+
 import json
 
 def load_standards(standards_file):
     """
     Load the predefined standard configurations.
     """
-    with open(standards_file, 'r') as f:
+    with open(standards_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 def compare_with_standards(data, standards):

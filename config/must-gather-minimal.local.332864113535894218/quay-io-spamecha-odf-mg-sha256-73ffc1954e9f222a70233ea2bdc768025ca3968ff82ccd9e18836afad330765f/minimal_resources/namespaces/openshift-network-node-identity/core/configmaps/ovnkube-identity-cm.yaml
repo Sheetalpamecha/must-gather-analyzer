@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+data:
+  additional-cert-acceptance-cond.json: |
+    [{
+      "commonNamePrefix":"system:multus",
+      "organizations": ["system:multus"],
+      "groups": ["system:nodes", "system:multus", "system:authenticated"],
+      "userPrefixes": ["system:node", "system:multus"]
+    }]
+  additional-pod-admission-cond.json: |
+    [{
+      "commonNamePrefix":"system:multus",
+      "allowedPodAnnotations": ["k8s.v1.cni.cncf.io/network-status"]
+    }]
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: |
+      This configmap contains the ovnkube-identity configuration files.
+  creationTimestamp: "2024-11-11T03:01:38Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:additional-cert-acceptance-cond.json: {}
+        f:additional-pod-admission-cond.json: {}
+      f:metadata:
+        f:annotations:
+          f:kubernetes.io/description: {}
+        f:ownerReferences:
+          k:{"uid":"3fc47453-0621-4bee-ac3f-e3cec88fc937"}: {}
+    manager: cluster-network-operator/operconfig
+    operation: Apply
+    time: "2024-11-11T03:01:38Z"
+  name: ovnkube-identity-cm
+  namespace: openshift-network-node-identity
+  ownerReferences:
+  - apiVersion: operator.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Network
+    name: cluster
+    uid: 3fc47453-0621-4bee-ac3f-e3cec88fc937
+  resourceVersion: "4074"
+  uid: 3db01bb3-6926-4142-9f9d-5c8fbcc55207

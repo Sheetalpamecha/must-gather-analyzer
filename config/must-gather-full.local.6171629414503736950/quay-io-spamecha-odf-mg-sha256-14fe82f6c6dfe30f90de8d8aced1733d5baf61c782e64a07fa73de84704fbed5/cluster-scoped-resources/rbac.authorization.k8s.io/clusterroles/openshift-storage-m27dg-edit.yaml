@@ -1,0 +1,434 @@
+---
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5ccc51d57a9ce542-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-efb12a2ea66b6c64-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-9c626d79fb785c91-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-5baa5929acc62195-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8dfc2a63e2feb6c9-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-44dd4fec5da1845-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-94d2dd7a0d8806e7-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a022983f817a132c-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-62e2d1ee37777c10-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ca13f6cd334b1083-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-47bc7c1173ca756e-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-a7238dd54e2e820d-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-345775c37f11b6ca-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-f03e7265e9e6e2d5-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-b280738eede00e42-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ca0e0d0722b44db-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7ec7b67b48d8e612-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-d32acb4252badada-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-8506b5939604d5d8-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-7bb907a72dc7116e-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-97beeaad9521bbe7-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3f0f4f6281994474-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e2f792f51ea1ef2b-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-41719b2096907ede-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-38cd97520e769cdd-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-165268e7c6da0af8-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-edb57df2a130d63c-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-c08a45603993da75-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-1cf66995ee5bab83-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-ed14b8217d5f81fc-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-3a054534430a3631-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e58adfe3b19e9184-edit: "true"
+  - matchLabels:
+      olm.opgroup.permissions/aggregate-to-e8f8d1de207c635c-edit: "true"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:23:57Z"
+  labels:
+    olm.owner: openshift-storage-m27dg
+    olm.owner.kind: OperatorGroup
+    olm.owner.namespace: openshift-storage
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: clusterrole-aggregation-controller
+    operation: Apply
+    time: "2024-11-11T04:27:55Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:aggregationRule:
+        .: {}
+        f:clusterRoleSelectors: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T04:27:55Z"
+  name: openshift-storage-m27dg-edit
+  resourceVersion: "63286"
+  uid: 86a0d851-0f46-4f12-839c-4103954aba59
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbuckettopics
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstoreusers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemmirrors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageprofiles
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageconsumers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectstores
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpoolradosnamespaces
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - odf.openshift.io
+  resources:
+  - storagesystems
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaas
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephcosidrivers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephnfses
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclusters
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystems
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - noobaa.io
+  resources:
+  - namespacestores
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclusters
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - ocsinitializations
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzones
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephclients
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbucketclaims
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbucketnotifications
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectzonegroups
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephobjectrealms
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ocs.openshift.io
+  resources:
+  - storageclassrequests
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaaaccounts
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephfilesystemsubvolumegroups
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - noobaa.io
+  resources:
+  - bucketclasses
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephrbdmirrors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - noobaa.io
+  resources:
+  - backingstores
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplicationclasses
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpools
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

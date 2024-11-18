@@ -1,0 +1,40 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:58Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: machine-config-operator
+    operation: Update
+    time: "2024-11-11T03:03:58Z"
+  name: machine-config-server
+  resourceVersion: "10326"
+  uid: 4a676441-77a2-416e-88ef-78b3a3460041
+rules:
+- apiGroups:
+  - machineconfiguration.openshift.io
+  resources:
+  - machineconfigs
+  - machineconfigpools
+  verbs:
+  - '*'
+- apiGroups:
+  - machineconfiguration.openshift.io
+  resources:
+  - controllerconfigs
+  verbs:
+  - get
+  - watch
+  - list
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - hostnetwork
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use

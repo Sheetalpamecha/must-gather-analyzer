@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:21Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-dcf38262ab6c693d-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"940d92da-9888-4b74-9dea-9c52c1852095"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:21Z"
+  name: reclaimspacecronjobs.csiaddons.openshift.io-v1alpha1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: reclaimspacecronjobs.csiaddons.openshift.io
+    uid: 940d92da-9888-4b74-9dea-9c52c1852095
+  resourceVersion: "33799"
+  uid: e0900089-3ac1-461b-800b-016bbbdb2a71
+rules:
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - get
+  - list
+  - watch

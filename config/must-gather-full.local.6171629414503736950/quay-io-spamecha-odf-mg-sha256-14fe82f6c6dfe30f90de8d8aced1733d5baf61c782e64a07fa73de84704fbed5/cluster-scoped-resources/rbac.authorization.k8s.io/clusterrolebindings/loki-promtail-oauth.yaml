@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T02:59:07Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:59:07Z"
+  name: loki-promtail-oauth
+  resourceVersion: "1039"
+  uid: 82a89eb7-71aa-4acb-a81b-b2c8c37d915d
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: loki-promtail-oauth
+subjects:
+- kind: ServiceAccount
+  name: loki-promtail
+  namespace: openshift-e2e-loki

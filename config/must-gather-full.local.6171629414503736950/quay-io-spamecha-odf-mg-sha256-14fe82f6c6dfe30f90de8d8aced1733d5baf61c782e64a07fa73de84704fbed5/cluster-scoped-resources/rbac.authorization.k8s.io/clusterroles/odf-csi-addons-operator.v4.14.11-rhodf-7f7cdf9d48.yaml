@@ -1,0 +1,238 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:24:57Z"
+  labels:
+    olm.owner: odf-csi-addons-operator.v4.14.11-rhodf
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-storage
+    operators.coreos.com/odf-csi-addons-operator.openshift-storage: ""
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:rules: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:57Z"
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:operators.coreos.com/odf-csi-addons-operator.openshift-storage: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:26:38Z"
+  name: odf-csi-addons-operator.v4.14.11-rhodf-7f7cdf9d48
+  resourceVersion: "35777"
+  uid: b25f2eee-4828-4426-8b89-cde50ed3e67b
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - get
+  - list
+  - patch
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - networkfences/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacecronjobs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - reclaimspacejobs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplicationclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications
+  verbs:
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - replication.storage.openshift.io
+  resources:
+  - volumereplications/status
+  verbs:
+  - update
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - volumeattachments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - subjectaccessreviews
+  verbs:
+  - create

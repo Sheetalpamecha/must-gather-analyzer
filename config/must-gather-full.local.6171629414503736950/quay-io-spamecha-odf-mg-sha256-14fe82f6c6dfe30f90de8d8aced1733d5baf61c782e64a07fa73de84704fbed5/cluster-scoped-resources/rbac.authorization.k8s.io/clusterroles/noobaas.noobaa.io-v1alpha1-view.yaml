@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:24Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-ca13f6cd334b1083-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-ca13f6cd334b1083-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"ab1cea9d-bacd-4236-8d05-a093e1d905cc"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:24Z"
+  name: noobaas.noobaa.io-v1alpha1-view
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: noobaas.noobaa.io
+    uid: ab1cea9d-bacd-4236-8d05-a093e1d905cc
+  resourceVersion: "33936"
+  uid: b97acbb6-957e-4963-8c73-e350849e6238
+rules:
+- apiGroups:
+  - noobaa.io
+  resources:
+  - noobaas
+  verbs:
+  - get
+  - list
+  - watch

@@ -1,0 +1,39 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:03:19Z"
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/name: prometheus-operator
+    app.kubernetes.io/part-of: openshift-monitoring
+    app.kubernetes.io/version: 0.67.1
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:03:19Z"
+  name: prometheus-operator
+  resourceVersion: "8719"
+  uid: 44dd61b8-ff0a-4bc6-bdee-8f8ce1e8bac3
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: prometheus-operator
+subjects:
+- kind: ServiceAccount
+  name: prometheus-operator
+  namespace: openshift-monitoring

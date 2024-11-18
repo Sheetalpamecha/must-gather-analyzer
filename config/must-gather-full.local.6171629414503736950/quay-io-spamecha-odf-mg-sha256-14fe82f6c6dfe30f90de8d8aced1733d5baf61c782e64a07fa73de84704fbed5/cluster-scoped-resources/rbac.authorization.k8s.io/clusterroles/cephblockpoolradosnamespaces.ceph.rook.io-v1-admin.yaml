@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:41Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-a022983f817a132c-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-a022983f817a132c-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"bbb41633-7607-4707-a526-b96324ca94f8"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:41Z"
+  name: cephblockpoolradosnamespaces.ceph.rook.io-v1-admin
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephblockpoolradosnamespaces.ceph.rook.io
+    uid: bbb41633-7607-4707-a526-b96324ca94f8
+  resourceVersion: "34694"
+  uid: 2d60437b-37ec-42c2-8aca-eead9db13d3c
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephblockpoolradosnamespaces
+  verbs:
+  - '*'

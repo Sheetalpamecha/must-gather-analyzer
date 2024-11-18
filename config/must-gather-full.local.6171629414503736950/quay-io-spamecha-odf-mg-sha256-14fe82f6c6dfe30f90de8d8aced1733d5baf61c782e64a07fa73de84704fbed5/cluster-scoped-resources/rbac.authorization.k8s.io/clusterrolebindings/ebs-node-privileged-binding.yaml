@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:45Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: aws-ebs-csi-driver-operator
+    operation: Update
+    time: "2024-11-11T03:02:45Z"
+  name: ebs-node-privileged-binding
+  resourceVersion: "6963"
+  uid: 733c3e31-fe62-4426-a4df-0b4f83e4a134
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: ebs-privileged-role
+subjects:
+- kind: ServiceAccount
+  name: aws-ebs-csi-driver-node-sa
+  namespace: openshift-cluster-csi-drivers

@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+data:
+  images.json: |
+    {
+      "releaseVersion": "4.14.0-0.nightly-2024-11-08-043134",
+      "machineConfigOperator": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:63ca558e85e48843b803d131bf63a8233bc2d23859577007051494cfbbe344b8",
+      "infraImage": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:20cbce304e3173a90e51b9a53ceadf6bda881996c6d7991bcb96cef048ef0b98",
+      "keepalivedImage": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:97b648896b7d57a078369fc7a488d07631553dd29bd91cf92e39f6b86cf2e685",
+      "corednsImage": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4d347f8de26ac3b5781cc2eaa99232b87d4f6ad45c7b4b3ca493d37e1f6e4382",
+      "haproxyImage": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:c7a779a9828b4db3d76275c5f691e31d1e2ed4ec9037a024744da1a1daecb7ab",
+      "baremetalRuntimeCfgImage": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:c6bc7a8d93c1d3da82dc60e4886ada2617b365d162967604d4a175386d7a6279",
+      "oauthProxy": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0ef9892f291b93e40e8ef4b7a9832d866663a5ebb1d952f9d7934bc21ba25022",
+      "kubeRbacProxy": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8c839bb3665955bcf151f5d5b2fe26187c5070c4812739b7f0b83af7f6cf7afa"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:22Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:images.json: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:22Z"
+  name: machine-config-operator-images
+  namespace: openshift-machine-config-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1664"
+  uid: 66b37568-66dd-42cd-bad4-a87c78e58925

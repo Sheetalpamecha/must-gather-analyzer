@@ -1,0 +1,88 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:34Z"
+  labels:
+    authorization.openshift.io/aggregate-to-basic-user: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+        f:labels:
+          .: {}
+          f:authorization.openshift.io/aggregate-to-basic-user: {}
+      f:rules: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:34Z"
+  name: system:openshift:aggregate-to-basic-user
+  resourceVersion: "11516"
+  uid: f160c724-f2ec-4730-a30c-beb21df4efd7
+rules:
+- apiGroups:
+  - ""
+  - user.openshift.io
+  resourceNames:
+  - "~"
+  resources:
+  - users
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  - project.openshift.io
+  resources:
+  - projectrequests
+  verbs:
+  - list
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - clusterroles
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterroles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - storageclasses
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - ""
+  - project.openshift.io
+  resources:
+  - projects
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - selfsubjectrulesreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - selfsubjectaccessreviews
+  verbs:
+  - create

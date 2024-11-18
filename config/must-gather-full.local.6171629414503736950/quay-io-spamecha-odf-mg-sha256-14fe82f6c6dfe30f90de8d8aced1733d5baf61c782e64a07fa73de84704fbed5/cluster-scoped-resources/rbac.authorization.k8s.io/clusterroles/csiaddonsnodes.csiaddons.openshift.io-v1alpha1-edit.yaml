@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:21Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-575e4aee41cbbc35-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c566595f-d932-4049-a6a0-caecd1030d49"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:21Z"
+  name: csiaddonsnodes.csiaddons.openshift.io-v1alpha1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: csiaddonsnodes.csiaddons.openshift.io
+    uid: c566595f-d932-4049-a6a0-caecd1030d49
+  resourceVersion: "33744"
+  uid: 339bb713-bb18-4436-9cff-89908519bdf1
+rules:
+- apiGroups:
+  - csiaddons.openshift.io
+  resources:
+  - csiaddonsnodes
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

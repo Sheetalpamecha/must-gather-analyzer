@@ -1,0 +1,59 @@
+---
+apiVersion: v1
+data:
+  daemon-config.json: |
+    {
+        "cniVersion": "0.3.1",
+        "chrootDir": "/hostroot",
+        "logToStderr": true,
+        "logLevel": "verbose",
+        "binDir": "/var/lib/cni/bin",
+
+        "perNodeCertificate": {
+          "enabled": true,
+          "bootstrapKubeconfig": "/var/lib/kubelet/kubeconfig",
+          "certDir": "/etc/cni/multus/certs",
+          "certDuration": "24h"
+        },
+
+        "cniConfigDir": "/host/etc/cni/net.d",
+        "multusConfigFile": "auto",
+        "multusAutoconfigDir": "/host/run/multus/cni/net.d",
+        "namespaceIsolation": true,
+        "globalNamespaces": "default,openshift-multus,openshift-sriov-network-operator",
+        "readinessindicatorfile": "/host/run/multus/cni/net.d/10-ovn-kubernetes.conf",
+        "daemonSocketDir": "/run/multus/socket",
+        "socketDir": "/host/run/multus/socket"
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:01:04Z"
+  labels:
+    app: multus
+    tier: node
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:daemon-config.json: {}
+      f:metadata:
+        f:labels:
+          f:app: {}
+          f:tier: {}
+        f:ownerReferences:
+          k:{"uid":"3fc47453-0621-4bee-ac3f-e3cec88fc937"}: {}
+    manager: cluster-network-operator/operconfig
+    operation: Apply
+    time: "2024-11-11T03:01:04Z"
+  name: multus-daemon-config
+  namespace: openshift-multus
+  ownerReferences:
+  - apiVersion: operator.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Network
+    name: cluster
+    uid: 3fc47453-0621-4bee-ac3f-e3cec88fc937
+  resourceVersion: "3495"
+  uid: dedcd928-020a-4a56-8daa-a4f3fbbc5471

@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  creationTimestamp: "2024-11-11T03:04:34Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:rbac.authorization.kubernetes.io/autoupdate: {}
+      f:rules: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2024-11-11T03:04:34Z"
+  name: sudoer
+  resourceVersion: "11491"
+  uid: b5cea49f-b2be-4cb9-9bb5-a50c9f1d584b
+rules:
+- apiGroups:
+  - ""
+  - user.openshift.io
+  resourceNames:
+  - system:admin
+  resources:
+  - systemusers
+  - users
+  verbs:
+  - impersonate
+- apiGroups:
+  - ""
+  - user.openshift.io
+  resourceNames:
+  - system:masters
+  resources:
+  - groups
+  - systemgroups
+  verbs:
+  - impersonate

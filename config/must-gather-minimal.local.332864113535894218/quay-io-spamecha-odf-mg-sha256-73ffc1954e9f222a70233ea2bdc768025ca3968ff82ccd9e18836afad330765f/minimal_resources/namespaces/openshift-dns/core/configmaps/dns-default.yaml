@@ -1,0 +1,62 @@
+---
+apiVersion: v1
+data:
+  Corefile: |
+    .:5353 {
+        bufsize 1232
+        errors
+        log . {
+            class error
+        }
+        health {
+            lameduck 20s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+            pods insecure
+            fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus 127.0.0.1:9153
+        forward . /etc/resolv.conf {
+            policy sequential
+        }
+        cache 900 {
+            denial 9984 30
+        }
+        reload
+    }
+    hostname.bind:5353 {
+        chaos
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:03:20Z"
+  labels:
+    dns.operator.openshift.io/owning-dns: default
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:Corefile: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:dns.operator.openshift.io/owning-dns: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"f96681ef-eb81-42eb-b50f-c078ddbcc7d8"}: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:03:20Z"
+  name: dns-default
+  namespace: openshift-dns
+  ownerReferences:
+  - apiVersion: operator.openshift.io/v1
+    controller: true
+    kind: DNS
+    name: default
+    uid: f96681ef-eb81-42eb-b50f-c078ddbcc7d8
+  resourceVersion: "8963"
+  uid: c5807f63-b49e-41a4-9b10-6ae920315150

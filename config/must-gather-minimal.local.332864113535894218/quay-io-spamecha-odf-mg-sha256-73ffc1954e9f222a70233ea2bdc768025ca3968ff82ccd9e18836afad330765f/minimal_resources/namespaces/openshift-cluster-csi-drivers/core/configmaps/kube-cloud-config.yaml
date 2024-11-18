@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+data:
+  cloud.conf: |
+    [Global]
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:43Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:cloud.conf: {}
+    manager: aws-ebs-csi-driver-operator
+    operation: Update
+    time: "2024-11-11T03:02:43Z"
+  name: kube-cloud-config
+  namespace: openshift-cluster-csi-drivers
+  resourceVersion: "6828"
+  uid: d826899b-9716-4e17-a3ef-12d0fdba9c1f

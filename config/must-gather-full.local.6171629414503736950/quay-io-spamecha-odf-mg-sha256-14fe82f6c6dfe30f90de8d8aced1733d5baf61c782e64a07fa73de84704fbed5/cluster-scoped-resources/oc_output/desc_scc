@@ -1,0 +1,538 @@
+Name:						anyuid
+Priority:					10
+Access:						
+  Users:					<none>
+  Groups:					system:cluster-admins
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			MKNOD
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						hostaccess
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,hostPath,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				true
+  Allow Host IPC:				true
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsRange		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						hostmount-anyuid
+Priority:					<none>
+Access:						
+  Users:					system:serviceaccount:openshift-infra:pv-recycler-controller
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			MKNOD
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,hostPath,nfs,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						hostnetwork
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsRange		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: MustRunAs	
+    Ranges:					<none>
+
+
+Name:						hostnetwork-v2
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			false
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			ALL
+  Allowed Capabilities:				NET_BIND_SERVICE
+  Allowed Seccomp Profiles:			runtime/default
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsRange		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: MustRunAs	
+    Ranges:					<none>
+
+
+Name:						machine-api-termination-handler
+Priority:					<none>
+Access:						
+  Users:					system:serviceaccount:openshift-machine-api:machine-api-termination-handler
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				downwardAPI,hostPath
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: MustRunAs	
+    Ranges:					<none>
+
+
+Name:						node-exporter
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				true
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			<none>
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				*
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				true
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: RunAsAny		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						nonroot
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsNonRoot	
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						nonroot-v2
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			false
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			ALL
+  Allowed Capabilities:				NET_BIND_SERVICE
+  Allowed Seccomp Profiles:			runtime/default
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsNonRoot	
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						noobaa
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			ALL
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				awsElasticBlockStore,azureDisk,azureFile,cephFS,cinder,configMap,csi,downwardAPI,emptyDir,ephemeral,fc,flexVolume,flocker,gcePersistentDisk,gitRepo,glusterfs,iscsi,nfs,persistentVolumeClaim,photonPersistentDisk,portworxVolume,projected,quobyte,rbd,scaleIO,secret,storageOS,vsphere
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			true
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: RunAsAny		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						privileged
+Priority:					<none>
+Access:						
+  Users:					system:admin,system:serviceaccount:openshift-infra:build-controller
+  Groups:					system:cluster-admins,system:nodes,system:masters
+Settings:					
+  Allow Privileged:				true
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			<none>
+  Allowed Capabilities:				*
+  Allowed Seccomp Profiles:			*
+  Allowed Volume Types:				*
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			*
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				true
+  Allow Host IPC:				true
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: RunAsAny		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						restricted
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			KILL,MKNOD,SETUID,SETGID
+  Allowed Capabilities:				<none>
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsRange		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						restricted-v2
+Priority:					<none>
+Access:						
+  Users:					<none>
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				false
+  Allow Privilege Escalation:			false
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			ALL
+  Allowed Capabilities:				NET_BIND_SERVICE
+  Allowed Seccomp Profiles:			runtime/default
+  Allowed Volume Types:				configMap,csi,downwardAPI,emptyDir,ephemeral,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				false
+  Allow Host Ports:				false
+  Allow Host PID:				false
+  Allow Host IPC:				false
+  Read Only Root Filesystem:			false
+  Run As User Strategy: MustRunAsRange		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						rook-ceph
+Priority:					<none>
+Access:						
+  Users:					system:serviceaccount:openshift-storage:rook-ceph-system,system:serviceaccount:openshift-storage:default,system:serviceaccount:openshift-storage:rook-ceph-mgr,system:serviceaccount:openshift-storage:rook-ceph-osd,system:serviceaccount:openshift-storage:rook-ceph-rgw
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				true
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			ALL
+  Allowed Capabilities:				MKNOD
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,downwardAPI,emptyDir,hostPath,persistentVolumeClaim,projected,secret
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				false
+  Allow Host IPC:				true
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: MustRunAs		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: MustRunAs			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>
+
+
+Name:						rook-ceph-csi
+Priority:					<none>
+Access:						
+  Users:					system:serviceaccount:openshift-storage:rook-csi-rbd-plugin-sa,system:serviceaccount:openshift-storage:rook-csi-rbd-provisioner-sa,system:serviceaccount:openshift-storage:rook-csi-cephfs-plugin-sa,system:serviceaccount:openshift-storage:rook-csi-cephfs-provisioner-sa,system:serviceaccount:openshift-storage:rook-csi-nfs-plugin-sa,system:serviceaccount:openshift-storage:rook-csi-nfs-provisioner-sa
+  Groups:					<none>
+Settings:					
+  Allow Privileged:				true
+  Allow Privilege Escalation:			true
+  Default Add Capabilities:			<none>
+  Required Drop Capabilities:			<none>
+  Allowed Capabilities:				SYS_ADMIN
+  Allowed Seccomp Profiles:			<none>
+  Allowed Volume Types:				configMap,emptyDir,hostPath,projected
+  Allowed Flexvolumes:				<all>
+  Allowed Unsafe Sysctls:			<none>
+  Forbidden Sysctls:				<none>
+  Allow Host Network:				true
+  Allow Host Ports:				true
+  Allow Host PID:				true
+  Allow Host IPC:				true
+  Read Only Root Filesystem:			false
+  Run As User Strategy: RunAsAny		
+    UID:					<none>
+    UID Range Min:				<none>
+    UID Range Max:				<none>
+  SELinux Context Strategy: RunAsAny		
+    User:					<none>
+    Role:					<none>
+    Type:					<none>
+    Level:					<none>
+  FSGroup Strategy: RunAsAny			
+    Ranges:					<none>
+  Supplemental Groups Strategy: RunAsAny	
+    Ranges:					<none>

@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:37Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-165268e7c6da0af8-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-165268e7c6da0af8-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"23f42c40-7cb4-476f-8f5a-595efd3d6e7d"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:37Z"
+  name: storageclassrequests.ocs.openshift.io-v1alpha1-crdview
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: storageclassrequests.ocs.openshift.io
+    uid: 23f42c40-7cb4-476f-8f5a-595efd3d6e7d
+  resourceVersion: "34307"
+  uid: 0a8fffb3-0edf-4b05-8943-53a63133c067
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - storageclassrequests.ocs.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get

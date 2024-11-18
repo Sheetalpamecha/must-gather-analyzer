@@ -1,0 +1,35 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:03:06Z"
+  labels:
+    olm.owner: packageserver
+    olm.owner.kind: ClusterServiceVersion
+    olm.owner.namespace: openshift-operator-lifecycle-manager
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+          f:olm.owner.kind: {}
+          f:olm.owner.namespace: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:03:06Z"
+  name: packageserver-service-system:auth-delegator
+  resourceVersion: "8161"
+  uid: 0c82f841-9a19-4c7d-8339-c1f0c0464881
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+- kind: ServiceAccount
+  name: olm-operator-serviceaccount
+  namespace: openshift-operator-lifecycle-manager

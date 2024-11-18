@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+data:
+  operator-config.yaml: |
+    apiVersion: operator.openshift.io/v1alpha1
+    kind: GenericOperatorConfig
+kind: ConfigMap
+metadata:
+  annotations:
+    capability.openshift.io/name: CSISnapshot
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:09Z"
+  labels:
+    app: csi-snapshot-controller-operator
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:operator-config.yaml: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:labels:
+          .: {}
+          f:app: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:09Z"
+  name: csi-snapshot-controller-operator-config
+  namespace: openshift-cluster-storage-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1125"
+  uid: 8bcf7e2b-5fc4-4f85-b9b4-1c4ed6e1638d

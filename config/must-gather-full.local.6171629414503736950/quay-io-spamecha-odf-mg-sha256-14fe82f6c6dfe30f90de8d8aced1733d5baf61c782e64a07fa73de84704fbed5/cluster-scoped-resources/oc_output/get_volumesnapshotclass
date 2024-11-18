@@ -1,0 +1,2 @@
+NAME          DRIVER            DELETIONPOLICY   AGE
+csi-aws-vsc   ebs.csi.aws.com   Delete           88m

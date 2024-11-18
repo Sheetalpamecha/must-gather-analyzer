@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T02:59:03Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:59:03Z"
+  name: event-exporter
+  resourceVersion: "813"
+  uid: fbad22fb-73a4-4c4c-bc2b-cdf46ee397f9
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+- kind: ServiceAccount
+  name: event-exporter
+  namespace: openshift-e2e-loki

@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"ip-10-0-112-145_d2478f78-8390-4060-9f6a-c4a6c22099c0","leaseDurationSeconds":137,"acquireTime":"2024-11-11T03:10:39Z","renewTime":"2024-11-11T04:56:57Z","leaderTransitions":1}'
+  creationTimestamp: "2024-11-11T02:58:53Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:control-plane.alpha.kubernetes.io/leader: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T04:56:57Z"
+  name: version
+  namespace: openshift-cluster-version
+  resourceVersion: "76083"
+  uid: a62ce4e0-da9a-4621-966b-f2a3574a3d0c

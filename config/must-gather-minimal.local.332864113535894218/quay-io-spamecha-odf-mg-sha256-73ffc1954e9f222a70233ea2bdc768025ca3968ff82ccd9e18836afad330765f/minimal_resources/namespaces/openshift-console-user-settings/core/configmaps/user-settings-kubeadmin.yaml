@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+data:
+  console.clusterDashboard.gettingStarted: show
+  console.communityProvidersWarning: "false"
+  console.createOperandForm.editor.lastView: form
+  console.guidedTour: '{"admin":{"completed":false}}'
+  console.hideUserWorkloadNotifications: "true"
+  console.lastPerspective: admin
+  console.perspective.visited.admin: "true"
+  console.pinnedResources: "null"
+  console.preferredLanguage: "null"
+  console.quickstart.active: ""
+  console.quickstart.allStates: '{}'
+  console.theme: systemDefault
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:22:45Z"
+  name: user-settings-kubeadmin
+  namespace: openshift-console-user-settings
+  resourceVersion: "46137"
+  uid: 01a51143-d50c-4553-8585-173b9519443a

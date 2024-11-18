@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDOTCCAiGgAwIBAgIIdAk35ZpE/uwwDQYJKoZIhvcNAQELBQAwKjESMBAGA1UE
+    CxMJb3BlbnNoaWZ0MRQwEgYDVQQDEwtldGNkLXNpZ25lcjAeFw0yNDExMTEwMjU3
+    MDZaFw0zNDExMDkwMjU3MDdaMCoxEjAQBgNVBAsTCW9wZW5zaGlmdDEUMBIGA1UE
+    AxMLZXRjZC1zaWduZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCz
+    1DTaFjJoFRc1+pP51yIjtFBLkfPPOglaSb1QxnFBrguh7i9H+RWbhXYE8dzEqJje
+    0+f9NfHWzd39V5ToLXNu2xkxAUMEa+2Uz2JZ4eFzDpfA6YKFREjhyGoowjxRkndZ
+    zU+KOg9QK8xldFem90IlJyrAxLBhSEKWr8qVs6Ywh9fZn5ySHNGbQghcRW163WEv
+    a5MCUpXwSoJGrTMXJodSwavUUgln+lAhehdV3vQmJfqMugKEFoDraXK/A9NKBFfk
+    qsZ3+iaN/+ox7sbqehwicqVcvifpjT/XVF/8zn40O0nfIl/okmtUk9MBVwfy1rF4
+    nvK2v2FKSFtRNpoAjZrvAgMBAAGjYzBhMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMB
+    Af8EBTADAQH/MB0GA1UdDgQWBBRzuoCzZbZOtG0uDuQWPNpgKOz4TjAfBgNVHSME
+    GDAWgBRzuoCzZbZOtG0uDuQWPNpgKOz4TjANBgkqhkiG9w0BAQsFAAOCAQEAEYt5
+    eLoI7tBF4pnJPUKNXESxomQYnumHMjIcqQBQtdYYUk36jddasUOTQeHvzWLoELht
+    ZanXS8odHJiZX1cILEpUUZfWibexJ5OlscCNoRK2FLxk5vCjJZN//cbJK8nq957s
+    GHWVZmaRgB1d5A9vPYAB6SknTUgKPhNzdBFlqr+xZTYEnl/qwjQBCgvVhdtjcNuU
+    APKh4rg90tTaRH0OII+7izJbuJvy8IFDreJq1TWlMWHuZvfYz0PovLcnODcB+BDu
+    SfaQIYAutqC4D99thzMKHxakyoGKcU1SrdYR57Aqr3yiHbykZPl9ehDcyI400xUY
+    /1IYJ26aI2Qn4vSHtA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:04:52Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca-bundle.crt: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"50380b3a-ff15-4332-8371-f0ee21726a20"}: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:04:52Z"
+  name: etcd-serving-ca-2
+  namespace: openshift-kube-apiserver
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-2
+    uid: 50380b3a-ff15-4332-8371-f0ee21726a20
+  resourceVersion: "12122"
+  uid: 49279cac-0ecf-4ef6-9074-23fde5532c4a

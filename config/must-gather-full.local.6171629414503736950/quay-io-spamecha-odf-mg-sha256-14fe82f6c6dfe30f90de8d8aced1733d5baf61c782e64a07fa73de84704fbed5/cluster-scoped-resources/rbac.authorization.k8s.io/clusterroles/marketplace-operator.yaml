@@ -1,0 +1,73 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    capability.openshift.io/name: marketplace
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:06Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+      f:rules: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:06Z"
+  name: marketplace-operator
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1008"
+  uid: 8248c649-40ea-4ad4-be8c-915ada3419f4
+rules:
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - clusteroperators
+  - operatorhubs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - config.openshift.io
+  resourceNames:
+  - marketplace
+  resources:
+  - clusteroperators/status
+  verbs:
+  - patch
+  - update
+- apiGroups:
+  - config.openshift.io
+  resourceNames:
+  - cluster
+  resources:
+  - operatorhubs/status
+  verbs:
+  - patch
+  - update
+- apiGroups:
+  - operators.coreos.com
+  resources:
+  - catalogsources
+  verbs:
+  - get
+  - list
+  - watch

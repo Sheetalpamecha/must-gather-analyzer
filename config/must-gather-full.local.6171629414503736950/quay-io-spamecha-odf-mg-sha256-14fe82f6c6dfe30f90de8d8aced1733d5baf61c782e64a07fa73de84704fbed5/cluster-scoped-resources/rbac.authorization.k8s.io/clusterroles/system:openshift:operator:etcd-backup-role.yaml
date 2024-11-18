@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:02:26Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: cluster-etcd-operator
+    operation: Update
+    time: "2024-11-11T03:02:26Z"
+  name: system:openshift:operator:etcd-backup-role
+  resourceVersion: "5989"
+  uid: ed2b9474-b5b3-4eaa-b380-73cbcba2495e
+rules:
+- apiGroups:
+  - operator.openshift.io
+  resources:
+  - etcdbackups
+  - etcdbackups/status
+  - etcdbackups/finalizers
+  verbs:
+  - create
+  - update
+  - delete
+- apiGroups:
+  - batch
+  resources:
+  - jobs/finalizers
+  verbs:
+  - update

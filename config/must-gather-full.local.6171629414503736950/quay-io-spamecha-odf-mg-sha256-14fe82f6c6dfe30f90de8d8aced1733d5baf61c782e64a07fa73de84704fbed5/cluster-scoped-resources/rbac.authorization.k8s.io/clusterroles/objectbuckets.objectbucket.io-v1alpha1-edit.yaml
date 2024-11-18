@@ -1,0 +1,44 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:26Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-ae84757a03b4800b-edit: {}
+          f:rbac.authorization.k8s.io/aggregate-to-edit: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5fbfa308-1726-40ff-a39c-a9e4f53cdee5"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:26Z"
+  name: objectbuckets.objectbucket.io-v1alpha1-edit
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: objectbuckets.objectbucket.io
+    uid: 5fbfa308-1726-40ff-a39c-a9e4f53cdee5
+  resourceVersion: "34093"
+  uid: 992bb87c-c05f-4f17-ba27-865acee4ff11
+rules:
+- apiGroups:
+  - objectbucket.io
+  resources:
+  - objectbuckets
+  verbs:
+  - create
+  - update
+  - patch
+  - delete

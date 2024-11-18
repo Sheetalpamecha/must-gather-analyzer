@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:02:20Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: csi-snapshot-controller-operator
+    operation: Update
+    time: "2024-11-11T03:02:20Z"
+  name: csi-snapshot-webhook-clusterrole
+  resourceVersion: "5214"
+  uid: a0bda48a-7b9e-4c84-bb2d-b3ee5e324a49
+rules:
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshotclasses
+  verbs:
+  - get
+  - list
+  - watch

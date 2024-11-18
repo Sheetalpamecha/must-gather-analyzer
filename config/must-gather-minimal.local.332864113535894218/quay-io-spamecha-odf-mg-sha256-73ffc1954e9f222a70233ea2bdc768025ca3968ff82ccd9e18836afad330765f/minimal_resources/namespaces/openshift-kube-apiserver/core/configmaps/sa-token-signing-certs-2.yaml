@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+data:
+  service-account-001.pub: |
+    -----BEGIN RSA PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8U6ySgT7ZOIOLnU3sTXD
+    1lWlWX1HZcmK3FH74YKejpV9vs7lAQ17nxBuDnCfrsxbPHQ04POjc1hx6H0OFIya
+    kWLtYEVr8OOmK6kfP+/yU2L6EOT1WV9FPjnmoNHo5PYD7+Ae46tdtSbRWntqlDVF
+    HgAQM58qhDorrLuoTlcCXMBQZr+Yq33RPB3bZJTh+KcianzVZDsfWdUwXdzmMhGY
+    RQDBaNHJkYljtOlJ0w3hpzQf/OHM1F3Nkje+ocjnqjWLrLZr9YNYHNflYSpw/+Zj
+    u7FXGMgh9ci6gkTVDRQGmlzgU2S4R/VL05pW0dg2MbxnzoMsPa57GqrOBS8EMh4n
+    GQIDAQAB
+    -----END RSA PUBLIC KEY-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:04:55Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:service-account-001.pub: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"50380b3a-ff15-4332-8371-f0ee21726a20"}: {}
+    manager: cluster-kube-apiserver-operator
+    operation: Update
+    time: "2024-11-11T03:04:55Z"
+  name: sa-token-signing-certs-2
+  namespace: openshift-kube-apiserver
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-2
+    uid: 50380b3a-ff15-4332-8371-f0ee21726a20
+  resourceVersion: "12199"
+  uid: 423da917-a38c-4f83-bbe8-0b636360eb5e

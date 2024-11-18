@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:44Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: aws-ebs-csi-driver-operator
+    operation: Update
+    time: "2024-11-11T03:02:44Z"
+  name: ebs-csi-storageclass-reader-resizer-binding
+  resourceVersion: "6842"
+  uid: 0fe9d264-8136-4308-9a6f-9d340a49a903
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: openshift-csi-resizer-storageclass-reader-role
+subjects:
+- kind: ServiceAccount
+  name: aws-ebs-csi-driver-controller-sa
+  namespace: openshift-cluster-csi-drivers

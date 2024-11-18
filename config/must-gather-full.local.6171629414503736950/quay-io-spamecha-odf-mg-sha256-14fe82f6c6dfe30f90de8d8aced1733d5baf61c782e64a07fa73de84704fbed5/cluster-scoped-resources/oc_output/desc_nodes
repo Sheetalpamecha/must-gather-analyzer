@@ -1,0 +1,962 @@
+Name:               ip-10-0-105-93.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-105-93.ec2.internal
+                    kubernetes.io/os=linux
+                    machine.openshift.io/interruptible-instance=
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1c
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1c
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0922bd536acd15d1a","ifaddr":{"ipv4":"10.0.64.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-08a4d89d3e9708cef"}
+                    k8s.ovn.org/host-cidrs: ["10.0.105.93/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-105-93.ec2.internal","mac-address":"12:b3:57:87:b6:a3","ip-addresses":["10.0.105...
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: 1051696b-c098-42a2-9b2d-e7924e1586f9
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.5/16"}
+                    k8s.ovn.org/node-id: 5
+                    k8s.ovn.org/node-mgmt-port-mac-address: e6:1a:9a:bf:7c:e0
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.105.93/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.131.0.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.5/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-105-93.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-105-93.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-worker-us-east-1c-g8drp
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 03:07:10 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-105-93.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:42 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:29:51 +0000   Mon, 11 Nov 2024 03:07:10 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:29:51 +0000   Mon, 11 Nov 2024 03:07:10 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:29:51 +0000   Mon, 11 Nov 2024 03:07:10 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:29:51 +0000   Mon, 11 Nov 2024 03:10:04 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.105.93
+  InternalDNS:  ip-10-0-105-93.ec2.internal
+  Hostname:     ip-10-0-105-93.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                             ec2a0e66229729a5755bcfeaf9a2d1d2
+  System UUID:                            ec2a0e66-2297-29a5-755b-cfeaf9a2d1d2
+  Boot ID:                                442ea810-e4e9-40f5-816a-c88a7604f204
+  Kernel Version:                         5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                        v1.27.16+03a907c
+  Kube-Proxy Version:                     v1.27.16+03a907c
+ProviderID:                               aws:///us-east-1c/i-08a4d89d3e9708cef
+Non-terminated Pods:                      (31 in total)
+  Namespace                               Name                                                      CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                                      ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-22str                             30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         84m
+  openshift-cluster-node-tuning-operator  tuned-s6wxx                                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         84m
+  openshift-console                       downloads-86947bd9f9-jnhzp                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         80m
+  openshift-dns                           dns-default-vmw4c                                         60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         81m
+  openshift-dns                           node-resolver-qzh7k                                       5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         84m
+  openshift-e2e-loki                      loki-promtail-b8dp7                                       40m (1%)      0 (0%)      90Mi (0%)        0 (0%)         84m
+  openshift-image-registry                image-registry-75d6bdf747-q98j2                           100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         80m
+  openshift-image-registry                node-ca-p5bt5                                             10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         80m
+  openshift-ingress-canary                ingress-canary-kn5tk                                      10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         81m
+  openshift-ingress                       router-default-7b5785d7fc-bdcm9                           100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         88m
+  openshift-machine-api                   machine-api-termination-handler-4982t                     10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         84m
+  openshift-machine-config-operator       kube-rbac-proxy-crio-ip-10-0-105-93.ec2.internal          20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         84m
+  openshift-machine-config-operator       machine-config-daemon-prm2k                               40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         84m
+  openshift-monitoring                    alertmanager-main-0                                       9m (0%)       0 (0%)      120Mi (0%)       0 (0%)         23m
+  openshift-monitoring                    monitoring-plugin-55c4d4b49c-4thsx                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    node-exporter-xzt48                                       9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    prometheus-adapter-7c8b477754-7gq77                       1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    prometheus-k8s-0                                          75m (2%)      0 (0%)      1104Mi (7%)      0 (0%)         79m
+  openshift-monitoring                    prometheus-operator-admission-webhook-648b9846f5-g4vmf    5m (0%)       0 (0%)      30Mi (0%)        0 (0%)         88m
+  openshift-monitoring                    thanos-querier-757cdc96fc-m2g6g                           15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         80m
+  openshift-multus                        multus-additional-cni-plugins-lc9bk                       10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         84m
+  openshift-multus                        multus-cssfm                                              10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         84m
+  openshift-multus                        network-metrics-daemon-qj8qm                              20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         84m
+  openshift-network-diagnostics           network-check-source-6c9c85974b-plbdn                     10m (0%)      0 (0%)      40Mi (0%)        0 (0%)         90m
+  openshift-network-diagnostics           network-check-target-z97jf                                10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         84m
+  openshift-ovn-kubernetes                ovnkube-node-q6qhd                                        80m (2%)      0 (0%)      1630Mi (11%)     0 (0%)         84m
+  openshift-storage                       ip-10-0-105-93ec2internal-debug-d8tj2                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         71s
+  openshift-storage                       noobaa-operator-66c974fdc-lg4j8                           250m (7%)     250m (7%)   512Mi (3%)       512Mi (3%)     23m
+  openshift-storage                       ocs-operator-7bdf6c8b7-nb7r7                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         23m
+  openshift-storage                       odf-console-776756b857-nc8r7                              100m (2%)     100m (2%)   512Mi (3%)       512Mi (3%)     23m
+  openshift-storage                       ux-backend-server-7bfc4bdf6-m7npq                         0 (0%)        0 (0%)      0 (0%)           0 (0%)         66m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                1059m (30%)   350m (10%)
+  memory             5570Mi (38%)  1Gi (7%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                 From                   Message
+  ----     ------                   ----                ----                   -------
+  Warning  ErrorAddingResource      84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Normal   NodeHasSufficientPID     84m                 kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasSufficientPID
+  Normal   NodeHasNoDiskPressure    84m (x2 over 84m)   kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory  84m (x2 over 84m)   kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasSufficientMemory
+  Normal   Starting                 84m                 kubelet                Starting kubelet.
+  Warning  ErrorUpdatingResource    84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-105-93.ec2.internal"]
+  Warning  ErrorUpdatingResource    84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-105-93.ec2.internal"]
+  Warning  ErrorUpdatingResource    84m (x2 over 84m)   controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    84m (x2 over 84m)   controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    84m (x2 over 84m)   controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Normal   Synced                   84m                 cloud-node-controller  Node synced successfully
+  Normal   RegisteredNode           84m                 node-controller        Node ip-10-0-105-93.ec2.internal event: Registered Node ip-10-0-105-93.ec2.internal in Controller
+  Warning  ErrorUpdatingResource    84m                 controlplane           [adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal, error parsing annotation for node ip-10-0-105-93.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-105-93.ec2.internal"]
+  Normal   Starting                 84m                 kubelet                Starting kubelet.
+  Normal   NodeAllocatableEnforced  84m                 kubelet                Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientPID     84m (x2 over 84m)   kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasSufficientPID
+  Normal   NodeHasNoDiskPressure    84m (x2 over 84m)   kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory  84m (x2 over 84m)   kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeHasSufficientMemory
+  Warning  ErrorUpdatingResource    83m (x13 over 84m)  controlplane           adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal
+  Warning  ErrorUpdatingResource    83m (x13 over 84m)  controlplane           adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal
+  Warning  ErrorUpdatingResource    83m (x13 over 84m)  controlplane           adding or updating remote node chassis ip-10-0-105-93.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-105-93.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-105-93.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-105-93.ec2.internal
+  Normal   RegisteredNode           81m                 node-controller        Node ip-10-0-105-93.ec2.internal event: Registered Node ip-10-0-105-93.ec2.internal in Controller
+  Normal   NodeReady                81m                 kubelet                Node ip-10-0-105-93.ec2.internal status is now: NodeReady
+  Normal   RegisteredNode           79m                 node-controller        Node ip-10-0-105-93.ec2.internal event: Registered Node ip-10-0-105-93.ec2.internal in Controller
+  Normal   RegisteredNode           76m                 node-controller        Node ip-10-0-105-93.ec2.internal event: Registered Node ip-10-0-105-93.ec2.internal in Controller
+  Normal   RegisteredNode           74m                 node-controller        Node ip-10-0-105-93.ec2.internal event: Registered Node ip-10-0-105-93.ec2.internal in Controller
+
+
+Name:               ip-10-0-112-145.ec2.internal
+Roles:              control-plane,master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-112-145.ec2.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1c
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1c
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0e1c2669895ae4427","ifaddr":{"ipv4":"10.0.64.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0090384b71c0eb188"}
+                    k8s.ovn.org/host-cidrs: ["10.0.112.145/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-112-145.ec2.internal","mac-address":"12:04:ee:a9:6f:fb","ip-addresses":["10.0.11...
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: accc8835-8cea-47e6-a656-4cdb01a88b1a
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.2/16"}
+                    k8s.ovn.org/node-id: 2
+                    k8s.ovn.org/node-mgmt-port-mac-address: a6:71:d7:69:bb:52
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.112.145/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.130.0.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.2/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-112-145.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-112-145.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-master-2
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 03:00:24 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-112-145.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:47 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:31:14 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:31:14 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:31:14 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:31:14 +0000   Mon, 11 Nov 2024 03:02:00 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.112.145
+  InternalDNS:  ip-10-0-112-145.ec2.internal
+  Hostname:     ip-10-0-112-145.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                             ec2724631f4326108f209685598c592d
+  System UUID:                            ec272463-1f43-2610-8f20-9685598c592d
+  Boot ID:                                feecf61c-6868-4053-b0ae-1cc9241d5872
+  Kernel Version:                         5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                        v1.27.16+03a907c
+  Kube-Proxy Version:                     v1.27.16+03a907c
+ProviderID:                               aws:///us-east-1c/i-0090384b71c0eb188
+Non-terminated Pods:                      (41 in total)
+  Namespace                               Name                                                           CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                                           ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver                     apiserver-5bb9748fcc-spllc                                     110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         80m
+  openshift-authentication                oauth-openshift-768dbc8bb6-5m4h2                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         79m
+  openshift-cloud-credential-operator     pod-identity-webhook-558c4bb847-2zj2n                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         81m
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-controller-847c7f899c-mft6q                 110m (3%)     0 (0%)      400Mi (2%)       0 (0%)         87m
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-t4tb6                                  30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         88m
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-operator-7c687d9798-kbs9c                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         89m
+  openshift-cluster-node-tuning-operator  tuned-6ssd8                                                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-cluster-samples-operator      cluster-samples-operator-594b64957-7t58z                       20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         87m
+  openshift-cluster-storage-operator      csi-snapshot-controller-764774df6-gbwxd                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         89m
+  openshift-cluster-storage-operator      csi-snapshot-webhook-77b675f768-2wd8q                          10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         89m
+  openshift-cluster-version               cluster-version-operator-66b67c58bb-rdg8p                      20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-console                       console-747bc5cfd7-2bsj5                                       10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         67m
+  openshift-controller-manager            controller-manager-7547f844c9-8ckwg                            100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+  openshift-dns                           dns-default-8h6v4                                              60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         88m
+  openshift-dns                           node-resolver-cfk5p                                            5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         88m
+  openshift-e2e-loki                      loki-promtail-ms6gv                                            40m (1%)      0 (0%)      90Mi (0%)        0 (0%)         91m
+  openshift-etcd                          etcd-guard-ip-10-0-112-145.ec2.internal                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         87m
+  openshift-etcd                          etcd-ip-10-0-112-145.ec2.internal                              360m (10%)    0 (0%)      910Mi (6%)       0 (0%)         74m
+  openshift-image-registry                node-ca-l87wc                                                  10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         80m
+  openshift-kube-apiserver                kube-apiserver-guard-ip-10-0-112-145.ec2.internal              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         83m
+  openshift-kube-apiserver                kube-apiserver-ip-10-0-112-145.ec2.internal                    290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         71m
+  openshift-kube-controller-manager       kube-controller-manager-guard-ip-10-0-112-145.ec2.internal     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         85m
+  openshift-kube-controller-manager       kube-controller-manager-ip-10-0-112-145.ec2.internal           80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         75m
+  openshift-kube-scheduler                openshift-kube-scheduler-guard-ip-10-0-112-145.ec2.internal    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         87m
+  openshift-kube-scheduler                openshift-kube-scheduler-ip-10-0-112-145.ec2.internal          25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         79m
+  openshift-machine-config-operator       kube-rbac-proxy-crio-ip-10-0-112-145.ec2.internal              20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-machine-config-operator       machine-config-daemon-cjgkd                                    40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         88m
+  openshift-machine-config-operator       machine-config-server-kjcmf                                    20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         87m
+  openshift-monitoring                    node-exporter-6gxlh                                            9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         80m
+  openshift-multus                        multus-2tcsp                                                   10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         90m
+  openshift-multus                        multus-additional-cni-plugins-vftmf                            10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         90m
+  openshift-multus                        network-metrics-daemon-tngt8                                   20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         90m
+  openshift-must-gather-6tc69             must-gather-b8fgc                                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         73s
+  openshift-network-diagnostics           network-check-target-qtgtk                                     10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         90m
+  openshift-network-node-identity         network-node-identity-n6bpl                                    20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         90m
+  openshift-network-operator              network-operator-7f989f69db-2gtbt                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-oauth-apiserver               apiserver-5ff458449d-7qx9g                                     150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         84m
+  openshift-ovn-kubernetes                ovnkube-control-plane-74dfc4df6c-fztg5                         20m (0%)      0 (0%)      320Mi (2%)       0 (0%)         90m
+  openshift-ovn-kubernetes                ovnkube-node-g8jlr                                             80m (2%)      0 (0%)      1630Mi (11%)     0 (0%)         89m
+  openshift-route-controller-manager      route-controller-manager-76ccfc568d-nf9jb                      100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+  openshift-service-ca                    service-ca-865b76d966-qs48p                                    10m (0%)      0 (0%)      120Mi (0%)       0 (0%)         89m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                1899m (54%)   0 (0%)
+  memory             7392Mi (50%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason               Age   From                   Message
+  ----     ------               ----  ----                   -------
+  Normal   RegisteredNode       91m   node-controller        Node ip-10-0-112-145.ec2.internal event: Registered Node ip-10-0-112-145.ec2.internal in Controller
+  Normal   Synced               91m   cloud-node-controller  Node synced successfully
+  Warning  ErrorAddingResource  89m   controlplane           adding or updating remote node chassis ip-10-0-112-145.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-112-145.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-112-145.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-112-145.ec2.internal
+  Warning  ErrorAddingResource  89m   controlplane           adding or updating remote node chassis ip-10-0-112-145.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-112-145.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-112-145.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-112-145.ec2.internal
+  Normal   RegisteredNode       81m   node-controller        Node ip-10-0-112-145.ec2.internal event: Registered Node ip-10-0-112-145.ec2.internal in Controller
+  Normal   RegisteredNode       79m   node-controller        Node ip-10-0-112-145.ec2.internal event: Registered Node ip-10-0-112-145.ec2.internal in Controller
+  Normal   RegisteredNode       76m   node-controller        Node ip-10-0-112-145.ec2.internal event: Registered Node ip-10-0-112-145.ec2.internal in Controller
+  Normal   RegisteredNode       74m   node-controller        Node ip-10-0-112-145.ec2.internal event: Registered Node ip-10-0-112-145.ec2.internal in Controller
+
+
+Name:               ip-10-0-25-79.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-25-79.ec2.internal
+                    kubernetes.io/os=linux
+                    machine.openshift.io/interruptible-instance=
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1a
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0cf9eac52970ccaf5","ifaddr":{"ipv4":"10.0.0.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-07cb23c704945a4e1"}
+                    k8s.ovn.org/host-cidrs: ["10.0.25.79/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-25-79.ec2.internal","mac-address":"0e:ce:eb:21:52:37","ip-addresses":["10.0.25.7...
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: ef0025dd-6421-424d-8bc7-4fb8ca207511
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.6/16"}
+                    k8s.ovn.org/node-id: 6
+                    k8s.ovn.org/node-mgmt-port-mac-address: a2:78:5e:5c:84:f4
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.25.79/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.128.2.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.6/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-25-79.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-25-79.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-worker-us-east-1a-kglkv
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 03:07:56 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-25-79.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:41 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:29:41 +0000   Mon, 11 Nov 2024 03:07:56 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:29:41 +0000   Mon, 11 Nov 2024 03:07:56 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:29:41 +0000   Mon, 11 Nov 2024 03:07:56 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:29:41 +0000   Mon, 11 Nov 2024 03:10:30 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.25.79
+  InternalDNS:  ip-10-0-25-79.ec2.internal
+  Hostname:     ip-10-0-25-79.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                             ec2414c4dbb9e8c13fcc59c7c0730151
+  System UUID:                            ec2414c4-dbb9-e8c1-3fcc-59c7c0730151
+  Boot ID:                                40fd1ce1-de4f-4f3e-8349-c7cbf4528da4
+  Kernel Version:                         5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                        v1.27.16+03a907c
+  Kube-Proxy Version:                     v1.27.16+03a907c
+ProviderID:                               aws:///us-east-1a/i-07cb23c704945a4e1
+Non-terminated Pods:                      (32 in total)
+  Namespace                               Name                                                      CPU Requests  CPU Limits   Memory Requests  Memory Limits  Age
+  ---------                               ----                                                      ------------  ----------   ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-7j457                             30m (0%)      0 (0%)       150Mi (1%)       0 (0%)         83m
+  openshift-cluster-node-tuning-operator  tuned-wcmcv                                               10m (0%)      0 (0%)       50Mi (0%)        0 (0%)         83m
+  openshift-console                       downloads-86947bd9f9-h9ljh                                10m (0%)      0 (0%)       50Mi (0%)        0 (0%)         80m
+  openshift-dns                           dns-default-924jr                                         60m (1%)      0 (0%)       110Mi (0%)       0 (0%)         81m
+  openshift-dns                           node-resolver-xqq8p                                       5m (0%)       0 (0%)       21Mi (0%)        0 (0%)         83m
+  openshift-e2e-loki                      loki-promtail-ts62w                                       40m (1%)      0 (0%)       90Mi (0%)        0 (0%)         83m
+  openshift-image-registry                image-registry-75d6bdf747-v4c82                           100m (2%)     0 (0%)       256Mi (1%)       0 (0%)         80m
+  openshift-image-registry                node-ca-g764x                                             10m (0%)      0 (0%)       10Mi (0%)        0 (0%)         80m
+  openshift-ingress-canary                ingress-canary-bmdkb                                      10m (0%)      0 (0%)       20Mi (0%)        0 (0%)         81m
+  openshift-ingress                       router-default-7b5785d7fc-l25gz                           100m (2%)     0 (0%)       256Mi (1%)       0 (0%)         88m
+  openshift-machine-api                   machine-api-termination-handler-nrgz2                     10m (0%)      0 (0%)       20Mi (0%)        0 (0%)         83m
+  openshift-machine-config-operator       kube-rbac-proxy-crio-ip-10-0-25-79.ec2.internal           20m (0%)      0 (0%)       50Mi (0%)        0 (0%)         83m
+  openshift-machine-config-operator       machine-config-daemon-vqs7p                               40m (1%)      0 (0%)       100Mi (0%)       0 (0%)         83m
+  openshift-monitoring                    alertmanager-main-1                                       9m (0%)       0 (0%)       120Mi (0%)       0 (0%)         79m
+  openshift-monitoring                    kube-state-metrics-849cb57c44-g5ztg                       4m (0%)       0 (0%)       110Mi (0%)       0 (0%)         80m
+  openshift-monitoring                    monitoring-plugin-55c4d4b49c-nqz5x                        10m (0%)      0 (0%)       50Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    node-exporter-jc7r2                                       9m (0%)       0 (0%)       47Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    openshift-state-metrics-68974fbdfc-7mgpm                  3m (0%)       0 (0%)       72Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    prometheus-adapter-7c8b477754-bjgtv                       1m (0%)       0 (0%)       40Mi (0%)        0 (0%)         80m
+  openshift-monitoring                    prometheus-k8s-1                                          75m (2%)      0 (0%)       1104Mi (7%)      0 (0%)         79m
+  openshift-monitoring                    prometheus-operator-admission-webhook-648b9846f5-pkk9h    5m (0%)       0 (0%)       30Mi (0%)        0 (0%)         88m
+  openshift-monitoring                    thanos-querier-757cdc96fc-4nb2r                           15m (0%)      0 (0%)       92Mi (0%)        0 (0%)         80m
+  openshift-multus                        multus-64hsp                                              10m (0%)      0 (0%)       65Mi (0%)        0 (0%)         83m
+  openshift-multus                        multus-additional-cni-plugins-rt6nd                       10m (0%)      0 (0%)       10Mi (0%)        0 (0%)         83m
+  openshift-multus                        network-metrics-daemon-xrbbh                              20m (0%)      0 (0%)       120Mi (0%)       0 (0%)         83m
+  openshift-network-diagnostics           network-check-target-xbghw                                10m (0%)      0 (0%)       15Mi (0%)        0 (0%)         83m
+  openshift-ovn-kubernetes                ovnkube-node-bm5sm                                        80m (2%)      0 (0%)       1630Mi (11%)     0 (0%)         83m
+  openshift-storage                       csi-addons-controller-manager-6f48d4d8cd-2wwln            20m (0%)      1500m (42%)  128Mi (0%)       640Mi (4%)     66m
+  openshift-storage                       ip-10-0-25-79ec2internal-debug-7sc9f                      0 (0%)        0 (0%)       0 (0%)           0 (0%)         71s
+  openshift-storage                       ocs-metrics-exporter-6d7b979689-7mp4p                     0 (0%)        0 (0%)       0 (0%)           0 (0%)         23m
+  openshift-storage                       odf-operator-controller-manager-985759b77-687sw           200m (5%)     200m (5%)    200Mi (1%)       300Mi (2%)     23m
+  openshift-storage                       rook-ceph-operator-6876b4d97d-c24bx                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         66m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                926m (26%)    1700m (48%)
+  memory             5016Mi (34%)  940Mi (6%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                 From                   Message
+  ----     ------                   ----                ----                   -------
+  Warning  ErrorAddingResource      83m                 controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      83m                 controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      83m                 controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    83m (x2 over 83m)   controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    83m (x2 over 83m)   controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    83m (x2 over 83m)   controlplane           [adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal, error parsing annotation for node ip-10-0-25-79.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Normal   NodeHasSufficientPID     83m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasSufficientPID
+  Normal   Starting                 83m                 kubelet                Starting kubelet.
+  Normal   NodeHasSufficientMemory  83m (x2 over 83m)   kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasSufficientMemory
+  Normal   Synced                   83m                 cloud-node-controller  Node synced successfully
+  Normal   RegisteredNode           83m                 node-controller        Node ip-10-0-25-79.ec2.internal event: Registered Node ip-10-0-25-79.ec2.internal in Controller
+  Normal   NodeHasNoDiskPressure    83m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasNoDiskPressure
+  Warning  ErrorAddingResource      83m                 controlplane           adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal
+  Normal   NodeHasNoDiskPressure    83m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasNoDiskPressure
+  Normal   Starting                 83m                 kubelet                Starting kubelet.
+  Normal   NodeAllocatableEnforced  83m                 kubelet                Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientMemory  83m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasSufficientPID     83m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeHasSufficientPID
+  Warning  ErrorUpdatingResource    83m (x13 over 83m)  controlplane           adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal
+  Warning  ErrorUpdatingResource    83m (x8 over 83m)   controlplane           adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal
+  Warning  ErrorUpdatingResource    83m (x13 over 83m)  controlplane           adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal
+  Warning  ErrorUpdatingResource    83m (x13 over 83m)  controlplane           adding or updating remote node chassis ip-10-0-25-79.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-25-79.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-25-79.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-25-79.ec2.internal
+  Normal   RegisteredNode           82m                 node-controller        Node ip-10-0-25-79.ec2.internal event: Registered Node ip-10-0-25-79.ec2.internal in Controller
+  Normal   NodeReady                81m                 kubelet                Node ip-10-0-25-79.ec2.internal status is now: NodeReady
+  Normal   RegisteredNode           79m                 node-controller        Node ip-10-0-25-79.ec2.internal event: Registered Node ip-10-0-25-79.ec2.internal in Controller
+  Normal   RegisteredNode           76m                 node-controller        Node ip-10-0-25-79.ec2.internal event: Registered Node ip-10-0-25-79.ec2.internal in Controller
+  Normal   RegisteredNode           74m                 node-controller        Node ip-10-0-25-79.ec2.internal event: Registered Node ip-10-0-25-79.ec2.internal in Controller
+
+
+Name:               ip-10-0-47-7.ec2.internal
+Roles:              control-plane,master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-47-7.ec2.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1a
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-05952eb4341d160f8","ifaddr":{"ipv4":"10.0.0.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-005a8583e80971c33"}
+                    k8s.ovn.org/host-cidrs: ["10.0.47.7/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-47-7.ec2.internal","mac-address":"0e:22:71:25:cd:37","ip-addresses":["10.0.47.7/...
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: 94d23805-d0f2-4bd1-b9cc-4b43eb9507d6
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.3/16"}
+                    k8s.ovn.org/node-id: 3
+                    k8s.ovn.org/node-mgmt-port-mac-address: 56:31:71:cc:b4:e3
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.47.7/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.128.0.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.3/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-47-7.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-47-7.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-master-1
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 03:00:24 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-47-7.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:49 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:28:18 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:28:18 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:28:18 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:28:18 +0000   Mon, 11 Nov 2024 03:02:00 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.47.7
+  InternalDNS:  ip-10-0-47-7.ec2.internal
+  Hostname:     ip-10-0-47-7.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                                  ec27a2520ebd7a00c5f0040865d714e8
+  System UUID:                                 ec27a252-0ebd-7a00-c5f0-040865d714e8
+  Boot ID:                                     c2df2064-abae-4cc5-bda4-2e08c0f3e0ab
+  Kernel Version:                              5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                                    Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                            linux
+  Architecture:                                amd64
+  Container Runtime Version:                   cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                             v1.27.16+03a907c
+  Kube-Proxy Version:                          v1.27.16+03a907c
+ProviderID:                                    aws:///us-east-1a/i-005a8583e80971c33
+Non-terminated Pods:                           (48 in total)
+  Namespace                                    Name                                                          CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                    ----                                                          ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver                          apiserver-5bb9748fcc-gqbhs                                    110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         79m
+  openshift-authentication                     oauth-openshift-768dbc8bb6-244sm                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         80m
+  openshift-cloud-controller-manager-operator  cluster-cloud-controller-manager-operator-78d77b749c-qvmk7    20m (0%)      0 (0%)      75Mi (0%)        0 (0%)         91m
+  openshift-cloud-controller-manager           aws-cloud-controller-manager-67fdcd66d-xqk47                  200m (5%)     0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-cloud-credential-operator          pod-identity-webhook-558c4bb847-w9r5r                         10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         81m
+  openshift-cluster-csi-drivers                aws-ebs-csi-driver-controller-847c7f899c-mc7k5                110m (3%)     0 (0%)      400Mi (2%)       0 (0%)         88m
+  openshift-cluster-csi-drivers                aws-ebs-csi-driver-node-zk2nl                                 30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         88m
+  openshift-cluster-node-tuning-operator       tuned-6bz4z                                                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-cluster-storage-operator           csi-snapshot-controller-764774df6-2vsvw                       10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         89m
+  openshift-cluster-storage-operator           csi-snapshot-webhook-77b675f768-69bjb                         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         89m
+  openshift-console-operator                   console-operator-675ddbc4f5-6lxrw                             20m (0%)      0 (0%)      200Mi (1%)       0 (0%)         80m
+  openshift-console                            console-747bc5cfd7-hbhpw                                      10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         67m
+  openshift-controller-manager                 controller-manager-7547f844c9-dlw94                           100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+  openshift-dns                                dns-default-p2jkl                                             60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         88m
+  openshift-dns                                node-resolver-f2n7p                                           5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         88m
+  openshift-e2e-loki                           loki-promtail-h8mh8                                           40m (1%)      0 (0%)      90Mi (0%)        0 (0%)         91m
+  openshift-etcd                               etcd-guard-ip-10-0-47-7.ec2.internal                          10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         86m
+  openshift-etcd                               etcd-ip-10-0-47-7.ec2.internal                                360m (10%)    0 (0%)      910Mi (6%)       0 (0%)         72m
+  openshift-image-registry                     node-ca-wzs4g                                                 10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         80m
+  openshift-kube-apiserver                     kube-apiserver-guard-ip-10-0-47-7.ec2.internal                10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         78m
+  openshift-kube-apiserver                     kube-apiserver-ip-10-0-47-7.ec2.internal                      290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         79m
+  openshift-kube-controller-manager            kube-controller-manager-guard-ip-10-0-47-7.ec2.internal       10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         84m
+  openshift-kube-controller-manager            kube-controller-manager-ip-10-0-47-7.ec2.internal             80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         74m
+  openshift-kube-scheduler                     openshift-kube-scheduler-guard-ip-10-0-47-7.ec2.internal      10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         85m
+  openshift-kube-scheduler                     openshift-kube-scheduler-ip-10-0-47-7.ec2.internal            25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         77m
+  openshift-kube-storage-version-migrator      migrator-757976d7d7-cpnf8                                     10m (0%)      0 (0%)      200Mi (1%)       0 (0%)         89m
+  openshift-machine-api                        machine-api-controllers-7564f64c9c-z78x9                      70m (2%)      0 (0%)      140Mi (0%)       0 (0%)         88m
+  openshift-machine-config-operator            kube-rbac-proxy-crio-ip-10-0-47-7.ec2.internal                20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-machine-config-operator            machine-config-controller-6cb6c758d6-zjf7v                    40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         88m
+  openshift-machine-config-operator            machine-config-daemon-djp5g                                   40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         88m
+  openshift-machine-config-operator            machine-config-server-45c5j                                   20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         87m
+  openshift-marketplace                        certified-operators-b9lp4                                     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-marketplace                        community-operators-gz6vc                                     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-marketplace                        redhat-marketplace-vbw5k                                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-marketplace                        redhat-operators-c4jdn                                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-monitoring                         node-exporter-tl7nc                                           9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         80m
+  openshift-monitoring                         prometheus-operator-5b6b974648-dl4pq                          6m (0%)       0 (0%)      165Mi (1%)       0 (0%)         80m
+  openshift-multus                             multus-additional-cni-plugins-t844g                           10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         90m
+  openshift-multus                             multus-admission-controller-54d654dc48-ttxfc                  20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         86m
+  openshift-multus                             multus-xxc56                                                  10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         90m
+  openshift-multus                             network-metrics-daemon-x7g8d                                  20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         90m
+  openshift-network-diagnostics                network-check-target-f7qns                                    10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         90m
+  openshift-network-node-identity              network-node-identity-cwrsf                                   20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         90m
+  openshift-oauth-apiserver                    apiserver-5ff458449d-2q4kq                                    150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         85m
+  openshift-operator-lifecycle-manager         packageserver-69fd4759f5-znm2h                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-ovn-kubernetes                     ovnkube-control-plane-74dfc4df6c-7t6cs                        20m (0%)      0 (0%)      320Mi (2%)       0 (0%)         90m
+  openshift-ovn-kubernetes                     ovnkube-node-f28n5                                            80m (2%)      0 (0%)      1630Mi (11%)     0 (0%)         88m
+  openshift-route-controller-manager           route-controller-manager-76ccfc568d-t9vds                     100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                2265m (64%)   0 (0%)
+  memory             8272Mi (56%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type    Reason          Age   From                   Message
+  ----    ------          ----  ----                   -------
+  Normal  RegisteredNode  91m   node-controller        Node ip-10-0-47-7.ec2.internal event: Registered Node ip-10-0-47-7.ec2.internal in Controller
+  Normal  Synced          91m   cloud-node-controller  Node synced successfully
+  Normal  RegisteredNode  81m   node-controller        Node ip-10-0-47-7.ec2.internal event: Registered Node ip-10-0-47-7.ec2.internal in Controller
+  Normal  RegisteredNode  79m   node-controller        Node ip-10-0-47-7.ec2.internal event: Registered Node ip-10-0-47-7.ec2.internal in Controller
+  Normal  RegisteredNode  76m   node-controller        Node ip-10-0-47-7.ec2.internal event: Registered Node ip-10-0-47-7.ec2.internal in Controller
+  Normal  RegisteredNode  74m   node-controller        Node ip-10-0-47-7.ec2.internal event: Registered Node ip-10-0-47-7.ec2.internal in Controller
+
+
+Name:               ip-10-0-65-21.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-65-21.ec2.internal
+                    kubernetes.io/os=linux
+                    machine.openshift.io/interruptible-instance=
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1c
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1c
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0c228bb82aa4099cc","ifaddr":{"ipv4":"10.0.64.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-01c7b6e24987d95c4"}
+                    k8s.ovn.org/host-cidrs: ["10.0.65.21/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-65-21.ec2.internal","mac-address":"12:8e:63:35:4c:4d","ip-addresses":["10.0.65.2...
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: f15f26c4-81db-4e37-9034-e3b8c4e46a4d
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.8/16"}
+                    k8s.ovn.org/node-id: 8
+                    k8s.ovn.org/node-mgmt-port-mac-address: 4e:d9:1d:71:cf:1b
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.65.21/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.130.2.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.8/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-65-21.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-65-21.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-worker-us-east-1c-5r4dd
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-ed9cf98e66dba9d1a5c1fb89fa063a4c
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 04:12:16 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-65-21.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:50 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:31:08 +0000   Mon, 11 Nov 2024 04:12:15 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:31:08 +0000   Mon, 11 Nov 2024 04:12:15 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:31:08 +0000   Mon, 11 Nov 2024 04:12:15 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:31:08 +0000   Mon, 11 Nov 2024 04:13:13 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.65.21
+  InternalDNS:  ip-10-0-65-21.ec2.internal
+  Hostname:     ip-10-0-65-21.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                             ec244b8456d56e5f00ac2a320938e3aa
+  System UUID:                            ec244b84-56d5-6e5f-00ac-2a320938e3aa
+  Boot ID:                                d0206225-b988-479e-9010-79b51a134427
+  Kernel Version:                         5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                        v1.27.16+03a907c
+  Kube-Proxy Version:                     v1.27.16+03a907c
+ProviderID:                               aws:///us-east-1c/i-01c7b6e24987d95c4
+Non-terminated Pods:                      (17 in total)
+  Namespace                               Name                                               CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                               ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-zb9lf                      30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         19m
+  openshift-cluster-node-tuning-operator  tuned-r8hgm                                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         19m
+  openshift-dns                           dns-default-q4p4m                                  60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         18m
+  openshift-dns                           node-resolver-zz8j2                                5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         19m
+  openshift-e2e-loki                      loki-promtail-ztbdz                                40m (1%)      0 (0%)      90Mi (0%)        0 (0%)         19m
+  openshift-image-registry                node-ca-bn8x9                                      10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         19m
+  openshift-ingress-canary                ingress-canary-8tfbv                               10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         18m
+  openshift-machine-api                   machine-api-termination-handler-f6w97              10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         19m
+  openshift-machine-config-operator       kube-rbac-proxy-crio-ip-10-0-65-21.ec2.internal    20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         19m
+  openshift-machine-config-operator       machine-config-daemon-fpd7h                        40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         19m
+  openshift-monitoring                    node-exporter-x6cm8                                9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         19m
+  openshift-multus                        multus-4w5wd                                       10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         19m
+  openshift-multus                        multus-additional-cni-plugins-76kb2                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         19m
+  openshift-multus                        network-metrics-daemon-8bng6                       20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         19m
+  openshift-network-diagnostics           network-check-target-jsmms                         10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         19m
+  openshift-ovn-kubernetes                ovnkube-node-n2xd6                                 80m (2%)      0 (0%)      1630Mi (11%)     0 (0%)         19m
+  openshift-storage                       ip-10-0-65-21ec2internal-debug-9ddxj               0 (0%)        0 (0%)      0 (0%)           0 (0%)         72s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                374m (10%)    0 (0%)
+  memory             2508Mi (17%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                 From                   Message
+  ----     ------                   ----                ----                   -------
+  Normal   Starting                 19m                 kubelet                Starting kubelet.
+  Normal   NodeHasSufficientPID     19m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasSufficientPID
+  Normal   NodeHasNoDiskPressure    19m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory  19m (x2 over 19m)   kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasSufficientMemory
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-65-21.ec2.internal"]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-65-21.ec2.internal"]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-65-21.ec2.internal"]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-65-21.ec2.internal"]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: k8s.ovn.org/node-gateway-router-lrp-ifaddr annotation not found for node "ip-10-0-65-21.ec2.internal"]
+  Warning  ErrorAddingResource      19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorUpdatingResource    19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Warning  ErrorAddingResource      19m                 controlplane           [adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal, error parsing annotation for node ip-10-0-65-21.ec2.internal: could not find "k8s.ovn.org/node-subnets" annotation]
+  Normal   Synced                   19m                 cloud-node-controller  Node synced successfully
+  Normal   RegisteredNode           19m                 node-controller        Node ip-10-0-65-21.ec2.internal event: Registered Node ip-10-0-65-21.ec2.internal in Controller
+  Normal   Starting                 19m                 kubelet                Starting kubelet.
+  Normal   NodeAllocatableEnforced  19m                 kubelet                Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientMemory  19m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    19m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     19m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeHasSufficientPID
+  Warning  ErrorUpdatingResource    18m (x13 over 19m)  controlplane           adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal
+  Warning  ErrorUpdatingResource    18m (x13 over 19m)  controlplane           adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal
+  Warning  ErrorUpdatingResource    18m (x13 over 19m)  controlplane           adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal
+  Warning  ErrorUpdatingResource    18m (x13 over 19m)  controlplane           adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal
+  Warning  ErrorUpdatingResource    18m (x13 over 19m)  controlplane           adding or updating remote node chassis ip-10-0-65-21.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-65-21.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-65-21.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-65-21.ec2.internal
+  Normal   NodeReady                18m                 kubelet                Node ip-10-0-65-21.ec2.internal status is now: NodeReady
+
+
+Name:               ip-10-0-76-169.ec2.internal
+Roles:              control-plane,master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-76-169.ec2.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-east-1c
+                    topology.kubernetes.io/region=us-east-1
+                    topology.kubernetes.io/zone=us-east-1c
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-02b22ca56aa46896c","ifaddr":{"ipv4":"10.0.64.0/18"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-05270017cd01708c3"}
+                    k8s.ovn.org/host-cidrs: ["10.0.76.169/18"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_ip-10-0-76-169.ec2.internal","mac-address":"12:5f:97:b0:7e:9f","ip-addresses":["10.0.76....
+                    k8s.ovn.org/network-ids: {"default":"0"}
+                    k8s.ovn.org/node-chassis-id: bd518365-0f72-4963-b302-2c075ad2e0ef
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.4/16"}
+                    k8s.ovn.org/node-id: 4
+                    k8s.ovn.org/node-mgmt-port-mac-address: ea:1e:e8:9e:a5:2e
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.0.76.169/18"}
+                    k8s.ovn.org/node-subnets: {"default":["10.129.0.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.4/16"}
+                    k8s.ovn.org/remote-zone-migrated: ip-10-0-76-169.ec2.internal
+                    k8s.ovn.org/zone-name: ip-10-0-76-169.ec2.internal
+                    machine.openshift.io/machine: openshift-machine-api/ci-ln-2s0x4sk-76ef8-2sx7w-master-0
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-3f9262a72aca9f5083c5f32d9757ff80
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 24564
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Nov 2024 03:00:24 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-76-169.ec2.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 11 Nov 2024 04:31:48 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 11 Nov 2024 04:29:21 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 11 Nov 2024 04:29:21 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 11 Nov 2024 04:29:21 +0000   Mon, 11 Nov 2024 03:00:24 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 11 Nov 2024 04:29:21 +0000   Mon, 11 Nov 2024 03:02:00 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.76.169
+  InternalDNS:  ip-10-0-76-169.ec2.internal
+  Hostname:     ip-10-0-76-169.ec2.internal
+Capacity:
+  cpu:                4
+  ephemeral-storage:  125238252Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16017168Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  114345831029
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14866192Ki
+  pods:               250
+System Info:
+  Machine ID:                                       ec2661e4db51dc951b1f9859b654d425
+  System UUID:                                      ec2661e4-db51-dc95-1b1f-9859b654d425
+  Boot ID:                                          40e8bfd5-72cc-4f20-a257-08a360f30517
+  Kernel Version:                                   5.14.0-284.92.1.el9_2.x86_64
+  OS Image:                                         Red Hat Enterprise Linux CoreOS 414.92.202411050055-0 (Plow)
+  Operating System:                                 linux
+  Architecture:                                     amd64
+  Container Runtime Version:                        cri-o://1.27.8-12.rhaos4.14.git7597c43.el9
+  Kubelet Version:                                  v1.27.16+03a907c
+  Kube-Proxy Version:                               v1.27.16+03a907c
+ProviderID:                                         aws:///us-east-1c/i-05270017cd01708c3
+Non-terminated Pods:                                (63 in total)
+  Namespace                                         Name                                                          CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                         ----                                                          ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver-operator                      openshift-apiserver-operator-6fc6c64dcb-662nb                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-apiserver                               apiserver-5bb9748fcc-t9mmf                                    110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         77m
+  openshift-authentication-operator                 authentication-operator-74d4dbb4bc-qfkgv                      20m (0%)      0 (0%)      200Mi (1%)       0 (0%)         91m
+  openshift-authentication                          oauth-openshift-768dbc8bb6-hbhqj                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         79m
+  openshift-cloud-controller-manager                aws-cloud-controller-manager-67fdcd66d-rtscl                  200m (5%)     0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-cloud-credential-operator               cloud-credential-operator-ddd644647-gr4jq                     20m (0%)      0 (0%)      40Mi (0%)        0 (0%)         91m
+  openshift-cloud-network-config-controller         cloud-network-config-controller-76d986bdd4-ckttk              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         90m
+  openshift-cluster-csi-drivers                     aws-ebs-csi-driver-node-zhfz5                                 30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         88m
+  openshift-cluster-machine-approver                machine-approver-749c46749f-4g799                             20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         91m
+  openshift-cluster-node-tuning-operator            cluster-node-tuning-operator-778c75994b-vknk6                 10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         91m
+  openshift-cluster-node-tuning-operator            tuned-vvxbk                                                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-cluster-storage-operator                cluster-storage-operator-67dc94bd8d-xmwvz                     10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         90m
+  openshift-cluster-storage-operator                csi-snapshot-controller-operator-75c948495d-ttpkp             10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         91m
+  openshift-config-operator                         openshift-config-operator-56f4dcbb9b-f7rtr                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         90m
+  openshift-controller-manager-operator             openshift-controller-manager-operator-7bbf997979-cn294        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-controller-manager                      controller-manager-7547f844c9-jtt9n                           100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+  openshift-dns-operator                            dns-operator-5975b7bc8b-btg5m                                 20m (0%)      0 (0%)      69Mi (0%)        0 (0%)         91m
+  openshift-dns                                     dns-default-xj2g8                                             60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         88m
+  openshift-dns                                     node-resolver-tz9jf                                           5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         88m
+  openshift-e2e-loki                                event-exporter-599555dd98-bdwbt                               10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         92m
+  openshift-e2e-loki                                loki-promtail-w5qf5                                           40m (1%)      0 (0%)      90Mi (0%)        0 (0%)         91m
+  openshift-etcd-operator                           etcd-operator-5f44c8-f5wc4                                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-etcd                                    etcd-guard-ip-10-0-76-169.ec2.internal                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         85m
+  openshift-etcd                                    etcd-ip-10-0-76-169.ec2.internal                              360m (10%)    0 (0%)      910Mi (6%)       0 (0%)         70m
+  openshift-image-registry                          cluster-image-registry-operator-6547745567-8nnrw              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         90m
+  openshift-image-registry                          node-ca-5z9nl                                                 10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         80m
+  openshift-ingress-operator                        ingress-operator-6c7f5979f8-k27dc                             20m (0%)      0 (0%)      96Mi (0%)        0 (0%)         90m
+  openshift-insights                                insights-operator-794b9f445-rpphk                             10m (0%)      0 (0%)      30Mi (0%)        0 (0%)         90m
+  openshift-kube-apiserver-operator                 kube-apiserver-operator-7598d8ddc7-fglcw                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         90m
+  openshift-kube-apiserver                          kube-apiserver-guard-ip-10-0-76-169.ec2.internal              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         80m
+  openshift-kube-apiserver                          kube-apiserver-ip-10-0-76-169.ec2.internal                    290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         75m
+  openshift-kube-controller-manager-operator        kube-controller-manager-operator-677b6c74b4-7fx7p             10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-kube-controller-manager                 kube-controller-manager-guard-ip-10-0-76-169.ec2.internal     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         83m
+  openshift-kube-controller-manager                 kube-controller-manager-ip-10-0-76-169.ec2.internal           80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         76m
+  openshift-kube-scheduler-operator                 openshift-kube-scheduler-operator-574dd6fbf5-5s4kt            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-kube-scheduler                          openshift-kube-scheduler-guard-ip-10-0-76-169.ec2.internal    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         84m
+  openshift-kube-scheduler                          openshift-kube-scheduler-ip-10-0-76-169.ec2.internal          25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         75m
+  openshift-kube-storage-version-migrator-operator  kube-storage-version-migrator-operator-8bf9bd98c-w7x7h        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-machine-api                             cluster-autoscaler-operator-787958f6d8-2mrz7                  30m (0%)      0 (0%)      70Mi (0%)        0 (0%)         91m
+  openshift-machine-api                             cluster-baremetal-operator-7f644f6944-xt59t                   20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         91m
+  openshift-machine-api                             control-plane-machine-set-operator-86459fddc6-t9sv2           10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-machine-api                             machine-api-operator-764895cd84-qpwn7                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         90m
+  openshift-machine-config-operator                 kube-rbac-proxy-crio-ip-10-0-76-169.ec2.internal              20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         91m
+  openshift-machine-config-operator                 machine-config-daemon-fwfsp                                   40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         88m
+  openshift-machine-config-operator                 machine-config-operator-cf5ffc6cd-vrh8x                       40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         91m
+  openshift-machine-config-operator                 machine-config-server-r6lw6                                   20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         87m
+  openshift-marketplace                             marketplace-operator-85d5779fd8-j6bst                         1m (0%)       0 (0%)      5Mi (0%)         0 (0%)         91m
+  openshift-monitoring                              cluster-monitoring-operator-86674ff9d7-kq8ds                  10m (0%)      0 (0%)      75Mi (0%)        0 (0%)         91m
+  openshift-monitoring                              node-exporter-v2d55                                           9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         80m
+  openshift-multus                                  multus-additional-cni-plugins-pvjqc                           10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         90m
+  openshift-multus                                  multus-admission-controller-54d654dc48-xzbrl                  20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         86m
+  openshift-multus                                  multus-j6kq9                                                  10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         90m
+  openshift-multus                                  network-metrics-daemon-d68k8                                  20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         90m
+  openshift-network-diagnostics                     network-check-target-vrpdm                                    10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         90m
+  openshift-network-node-identity                   network-node-identity-tb8xp                                   20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         90m
+  openshift-oauth-apiserver                         apiserver-5ff458449d-77vd2                                    150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         84m
+  openshift-operator-lifecycle-manager              catalog-operator-788f57f7f7-jjdl7                             10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         90m
+  openshift-operator-lifecycle-manager              olm-operator-5bd8c5b986-q6vtf                                 10m (0%)      0 (0%)      160Mi (1%)       0 (0%)         90m
+  openshift-operator-lifecycle-manager              package-server-manager-75f8f4d6bd-x9sgb                       10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         90m
+  openshift-operator-lifecycle-manager              packageserver-69fd4759f5-gmf9r                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         88m
+  openshift-ovn-kubernetes                          ovnkube-node-kzr5h                                            80m (2%)      0 (0%)      1630Mi (11%)     0 (0%)         89m
+  openshift-route-controller-manager                route-controller-manager-76ccfc568d-jr9lw                     100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         80m
+  openshift-service-ca-operator                     service-ca-operator-78b5798788-n9ql4                          10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         91m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                2310m (66%)   0 (0%)
+  memory             8232Mi (56%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason               Age   From                   Message
+  ----     ------               ----  ----                   -------
+  Normal   RegisteredNode       91m   node-controller        Node ip-10-0-76-169.ec2.internal event: Registered Node ip-10-0-76-169.ec2.internal in Controller
+  Normal   Synced               91m   cloud-node-controller  Node synced successfully
+  Warning  ErrorAddingResource  89m   controlplane           adding or updating remote node chassis ip-10-0-76-169.ec2.internal failed, err - failed to create or update chassis to remote for remote node ip-10-0-76-169.ec2.internal, error: failed to parse node chassis-id for node - ip-10-0-76-169.ec2.internal, error: suppressed error logged: k8s.ovn.org/node-chassis-id annotation not found for node ip-10-0-76-169.ec2.internal
+  Normal   RegisteredNode       81m   node-controller        Node ip-10-0-76-169.ec2.internal event: Registered Node ip-10-0-76-169.ec2.internal in Controller
+  Normal   RegisteredNode       79m   node-controller        Node ip-10-0-76-169.ec2.internal event: Registered Node ip-10-0-76-169.ec2.internal in Controller
+  Normal   RegisteredNode       76m   node-controller        Node ip-10-0-76-169.ec2.internal event: Registered Node ip-10-0-76-169.ec2.internal in Controller
+  Normal   RegisteredNode       74m   node-controller        Node ip-10-0-76-169.ec2.internal event: Registered Node ip-10-0-76-169.ec2.internal in Controller

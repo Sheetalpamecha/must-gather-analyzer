@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    oc.openshift.io/command: oc adm must-gather
+  creationTimestamp: "2024-11-11T04:30:35Z"
+  generateName: must-gather-
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:oc.openshift.io/command: {}
+        f:generateName: {}
+      f:roleRef: {}
+      f:subjects: {}
+    manager: oc
+    operation: Update
+    time: "2024-11-11T04:30:35Z"
+  name: must-gather-7mg7r
+  resourceVersion: "64485"
+  uid: ecfc2069-acab-444a-8c71-d6ef2fa85506
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: openshift-must-gather-6tc69

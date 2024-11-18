@@ -1,0 +1,52 @@
+Name:              pvc-c530e3f9-c910-404f-ae7c-77a2cd8ba731
+Labels:            <none>
+Annotations:       pv.kubernetes.io/provisioned-by: ebs.csi.aws.com
+                   volume.kubernetes.io/provisioner-deletion-secret-name: 
+                   volume.kubernetes.io/provisioner-deletion-secret-namespace: 
+Finalizers:        [kubernetes.io/pv-protection external-attacher/ebs-csi-aws-com]
+StorageClass:      gp3-csi
+Status:            Bound
+Claim:             openshift-monitoring/prometheus-data-prometheus-k8s-0
+Reclaim Policy:    Delete
+Access Modes:      RWO
+VolumeMode:        Filesystem
+Capacity:          20Gi
+Node Affinity:     
+  Required Terms:  
+    Term 0:        topology.ebs.csi.aws.com/zone in [us-east-1c]
+Message:           
+Source:
+    Type:              CSI (a Container Storage Interface (CSI) volume source)
+    Driver:            ebs.csi.aws.com
+    FSType:            ext4
+    VolumeHandle:      vol-015a91f848f131664
+    ReadOnly:          false
+    VolumeAttributes:      storage.kubernetes.io/csiProvisionerIdentity=1731294249421-2585-ebs.csi.aws.com
+Events:                <none>
+
+
+Name:              pvc-e819452a-aa95-49d6-9962-acea16932182
+Labels:            <none>
+Annotations:       pv.kubernetes.io/provisioned-by: ebs.csi.aws.com
+                   volume.kubernetes.io/provisioner-deletion-secret-name: 
+                   volume.kubernetes.io/provisioner-deletion-secret-namespace: 
+Finalizers:        [kubernetes.io/pv-protection external-attacher/ebs-csi-aws-com]
+StorageClass:      gp3-csi
+Status:            Bound
+Claim:             openshift-monitoring/prometheus-data-prometheus-k8s-1
+Reclaim Policy:    Delete
+Access Modes:      RWO
+VolumeMode:        Filesystem
+Capacity:          20Gi
+Node Affinity:     
+  Required Terms:  
+    Term 0:        topology.ebs.csi.aws.com/zone in [us-east-1a]
+Message:           
+Source:
+    Type:              CSI (a Container Storage Interface (CSI) volume source)
+    Driver:            ebs.csi.aws.com
+    FSType:            ext4
+    VolumeHandle:      vol-04320689627fad6ba
+    ReadOnly:          false
+    VolumeAttributes:      storage.kubernetes.io/csiProvisionerIdentity=1731294249421-2585-ebs.csi.aws.com
+Events:                <none>

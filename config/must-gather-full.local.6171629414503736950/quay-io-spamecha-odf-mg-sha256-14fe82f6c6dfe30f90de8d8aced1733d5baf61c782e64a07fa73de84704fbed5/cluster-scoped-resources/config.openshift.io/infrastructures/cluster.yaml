@@ -1,0 +1,68 @@
+apiVersion: config.openshift.io/v1
+kind: Infrastructure
+metadata:
+  creationTimestamp: "2024-11-11T02:58:51Z"
+  generation: 1
+  managedFields:
+  - apiVersion: config.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:cloudConfig:
+          .: {}
+          f:key: {}
+          f:name: {}
+        f:platformSpec:
+          .: {}
+          f:aws: {}
+          f:type: {}
+    manager: cluster-bootstrap
+    operation: Update
+    time: "2024-11-11T02:58:51Z"
+  - apiVersion: config.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:apiServerInternalURI: {}
+        f:apiServerURL: {}
+        f:controlPlaneTopology: {}
+        f:cpuPartitioning: {}
+        f:etcdDiscoveryDomain: {}
+        f:infrastructureName: {}
+        f:infrastructureTopology: {}
+        f:platform: {}
+        f:platformStatus:
+          .: {}
+          f:aws:
+            .: {}
+            f:region: {}
+          f:type: {}
+    manager: cluster-bootstrap
+    operation: Update
+    subresource: status
+    time: "2024-11-11T02:58:51Z"
+  name: cluster
+  resourceVersion: "520"
+  uid: 461dd416-f3f1-4091-9c89-edc5140acad6
+spec:
+  cloudConfig:
+    key: config
+    name: cloud-provider-config
+  platformSpec:
+    aws: {}
+    type: AWS
+status:
+  apiServerInternalURI: https://api-int.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org:6443
+  apiServerURL: https://api.ci-ln-2s0x4sk-76ef8.aws-2.ci.openshift.org:6443
+  controlPlaneTopology: HighlyAvailable
+  cpuPartitioning: None
+  etcdDiscoveryDomain: ""
+  infrastructureName: ci-ln-2s0x4sk-76ef8-2sx7w
+  infrastructureTopology: HighlyAvailable
+  platform: AWS
+  platformStatus:
+    aws:
+      region: us-east-1
+    type: AWS

@@ -1,0 +1,67 @@
+---
+apiVersion: v1
+data:
+  metadata-profile.yaml: |-
+    "apiVersion": "audit.k8s.io/v1"
+    "kind": "Policy"
+    "metadata":
+      "name": "Metadata"
+    "omitStages":
+    - "RequestReceived"
+    "rules":
+    - "level": "Metadata"
+  none-profile.yaml: |-
+    "apiVersion": "audit.k8s.io/v1"
+    "kind": "Policy"
+    "metadata":
+      "name": "None"
+    "omitStages":
+    - "RequestReceived"
+    "rules":
+    - "level": "None"
+  request-profile.yaml: |-
+    "apiVersion": "audit.k8s.io/v1"
+    "kind": "Policy"
+    "metadata":
+      "name": "Request"
+    "omitStages":
+    - "RequestReceived"
+    "rules":
+    - "level": "Request"
+  requestresponse-profile.yaml: |-
+    "apiVersion": "audit.k8s.io/v1"
+    "kind": "Policy"
+    "metadata":
+      "name": "RequestResponse"
+    "omitStages":
+    - "RequestReceived"
+    "rules":
+    - "level": "RequestResponse"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:11:16Z"
+  labels:
+    app.kubernetes.io/managed-by: cluster-monitoring-operator
+    app.kubernetes.io/part-of: openshift-monitoring
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:metadata-profile.yaml: {}
+        f:none-profile.yaml: {}
+        f:request-profile.yaml: {}
+        f:requestresponse-profile.yaml: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/part-of: {}
+    manager: operator
+    operation: Update
+    time: "2024-11-11T03:11:16Z"
+  name: prometheus-adapter-audit-profiles
+  namespace: openshift-monitoring
+  resourceVersion: "22835"
+  uid: a1f9e434-717f-4dc0-b9f6-c72794b0aa21

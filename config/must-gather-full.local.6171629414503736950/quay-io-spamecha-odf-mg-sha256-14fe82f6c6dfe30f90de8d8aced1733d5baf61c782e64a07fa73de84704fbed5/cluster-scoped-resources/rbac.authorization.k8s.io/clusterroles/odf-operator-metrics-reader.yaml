@@ -1,0 +1,27 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:24:30Z"
+  labels:
+    olm.owner: odf-operator.v4.14.11-rhodf
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.owner: {}
+      f:rules: {}
+    manager: catalog
+    operation: Update
+    time: "2024-11-11T03:24:59Z"
+  name: odf-operator-metrics-reader
+  resourceVersion: "33267"
+  uid: 2c11ed65-1899-4ca1-bb26-9aad51a434a9
+rules:
+- nonResourceURLs:
+  - /metrics
+  verbs:
+  - get

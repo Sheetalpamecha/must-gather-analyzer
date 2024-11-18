@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:06:45Z"
+  labels:
+    release.openshift.io/verification-signatures: ""
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:release.openshift.io/verification-signatures: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T03:06:45Z"
+  name: signatures-managed
+  namespace: openshift-config-managed
+  resourceVersion: "14364"
+  uid: 05615355-29de-4371-aa45-8c64a2daa491

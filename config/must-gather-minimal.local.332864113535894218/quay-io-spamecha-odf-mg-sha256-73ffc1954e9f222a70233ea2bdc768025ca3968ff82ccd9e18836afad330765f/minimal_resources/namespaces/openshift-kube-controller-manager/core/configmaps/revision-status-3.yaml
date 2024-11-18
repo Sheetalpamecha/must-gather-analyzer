@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: required configmap/serviceaccount-ca has changed
+  revision: "3"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:03:46Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:03:46Z"
+  name: revision-status-3
+  namespace: openshift-kube-controller-manager
+  resourceVersion: "10026"
+  uid: a8797a90-0695-4eae-b4e0-1632ccdbed7a

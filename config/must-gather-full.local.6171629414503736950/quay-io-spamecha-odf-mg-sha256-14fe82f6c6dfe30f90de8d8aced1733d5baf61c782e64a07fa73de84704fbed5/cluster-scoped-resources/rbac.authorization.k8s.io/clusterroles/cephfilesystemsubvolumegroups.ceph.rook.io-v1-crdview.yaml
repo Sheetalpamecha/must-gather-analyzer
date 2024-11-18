@@ -1,0 +1,43 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:40Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-c08a45603993da75-view: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-c08a45603993da75-view: {}
+          f:rbac.authorization.k8s.io/aggregate-to-view: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"84dbb9ac-a9db-4300-b828-1e12c2c8096a"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:40Z"
+  name: cephfilesystemsubvolumegroups.ceph.rook.io-v1-crdview
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephfilesystemsubvolumegroups.ceph.rook.io
+    uid: 84dbb9ac-a9db-4300-b828-1e12c2c8096a
+  resourceVersion: "34685"
+  uid: befbc4c3-f012-4c96-a7dd-0b34a578d230
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - cephfilesystemsubvolumegroups.ceph.rook.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get

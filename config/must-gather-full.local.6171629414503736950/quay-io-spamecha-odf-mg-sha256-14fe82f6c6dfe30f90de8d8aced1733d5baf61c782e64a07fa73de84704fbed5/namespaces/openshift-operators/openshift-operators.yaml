@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    openshift.io/node-selector: ""
+    openshift.io/sa.scc.mcs: s0:c21,c0
+    openshift.io/sa.scc.supplemental-groups: 1000420000/10000
+    openshift.io/sa.scc.uid-range: 1000420000/10000
+    workload.openshift.io/allowed: management
+  creationTimestamp: "2024-11-11T02:59:11Z"
+  labels:
+    kubernetes.io/metadata.name: openshift-operators
+    openshift.io/scc: ""
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/enforce-version: v1.24
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:openshift.io/sa.scc.mcs: {}
+          f:openshift.io/sa.scc.supplemental-groups: {}
+          f:openshift.io/sa.scc.uid-range: {}
+    manager: cluster-policy-controller
+    operation: Update
+    time: "2024-11-11T02:59:11Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:openshift.io/node-selector: {}
+          f:workload.openshift.io/allowed: {}
+        f:labels:
+          .: {}
+          f:kubernetes.io/metadata.name: {}
+          f:openshift.io/scc: {}
+          f:pod-security.kubernetes.io/enforce: {}
+          f:pod-security.kubernetes.io/enforce-version: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:11Z"
+  name: openshift-operators
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1195"
+  uid: 66fad862-5fcd-47a0-89a9-4175790afdd8
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

@@ -1,0 +1,62 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+  creationTimestamp: "2024-11-11T02:59:26Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+      f:rules: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:26Z"
+  name: system:controller:operator-lifecycle-manager
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1793"
+  uid: aa0f5941-09b5-4caa-881a-04802f9a6be4
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - watch
+  - list
+  - get
+  - create
+  - update
+  - patch
+  - delete
+  - deletecollection
+  - escalate
+  - bind
+- nonResourceURLs:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - restricted-v2
+  - anyuid
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use

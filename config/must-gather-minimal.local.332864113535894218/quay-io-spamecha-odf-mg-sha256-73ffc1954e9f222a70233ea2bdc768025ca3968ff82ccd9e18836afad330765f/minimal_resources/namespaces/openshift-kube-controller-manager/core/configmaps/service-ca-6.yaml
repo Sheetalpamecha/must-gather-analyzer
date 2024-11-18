@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDUTCCAjmgAwIBAgIIV6y065t+YYYwDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE
+    Awwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTczMTI5NDE0MjAe
+    Fw0yNDExMTEwMzAyMjFaFw0yNzAxMTAwMzAyMjJaMDYxNDAyBgNVBAMMK29wZW5z
+    aGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE3MzEyOTQxNDIwggEiMA0GCSqG
+    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBpiU3d1Phhx8/ksLzUPqoIV6IxXChKFGD
+    g5y0JdluMrWZYbsmTG7mvztgwqr162yzEjGHrEZLGunN74PZ8QVerXqVeUvgSCIT
+    pzKchHhUQQDJooM6n5d7n7RxIKzFvFb2Sm5/SuTMOxuC/1xC1MFrJ1X0/7D9SEci
+    nJECrhWF/u1PVRhg5ivXuQ7PjrtO86NK8NVJM39U9R/IYKLRJ1BmYuDimtCkm2eJ
+    kcT+JufePN1C4pRy59YCrCS9lLLMDK6cljdnE/AGGmbNDQJY8DXzqwrxejR/H9a7
+    9FeQNE9YfNFWbU6ZQWnm+3nu42zrBaFdaumefjNJphjzoBDsNXXlAgMBAAGjYzBh
+    MA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBT7IcZm
+    wLf5o7pw4Zd3HhyHdA8rSzAfBgNVHSMEGDAWgBT7IcZmwLf5o7pw4Zd3HhyHdA8r
+    SzANBgkqhkiG9w0BAQsFAAOCAQEAVQ++WJT9M7drgWElxNgFru19ccE4YpAIawW4
+    jUQBj0KZgl9CQYnfMtli0p3TIirJPZMmHKVsEC3tnG09a3IYcr0EFZGcbzdCsD1C
+    aP9PVkWM34lldJB0ma8meIZFQ+qPPR9URdtY0neNHP7vf9l5/lxp7uaQersY/v1j
+    1MvWUcZj0K6doWb9adDMevOKJM1Zw05tuDjahQ0kOzDdcAShlAcswaFMX0N4YHtx
+    iXlYtSV0/V0/HLxmV5wCe+3p3wzEtUUjjudiNYHDTImLZ8rw2GMgYq6s1uJ4aJM1
+    zcpOwe0R0r+RVPOX0Lsyms22GUaM2OZ8+DbhfsvJx9NSh/3gZA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:14:11Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca-bundle.crt: {}
+      f:metadata:
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"31bd546d-72b9-4a1f-96aa-39ff7d08ca28"}: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:14:11Z"
+  name: service-ca-6
+  namespace: openshift-kube-controller-manager
+  ownerReferences:
+  - apiVersion: v1
+    kind: ConfigMap
+    name: revision-status-6
+    uid: 31bd546d-72b9-4a1f-96aa-39ff7d08ca28
+  resourceVersion: "27626"
+  uid: 2b31ceda-7095-45d6-b749-f884596b2cdd

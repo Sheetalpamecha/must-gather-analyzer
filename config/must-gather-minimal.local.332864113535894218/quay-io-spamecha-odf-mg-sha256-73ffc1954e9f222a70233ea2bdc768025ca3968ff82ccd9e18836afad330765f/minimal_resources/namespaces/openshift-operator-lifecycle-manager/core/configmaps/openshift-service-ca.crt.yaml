@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+data:
+  service-ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDUTCCAjmgAwIBAgIIV6y065t+YYYwDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE
+    Awwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTczMTI5NDE0MjAe
+    Fw0yNDExMTEwMzAyMjFaFw0yNzAxMTAwMzAyMjJaMDYxNDAyBgNVBAMMK29wZW5z
+    aGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE3MzEyOTQxNDIwggEiMA0GCSqG
+    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBpiU3d1Phhx8/ksLzUPqoIV6IxXChKFGD
+    g5y0JdluMrWZYbsmTG7mvztgwqr162yzEjGHrEZLGunN74PZ8QVerXqVeUvgSCIT
+    pzKchHhUQQDJooM6n5d7n7RxIKzFvFb2Sm5/SuTMOxuC/1xC1MFrJ1X0/7D9SEci
+    nJECrhWF/u1PVRhg5ivXuQ7PjrtO86NK8NVJM39U9R/IYKLRJ1BmYuDimtCkm2eJ
+    kcT+JufePN1C4pRy59YCrCS9lLLMDK6cljdnE/AGGmbNDQJY8DXzqwrxejR/H9a7
+    9FeQNE9YfNFWbU6ZQWnm+3nu42zrBaFdaumefjNJphjzoBDsNXXlAgMBAAGjYzBh
+    MA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBT7IcZm
+    wLf5o7pw4Zd3HhyHdA8rSzAfBgNVHSMEGDAWgBT7IcZmwLf5o7pw4Zd3HhyHdA8r
+    SzANBgkqhkiG9w0BAQsFAAOCAQEAVQ++WJT9M7drgWElxNgFru19ccE4YpAIawW4
+    jUQBj0KZgl9CQYnfMtli0p3TIirJPZMmHKVsEC3tnG09a3IYcr0EFZGcbzdCsD1C
+    aP9PVkWM34lldJB0ma8meIZFQ+qPPR9URdtY0neNHP7vf9l5/lxp7uaQersY/v1j
+    1MvWUcZj0K6doWb9adDMevOKJM1Zw05tuDjahQ0kOzDdcAShlAcswaFMX0N4YHtx
+    iXlYtSV0/V0/HLxmV5wCe+3p3wzEtUUjjudiNYHDTImLZ8rw2GMgYq6s1uJ4aJM1
+    zcpOwe0R0r+RVPOX0Lsyms22GUaM2OZ8+DbhfsvJx9NSh/3gZA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    service.beta.openshift.io/inject-cabundle: "true"
+  creationTimestamp: "2024-11-11T02:59:09Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:service.beta.openshift.io/inject-cabundle: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2024-11-11T02:59:09Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:service-ca.crt: {}
+    manager: service-ca-operator
+    operation: Update
+    time: "2024-11-11T03:02:54Z"
+  name: openshift-service-ca.crt
+  namespace: openshift-operator-lifecycle-manager
+  resourceVersion: "7468"
+  uid: c6fca341-ebc0-48ba-96d1-574b962a20ed

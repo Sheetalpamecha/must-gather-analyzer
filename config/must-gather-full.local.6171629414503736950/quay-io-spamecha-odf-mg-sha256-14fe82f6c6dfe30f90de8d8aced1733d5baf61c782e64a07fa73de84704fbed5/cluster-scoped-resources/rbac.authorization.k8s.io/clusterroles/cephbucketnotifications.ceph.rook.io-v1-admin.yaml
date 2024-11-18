@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:25:40Z"
+  labels:
+    olm.opgroup.permissions/aggregate-to-3f0f4f6281994474-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:olm.opgroup.permissions/aggregate-to-3f0f4f6281994474-admin: {}
+          f:rbac.authorization.k8s.io/aggregate-to-admin: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"a325e9e0-4b81-43a3-b270-3ebf6c14c7ac"}: {}
+      f:rules: {}
+    manager: olm
+    operation: Update
+    time: "2024-11-11T03:25:40Z"
+  name: cephbucketnotifications.ceph.rook.io-v1-admin
+  ownerReferences:
+  - apiVersion: apiextensions.k8s.io/v1
+    blockOwnerDeletion: false
+    controller: false
+    kind: CustomResourceDefinition
+    name: cephbucketnotifications.ceph.rook.io
+    uid: a325e9e0-4b81-43a3-b270-3ebf6c14c7ac
+  resourceVersion: "34631"
+  uid: 712a305a-fdf5-4216-8ead-d8bddcf7c04e
+rules:
+- apiGroups:
+  - ceph.rook.io
+  resources:
+  - cephbucketnotifications
+  verbs:
+  - '*'

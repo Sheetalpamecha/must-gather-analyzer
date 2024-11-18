@@ -1,0 +1,25 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2024-11-11T03:02:20Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:roleRef: {}
+      f:subjects: {}
+    manager: csi-snapshot-controller-operator
+    operation: Update
+    time: "2024-11-11T03:02:20Z"
+  name: csi-snapshot-webhook-clusterrolebinding
+  resourceVersion: "5224"
+  uid: cc3a7263-ca5f-4d62-8d81-5bc27c241a52
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: csi-snapshot-webhook-clusterrole
+subjects:
+- kind: ServiceAccount
+  name: csi-snapshot-webhook
+  namespace: openshift-cluster-storage-operator

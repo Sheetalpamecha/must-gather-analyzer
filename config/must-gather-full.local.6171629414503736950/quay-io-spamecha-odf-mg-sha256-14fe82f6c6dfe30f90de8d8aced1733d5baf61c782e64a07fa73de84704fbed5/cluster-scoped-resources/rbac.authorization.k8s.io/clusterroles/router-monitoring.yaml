@@ -1,0 +1,23 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2024-11-11T03:03:20Z"
+  managedFields:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:rules: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2024-11-11T03:03:20Z"
+  name: router-monitoring
+  resourceVersion: "9035"
+  uid: adbf508e-fd28-415a-8c49-00ab9077aa18
+rules:
+- apiGroups:
+  - route.openshift.io
+  resources:
+  - routers/metrics
+  verbs:
+  - get

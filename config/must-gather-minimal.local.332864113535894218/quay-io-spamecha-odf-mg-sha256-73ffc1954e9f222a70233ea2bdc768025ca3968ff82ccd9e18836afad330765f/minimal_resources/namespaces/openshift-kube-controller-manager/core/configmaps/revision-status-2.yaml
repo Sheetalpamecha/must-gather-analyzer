@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+data:
+  reason: configmap "kube-controller-manager-pod-1" not found
+  revision: "2"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-11T03:02:40Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:reason: {}
+        f:revision: {}
+    manager: cluster-kube-controller-manager-operator
+    operation: Update
+    time: "2024-11-11T03:03:08Z"
+  name: revision-status-2
+  namespace: openshift-kube-controller-manager
+  resourceVersion: "8331"
+  uid: f0957f91-aa33-4d2c-a296-6035fb1db5c9

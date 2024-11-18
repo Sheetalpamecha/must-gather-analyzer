@@ -1,0 +1,58 @@
+---
+apiVersion: v1
+data:
+  images.json: |
+    {
+      "machineAPIOperator": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:375c0cf46408b423d9998c0f38c156a8f4a4107e10858482b1a1e9bd9ebaee8d",
+      "kubeRBACProxy": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8c839bb3665955bcf151f5d5b2fe26187c5070c4812739b7f0b83af7f6cf7afa",
+      "clusterAPIControllerAWS": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:37e7aafb0d4e4eb2af4c55fbbdf3ad4e7625b8731964976e2be496648745fad7",
+      "clusterAPIControllerAlibaba": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:655794c10b3134c6222259633319f3de52ae754c91ed490680c31a4dab517213",
+      "clusterAPIControllerOpenStack": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:154c57e824b992696899a60b3daf4ed4ceb9e7ee6b45b12e87cef08162becabc",
+      "clusterAPIControllerLibvirt": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1919df0a2f680a2011ab624da75b21b48cd8c8dbbac6f77dcfc425b932010453",
+      "clusterAPIControllerBareMetal": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:a0c0b88a462b3ba5f9b912fac1c255404bc5e1131614eb9ca752ac8ff717997d",
+      "clusterAPIControllerAzure": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:2c44cded3ecb5de57c5cfff7fbe17a4ba6a795aa38768383ca347a0eda151de5",
+      "clusterAPIControllerGCP": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:df73141b85b67b1845adae2105df43af0d72aa92cffe1082c69f5e1a794bde38",
+      "clusterAPIControllerIBMCloud": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:9cef981638a10861ad2fef56345fc00cc4c6fc8d4e2e1a470461b93a4fd73072",
+      "clusterAPIControllerNutanix": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:308b82aa42f2cdeddeb7b1d291503c4a05f863e61a575747449804f38a8ecaaf",
+      "clusterAPIControllerOvirt": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:d53e41ea97be893c9647cb9bc10b0bf056a3c0e64e8742ff38553fa8280204d2",
+      "clusterAPIControllerPowerVS": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0908aa3edceee7abeeb23c3d2e39d3f6d07dd9dd8ff4869ed6ae6e11dd257e1b",
+      "clusterAPIControllerVSphere": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:375c0cf46408b423d9998c0f38c156a8f4a4107e10858482b1a1e9bd9ebaee8d"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    capability.openshift.io/name: MachineAPI
+    include.release.openshift.io/ibm-cloud-managed: "true"
+    include.release.openshift.io/self-managed-high-availability: "true"
+    include.release.openshift.io/single-node-developer: "true"
+  creationTimestamp: "2024-11-11T02:59:25Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:images.json: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:capability.openshift.io/name: {}
+          f:include.release.openshift.io/ibm-cloud-managed: {}
+          f:include.release.openshift.io/self-managed-high-availability: {}
+          f:include.release.openshift.io/single-node-developer: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"c0027b13-9238-4c5e-b824-f2e2febbc466"}: {}
+    manager: cluster-version-operator
+    operation: Update
+    time: "2024-11-11T02:59:25Z"
+  name: machine-api-operator-images
+  namespace: openshift-machine-api
+  ownerReferences:
+  - apiVersion: config.openshift.io/v1
+    controller: true
+    kind: ClusterVersion
+    name: version
+    uid: c0027b13-9238-4c5e-b824-f2e2febbc466
+  resourceVersion: "1758"
+  uid: 4105778d-397f-41dd-a533-41532327af3f

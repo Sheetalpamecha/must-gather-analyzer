@@ -2,9 +2,9 @@
 This script analyzes must-gather logs for non-standard configurations 
 by comparing them against predefined standards.
 
-It scans specific YAML files (CephCluster, StorageCluster, and CSVs) 
-from a given directory, identifies deviations from the standards, 
-and outputs the results in JSON format.
+It scans specific YAML files from a given directory, 
+identifies deviations from the standards, 
+and outputs the results on console or in JSON format.
 """
 
 import argparse
@@ -15,8 +15,7 @@ from utils.compare import load_standards, compare_with_standards
 
 def analyze_configs(input_dir, output_file=None):
     """
-    Analyzes configuration files in the specified directory for deviations
-    from predefined standards.
+    Analyzes configuration files in the specified directory 
 
     Args:
         input_dir (str): Path to the directory containing must-gather logs.
@@ -26,6 +25,9 @@ def analyze_configs(input_dir, output_file=None):
     Raises:
         FileNotFoundError: If the input directory doesn't exist.
     """
+    # Check if the input directory exists
+    if not os.path.exists(input_dir):
+        raise FileNotFoundError(f"The input directory '{input_dir}' does not exist.")
 
     # Define file types to gather (CephCluster, StorageCluster, CSVs)
     file_types = ['CephCluster', 'StorageCluster', 'ClusterServiceVersion']
@@ -69,5 +71,8 @@ if __name__ == '__main__':
         help='Path to the output JSON file'
     )
     args = parser.parse_args()
-
-    analyze_configs(args.input, args.output)
+    try:
+        analyze_configs(args.input, args.output)
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        exit(1)
